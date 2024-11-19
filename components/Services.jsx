@@ -27,9 +27,7 @@ export default function Services() {
             id: 1,
             image: "/web.png",
             title: "Digital Marketing",
-            description: `Transform your ideas into dynamic, high-performing websites
-        with our expert team, ensuring seamless delivery and
-        exceptional results that drive your business forward.`,
+            description: `Boost your brand's online visibility with marketing strategies that work for you. Whether it’s through SEO, social media, or ads, we help you reach the right people and grow your business.`,
             tags: [
                 " Creative web design",
                 "Web development",
@@ -42,9 +40,7 @@ export default function Services() {
             id: 1,
             image: "/web.png",
             title: "Branding",
-            description: `Transform your ideas into dynamic, high-performing websites
-        with our expert team, ensuring seamless delivery and
-        exceptional results that drive your business forward.`,
+            description: `Create a lasting impression with a strong, authentic brand. We help you define your identity, tell your story, and connect with your audience in a way that stands out and builds trust.`,
             tags: [
                 " Creative web design",
                 "Web development",
@@ -57,9 +53,7 @@ export default function Services() {
             id: 1,
             image: "/web.png",
             title: "Android App Development",
-            description: `Transform your ideas into dynamic, high-performing websites
-        with our expert team, ensuring seamless delivery and
-        exceptional results that drive your business forward.`,
+            description: `Turn your app ideas into reality with custom Android solutions. Our team builds intuitive, high-performance apps that provide seamless user experiences and drive engagement.`,
             tags: [
                 " Creative web design",
                 "Web development",
@@ -72,6 +66,7 @@ export default function Services() {
         
 
     ];
+
 
     const container = useRef();
     const { scrollYProgress } = useScroll({

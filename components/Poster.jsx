@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import CityFuture from "./City";
-import Navbar from "./Navbar";
 import gsap from "gsap";
 import Lottie from "lottie-react";
 import Wave from '../pages/animations/wave.json'
@@ -62,7 +61,7 @@ export default function Poster() {
       <section className="flex w-full items-center content-center justify-center">
         <div className="w-[100%] md:w-[85%]">
           <div className="flex pl-[1.5rem] lg:pl-[2rem] z-[9] items-center relative gap-[10px] top-[39px]">
-            <p className=" text-white">{`Hey, We are Flowbit`}</p>
+            <p className=" text-white">{`Hey, We are PiRhotech`}</p>
             <Lottie animationData={Wave} loop={true} className="w-[30px]" />
           </div>
           <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-[1rem] pr-[1rem] bg-zinc-900">

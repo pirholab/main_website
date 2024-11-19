@@ -27,7 +27,7 @@ export default function Who() {
           <br />
           <div className="text-left sm:text-right w-full sm:w-[75%] flex flex-col items-start sm:items-end">
             <p className={`text-white text-[large] sm:text-2xl md:text-4xl `}>
-              {`FlowBite is a web design, development, and digital marketing agency.
+              {`PiRhotech is a web design, development, and digital marketing agency.
             We create impactful websites and strategies that enhance your online
             presence and drive success.`}
             </p>

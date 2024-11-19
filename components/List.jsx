@@ -224,7 +224,7 @@ export default function List() {
               className={`${roboto.className} text-bold w-full pt-5 pb-7 flex text-[2rem] smll:text-5xl sm:text-7xl md:text-8xl lg:text-9xl cursor-pointer  sm:h-[300px] items-center`}
               data-item="1"
               style={{
-                zIndex: 99999,
+                
                 fontWeight:300,
                 textShadow: "2px 3px 20px rgb(0 0 0 / 32%) ",
               }}
@@ -236,7 +236,7 @@ export default function List() {
               className={`${roboto.className} text-bold w-full pt-5 pb-7 flex text-[2rem] smll:text-5xl sm:text-7xl md:text-8xl lg:text-9xl cursor-pointer  sm:h-[300px] items-center`}
               data-item="2"
               style={{
-                zIndex: 99999,
+                
                 fontWeight:300,
                 textShadow: "2px 3px 20px rgb(0 0 0 / 32%) ",
               }}
@@ -248,7 +248,7 @@ export default function List() {
               className={`${roboto.className} text-bold w-full pt-5 pb-7 text-[2rem] smll:text-5xl sm:text-7xl md:text-8xl flex lg:text-9xl cursor-pointer  sm:h-[300px] items-center`}
               data-item="3"
               style={{
-                zIndex: 99999,
+                
                 fontWeight:300,
                 textShadow: "2px 3px 20px rgb(0 0 0 / 32%) ",
               }}

@@ -6,27 +6,21 @@ const data = {
 
     rows: [
         {
-            title: "Lorem ipsum dolor sit amet,",
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-              Fusce sed commodo purus, at tempus turpis.`,
+            title: "What services does PiRhoTech offer?",
+            content: `At PiRhoTech, we specialize in a wide range of digital services, including Web Design & Development, Digital Marketing, Branding, and Android App Development. Our expert team works with you to create custom solutions that elevate your business and drive results.`,
         },
         {
-            title: "Nunc maximus, magna at ultricies elementum",
+            title: "How long does it take to complete a project?",
             content:
-                "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+                "The timeline for a project depends on its complexity and scope. We work closely with you to establish clear goals and deadlines, ensuring we deliver high-quality results within a realistic timeframe. Typically, projects range from a few weeks to a few months.",
         },
         {
-            title: "Curabitur laoreet, mauris vel blandit fringilla",
-            content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
-            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
-            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
-            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+            title: "What industries does PiRhoTech work with?",
+            content: `We work with businesses across a variety of industries, including e-commerce, healthcare, education, technology, finance, and more. No matter your industry, our team is dedicated to crafting tailored solutions that meet your unique needs.`,
         },
         {
-            title: "What is the package version",
-            content: <p>current version is 1.2.1</p>,
+            title: "How do I get started with PiRhoTech?",
+            content: <p>Getting started is easy! Simply reach out to us via our contact form, email, or phone. We'll schedule an initial consultation to discuss your goals, challenges, and how we can help your business succeed. From there, we'll guide you through the process step by step.</p>,
         },
     ],
 };

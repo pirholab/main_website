@@ -12,14 +12,17 @@ const members = [
   {
     name: "Fahad Ali",
     img: "img1.png",
+    skill:"Web Developer"
   },
   {
     name: "Fahad Ali",
     img: "img2.png",
+    skill:"Web Developer"
   },
   {
     name: "Fahad Ali",
     img: "img3.png",
+    skill:"Web Developer"
   },
 ];
 
@@ -95,7 +98,7 @@ export default function Home() {
                   <div className="bottom-0 flex items-end">
                     <div className="p-[15px] pl-[30px] bg-[#18181b] rounded-tr-[30px]">
                       <h1 className="text-xl">{e.name}</h1>
-                      <p className="font-[100] opacity-[0.5]">Web Developer</p>
+                      <p className="font-[100] opacity-[0.5]">{e.skill}</p>
                     </div>
                     <svg
                       id="Layer_1"

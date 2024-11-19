@@ -1,18 +1,25 @@
 "use client";
-import { motion, useMotionValue, useMotionTemplate, useInView, animate, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useMotionTemplate,
+  useInView,
+  animate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
-
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '300',
+  subsets: ['latin'],
+})
 // Array of image URLs
-const imageArray = [
-  "https://via.placeholder.com/150/FF0000/FFFFFF?text=Image1",
-  "https://via.placeholder.com/150/00FF00/FFFFFF?text=Image2",
-  "https://via.placeholder.com/150/0000FF/FFFFFF?text=Image3",
-  "https://via.placeholder.com/150/FFFF00/FFFFFF?text=Image4",
-  "https://via.placeholder.com/150/FF00FF/FFFFFF?text=Image5",
-];
+const imageArray = ["/image1.png", "/image2.png", "/image3.png"];
 
 const classNames = (...classes) => {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 };
 
 export const HeroHighlight = ({ children, className, containerClassName }) => {
@@ -91,7 +98,6 @@ export const Highlight = ({ children, className }) => {
   );
 };
 
-
 export default function List() {
   const parentRef = useRef(null);
   const [currentImage, setCurrentImage] = useState("");
@@ -110,24 +116,36 @@ export default function List() {
     return () => window.removeEventListener("resize", checkIfMobileOrTablet);
   }, []);
 
-
-
   useEffect(() => {
     function hoverCommand(event) {
-      const itemId = event.target.dataset.item;
-      const imageSrc = imageArray[itemId - 1];
-      setCurrentImage(imageSrc);
+      const listItem = event.target.closest("li"); // Ensure the target is a <li> element
+      if (listItem && listItem.dataset.item) {
+        const itemId = parseInt(listItem.dataset.item, 10); // Parse data-item as a number
+        console.log(itemId);
+        const imageSrc = imageArray[itemId - 1]; // Get the corresponding image
+        document.querySelector("#imageContainer").src = imageSrc;
+        console.log(imageSrc);
+        // setCurrentImage(imageSrc);
 
-      if (!isMobile && hiddenImageRef.current) {
-        animate(hiddenImageRef.current, { scale: 1, opacity: 1 }, { duration: 0.5 });
-        hiddenImageRef.current.style.visibility = 'visible';
+        if (!isMobile && hiddenImageRef.current) {
+          animate(
+            hiddenImageRef.current,
+            { scale: 1, opacity: 1 },
+            { duration: 0.5 }
+          );
+          hiddenImageRef.current.style.visibility = "visible";
+        }
       }
     }
 
     function hideImage() {
       if (!isMobile && hiddenImageRef.current) {
-        animate(hiddenImageRef.current, { scale: 0, opacity: 0 }, { duration: 0.5 });
-        hiddenImageRef.current.style.visibility = 'hidden';
+        animate(
+          hiddenImageRef.current,
+          { scale: 0, opacity: 0 },
+          { duration: 0.5 }
+        );
+        hiddenImageRef.current.style.visibility = "hidden";
       }
     }
 
@@ -141,10 +159,14 @@ export default function List() {
         const rotationX = ((mouseX - centerX) / width) * 30;
         setRotate(rotationX);
 
-        animate(imageElement, {
-          x: mouseX - imageElement.clientWidth / 2,
-          y: mouseY - imageElement.clientHeight / 2,
-        }, { duration: 0.1, ease: [0.16, 1, 0.3, 1] });
+        animate(
+          imageElement,
+          {
+            x: mouseX - imageElement.clientWidth / 2,
+            y: mouseY - imageElement.clientHeight / 2,
+          },
+          { duration: 0.1, ease: [0.16, 1, 0.3, 1] }
+        );
       }
     }
     if (parentRef.current && !isMobile) {
@@ -199,31 +221,49 @@ export default function List() {
             ref={parentRef}
           >
             <li
-              className="w-full pt-5 pb-7 flex text-5xl sm:text-7xl md:text-9xl cursor-pointer"
+              className={`${roboto.className} text-bold w-full pt-5 pb-7 flex text-[2rem] smll:text-5xl sm:text-7xl md:text-8xl lg:text-9xl cursor-pointer  sm:h-[300px] items-center`}
               data-item="1"
+              style={{
+                zIndex: 99999,
+                fontWeight:300,
+                textShadow: "2px 3px 20px rgb(0 0 0 / 32%) ",
+              }}
             >
-              <sup className="text-lg">01.</sup>Item 1
+              <sup className="text-lg">01.</sup>Design
             </li>
             <hr className="text-5xl w-[100%] border-zinc-700" />
             <li
-              className="w-full pt-5 pb-7 flex text-5xl sm:text-7xl md:text-9xl cursor-pointer"
+              className={`${roboto.className} text-bold w-full pt-5 pb-7 flex text-[2rem] smll:text-5xl sm:text-7xl md:text-8xl lg:text-9xl cursor-pointer  sm:h-[300px] items-center`}
               data-item="2"
+              style={{
+                zIndex: 99999,
+                fontWeight:300,
+                textShadow: "2px 3px 20px rgb(0 0 0 / 32%) ",
+              }}
             >
-              <sup className="text-lg">02.</sup> Item 2
+              <sup className="text-lg">02.</sup> Impact
             </li>
             <hr className="text-5xl w-[100%] border-zinc-700" />
             <li
-              className="w-full pt-5 pb-7 text-5xl sm:text-7xl md:text-9xl flex cursor-pointer"
+              className={`${roboto.className} text-bold w-full pt-5 pb-7 text-[2rem] smll:text-5xl sm:text-7xl md:text-8xl flex lg:text-9xl cursor-pointer  sm:h-[300px] items-center`}
               data-item="3"
+              style={{
+                zIndex: 99999,
+                fontWeight:300,
+                textShadow: "2px 3px 20px rgb(0 0 0 / 32%) ",
+              }}
             >
-              <sup className="text-lg">03.</sup> Item 3
+              <sup className="text-lg">03.</sup> Security
             </li>
             <hr className="text-5xl w-[100%] border-zinc-700" />
           </ul>
           <img
             ref={hiddenImageRef}
+            id="imageContainer"
             src={currentImage}
             alt="Hidden"
+            width={300}
+            height={300}
             className="hidden-image"
           />
         </div>

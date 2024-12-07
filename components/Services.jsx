@@ -10,7 +10,7 @@ export default function Services() {
     const actual_data = [
         {
             id: 1,
-            image: "/web.png",
+            image: "/project.mp4",
             title: "Web Design & Development ",
             description: `Transform your ideas into dynamic, high-performing websites
         with our expert team, ensuring seamless delivery and
@@ -25,7 +25,7 @@ export default function Services() {
         },
         {
             id: 1,
-            image: "/web.png",
+            image: "/project3.mp4",
             title: "Digital Marketing",
             description: `Boost your brand's online visibility with marketing strategies that work for you. Whether it’s through SEO, social media, or ads, we help you reach the right people and grow your business.`,
             tags: [
@@ -38,7 +38,7 @@ export default function Services() {
         },
         {
             id: 1,
-            image: "/web.png",
+            image: "/project1.mp4",
             title: "Branding",
             description: `Create a lasting impression with a strong, authentic brand. We help you define your identity, tell your story, and connect with your audience in a way that stands out and builds trust.`,
             tags: [
@@ -51,7 +51,7 @@ export default function Services() {
         },
         {
             id: 1,
-            image: "/web.png",
+            image: "/project2.mp4",
             title: "Android App Development",
             description: `Turn your app ideas into reality with custom Android solutions. Our team builds intuitive, high-performance apps that provide seamless user experiences and drive engagement.`,
             tags: [

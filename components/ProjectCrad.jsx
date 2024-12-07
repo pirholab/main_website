@@ -53,8 +53,8 @@ export function ProjectCard(props) {
         <div className="w-full h-full absolute" style={{ zIndex: -1 }}>
           {vid ? (
             <video
-              width="320"
-              height="240"
+              width="1280"
+              height="720"
               className="w-full h-full object-cover group-hover:scale-110 transition-all"
               autoPlay
               loop

@@ -102,9 +102,9 @@ export default function Card({
             // initial={{ opacity: 0, }}
             // animate={{ opacity: 1, }}
             className="w-[100%] h-[100%] flex justify-center items-center mt-[20px] ss:mt-0 "
-            style={{ scale: imageScale }}
+            style={{ scale: 1.5 }}
           >
-            <Image
+            {/* <Image
               src={`${image}`}
               alt={title}
               className="w-[100%] h-full object-cover md:h-[90%] pb-[10px] rounded-[30px] ss:rounded-[0px] sm:pb-0"
@@ -112,7 +112,19 @@ export default function Card({
               width={500}
               height={500}
               priority={true}
-            />
+            /> */}
+            <video
+              width="320"
+              height="240"
+              className="w-full h-full object-cover group-hover:scale-110 transition-all"
+              autoPlay
+              loop
+              playsInline
+              muted
+            >
+              <source src={`${image}`} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
         </div>
         <div className="p-5 w-full semi:w-[50%] transition-all">

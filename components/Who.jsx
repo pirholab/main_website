@@ -4,9 +4,14 @@ import { motion } from "framer-motion";
 
 import { Oswald } from "next/font/google";
 import Button from "@/components/Button";
+import TransitionLink from "@/ui/TransitionLink";
+
 
 const oswald = Oswald({ subsets: ["latin"] });
 export default function Who() {
+  
+  
+  
   return (
     <div className="w-full h-[50vh] flex items-center content-center justify-center">
       <div className="w-[92%] sm:w-[80%]">
@@ -32,12 +37,15 @@ export default function Who() {
             presence and drive success.`}
             </p>
             <br />
-            <Button className="flex w-auto border rounded-[23px] pl-[9px] pr-[5px] pt-[7px] pb-[7px]" height="54px" color="blue">
-              About Flowbite
+           
+            <Button href={"/about"} className="flex w-auto border rounded-[23px] pl-[9px] pr-[5px] pt-[7px] pb-[7px]" height="54px" color="blue">
+              About PiRhotech
             </Button>
+          
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

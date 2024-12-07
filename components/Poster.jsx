@@ -160,6 +160,7 @@ export default function Poster() {
                 </div>
                 <div className="flex space-x-4 relative top-[10px]">
                   <Button
+                  href="/contact"
                     className=" bg-black relative left-[11px] top-[0px] p-[10px] rounded-[10px] border-none"
                     button1Ref={button1Ref}
                   >

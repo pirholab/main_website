@@ -192,10 +192,19 @@ const Navbars = ({ loading, setLoading, trRef }) => {
         <div className="relative md:top-auto mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center pl-[8px] sm:pl-[0px]">
-              <Link href="/" className="text-white flex items-start justify-center gap-3 font-bold text-lg">
+              
+              <TransitionLink
+                  href="/"
+                  className="text-white flex items-start justify-center gap-3 font-bold text-lg"
+                  trRef={trRef}
+                  loading={loading}
+                  setLoading={setLoading}
+                >
+                
                <Image src={"/logo.svg"} alt="phirotech.com" width={20} height={20}/>
                 PhiroTech
-              </Link>
+                </TransitionLink>
+              
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4 text-white">
@@ -234,7 +243,7 @@ const Navbars = ({ loading, setLoading, trRef }) => {
                 </TransitionLink>
               </div>
             </div>
-            <Button className="hidden lg:flex text-nowrap">Get Started</Button>
+            <Button href={"/contact"} className="hidden lg:flex text-nowrap">Get Started</Button>
             <div className="block md:hidden">
               <Hamburger
                 size={17}

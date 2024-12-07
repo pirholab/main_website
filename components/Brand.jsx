@@ -31,24 +31,16 @@ export default function Brand() {
 
 const testimonials = [
   {
-    image: "/brands/brand.png",
+    image: "/brands/brand1.svg",
   },
   {
-    image: "/brands/brand.png",
+    image: "/brands/brand2.svg",
   },
   {
-    image: "/brands/brand.png",
+    image: "/brands/brand3.svg",
   },
   {
-    image: "/brands/brand.png",
+    image: "/brands/brand4.svg",
   },
-  {
-    image: "/brands/brand.png",
-  },
-  {
-    image: "/brands/brand.png",
-  },
-  {
-    image: "/brands/brand.png",
-  },
+  
 ];

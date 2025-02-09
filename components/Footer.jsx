@@ -24,18 +24,18 @@ export function Footer({ loading, setLoading, trRef }) {
           ></path>
         </svg>
         <Link
-          href={"mailto:hello@phirotech.com"}
+          href={"mailto:hello@pirhotech.com"}
           target="_blank"
           className="text-[1.7rem] sml:text-3xl md:text-5xl rounded-bl-[30px] bg-[#18171b] p-[12px] lg:text-6xl font-light tracking-tight"
         >
-          hello@phirotech.com
+          hello@pirhotech.com
         </Link>
       </div>
       <div className="max-w-7xl mx-auto pl-3 pb-16">
         {/* Top Section with Logo and Email */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-7 mb-20">
           <div className="text-2xl font-bold border border-white p-2 mb-6 md:mb-0">
-            PhiroTech
+            PiRhoTech
           </div>
         </div>
 
@@ -137,7 +137,7 @@ export function Footer({ loading, setLoading, trRef }) {
 
         {/* Copyright */}
         <div className=" text-sm text-gray-400">
-          © PHIROTECH {new Date().getFullYear()}
+          © PIRHOTECH {new Date().getFullYear()}
         </div>
       </div>
     </footer>

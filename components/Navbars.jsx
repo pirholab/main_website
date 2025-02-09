@@ -201,8 +201,8 @@ const Navbars = ({ loading, setLoading, trRef }) => {
                   setLoading={setLoading}
                 >
                 
-               <Image src={"/logo.svg"} alt="phirotech.com" width={20} height={20}/>
-                PiRoTech
+               <Image src={"/logo.svg"} alt="pirhotech.com" width={20} height={20}/>
+                PiRhoTech
                 </TransitionLink>
               
             </div>

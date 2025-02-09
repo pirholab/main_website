@@ -202,7 +202,7 @@ const Navbars = ({ loading, setLoading, trRef }) => {
                 >
                 
                <Image src={"/logo.svg"} alt="phirotech.com" width={20} height={20}/>
-                PhiroTech
+                PiRoTech
                 </TransitionLink>
               
             </div>

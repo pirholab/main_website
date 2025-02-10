@@ -1,14 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import CityFuture from "./City";
 import gsap from "gsap";
-import Lottie from "lottie-react";
 import Wave from '../pages/animations/wave.json'
 import Button from "@/components/Button";
 import { Roboto } from "next/font/google";
 import { Poppins } from "next/font/google";
-
+import dynamic from "next/dynamic";
 const roboto = Roboto({ weight: '500', subsets: ["latin"] });
 const pop = Poppins({ weight: '500', subsets: ["latin"] });
+
+const Lottie = dynamic(
+  () => import('lottie-react'),
+    { ssr: false }
+  )
 
 export default function Poster() {
   const textRef1 = useRef(null);
@@ -63,6 +67,7 @@ export default function Poster() {
           <div className="flex pl-[1.5rem] lg:pl-[2rem] z-[9] items-center relative gap-[10px] top-[39px]">
             <p className=" text-white">{`Hey, We are PiRhotech`}</p>
             <Lottie animationData={Wave} loop={true} className="w-[30px]" />
+            
           </div>
           <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-[1rem] pr-[1rem] bg-zinc-900">
             <div className="z-10 top-[50px] absolute w-[95%]">

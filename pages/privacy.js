@@ -1,9 +1,8 @@
 import { Footer } from "@/components/Footer";
 import Navbars from "@/components/Navbars";
 import { SingleSplitText } from "@/ui/SingleSplitText";
-import SplitLine from "@/ui/SplitLine";
 import Head from "next/head";
-import React,{useRef,useEffect,useState} from "react";
+import { useRef, useState } from "react";
 
 
 const PrivacyPolicy = () => {
@@ -15,7 +14,7 @@ const PrivacyPolicy = () => {
     <main>
        <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhotech -Privacy</title>
+        <title>PiRhoTech-Privacy</title>
         <meta
           name="description"
           content=""
@@ -103,7 +102,7 @@ const PrivacyPolicy = () => {
               </li>
               <li>
                 <span className="font-medium">
-                  Contact Information (Phone Number):
+                  Contact Information (+8801516503109):
                 </span>{" "}
                 To communicate with you about your inquiries or services.
               </li>
@@ -166,7 +165,7 @@ const PrivacyPolicy = () => {
             </ul>
             <p className="mt-4 text-white">
               To exercise these rights, please contact us at{" "}
-              <span className="font-medium">[Insert Contact Email]</span>.
+              <span className="font-medium">hello@pirhotech.com</span>.
             </p>
           </section>
 
@@ -214,12 +213,11 @@ const PrivacyPolicy = () => {
               <li>
                 <span className="font-medium">Email:</span>{" "}
                 <span className="underline text-blue-600">
-                  hello@pihrotech.com
+                  hello@pirhotech.com
                 </span>
               </li>
               <li>
-                <span className="font-medium">Phone:</span> [Insert Your
-                Business Phone Number]
+                <span className="font-medium">Phone:</span> +8801516503109
               </li>
             </ul>
           </section>

@@ -1,18 +1,17 @@
-import React, { useState, useRef } from "react";
+import { useRef, useState } from "react";
 
-import { Inter } from "next/font/google";
-import Poster from "../components/Poster";
-import Navbars from "../components/Navbars";
 import Brand from "../components/Brand";
+import Navbars from "../components/Navbars";
+import Poster from "../components/Poster";
 import Who from "../components/Who";
 
-import List from "../components/List";
-import Services from "../components/Services";
 import Faqs from "@/components/Faqs";
-import Motivation from "@/components/Motivation";
 import { Footer } from "@/components/Footer";
+import Motivation from "@/components/Motivation";
 import Project from "@/components/Project";
 import Head from "next/head";
+import List from "../components/List";
+import Services from "../components/Services";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -21,7 +20,7 @@ export default function Home() {
     <main className={`relative z-[999] `}>
       <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhotech</title>
+        <title>PiRhoTech</title>
         <meta
           name="description"
           content=""

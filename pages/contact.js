@@ -4,7 +4,7 @@ import Send from "@/components/Send";
 import { SingleSplitText } from "@/ui/SingleSplitText";
 import localFont from "next/font/local";
 import Head from "next/head";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 
 const myFont = localFont({ src: "../fonts/old.otf" });
@@ -16,7 +16,7 @@ export default function Contact() {
     <main>
        <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhotech - Contact Us</title>
+        <title>PiRhoTech- Contact Us</title>
         <meta
           name="description"
           content=""

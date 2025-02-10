@@ -1,11 +1,11 @@
-import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
-import { WorksWithSlug as Works } from "../../db/works";
-import Image from "next/image";
-import Navbars from "@/components/Navbars";
 import { Footer } from "@/components/Footer";
-import Link from "next/link";
+import Navbars from "@/components/Navbars";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
+import { WorksWithSlug as Works } from "../../db/works";
 
 export default function Index() {
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function Index() {
     <main>
        <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhotech - Projects Review</title>
+        <title>PiRhoTech- Projects Review</title>
         <meta
           name="description"
           content=""

@@ -1,10 +1,8 @@
-import React from "react";
 
 import { motion } from "framer-motion";
 
-import { Oswald } from "next/font/google";
 import Button from "@/components/Button";
-import TransitionLink from "@/ui/TransitionLink";
+import { Oswald } from "next/font/google";
 
 
 const oswald = Oswald({ subsets: ["latin"] });
@@ -32,14 +30,14 @@ export default function Who() {
           <br />
           <div className="text-left sm:text-right w-full sm:w-[75%] flex flex-col items-start sm:items-end">
             <p className={`text-white text-[large] sm:text-2xl md:text-4xl `}>
-              {`PiRhotech is a web design, development, and digital marketing agency.
+              {`PiRhoTech is a web design, development, and digital marketing agency.
             We create impactful websites and strategies that enhance your online
             presence and drive success.`}
             </p>
             <br />
            
             <Button href={"/about"} className="flex w-auto border rounded-[23px] pl-[9px] pr-[5px] pt-[7px] pb-[7px]" height="54px" color="blue">
-              About PiRhotech
+              About PiRhoTech
             </Button>
           
           </div>

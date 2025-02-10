@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import CityFuture from "./City";
-import gsap from "gsap";
-import Wave from '../pages/animations/wave.json'
 import Button from "@/components/Button";
-import { Roboto } from "next/font/google";
-import { Poppins } from "next/font/google";
+import gsap from "gsap";
 import dynamic from "next/dynamic";
+import { Poppins, Roboto } from "next/font/google";
+import { useEffect, useRef } from "react";
+import Wave from '../pages/animations/wave.json';
+import CityFuture from "./City";
 const roboto = Roboto({ weight: '500', subsets: ["latin"] });
 const pop = Poppins({ weight: '500', subsets: ["latin"] });
 
@@ -65,7 +64,7 @@ export default function Poster() {
       <section className="flex w-full items-center content-center justify-center">
         <div className="w-[100%] md:w-[85%]">
           <div className="flex pl-[1.5rem] lg:pl-[2rem] z-[9] items-center relative gap-[10px] top-[39px]">
-            <p className=" text-white">{`Hey, We are PiRhotech`}</p>
+            <p className=" text-white">{`Hey, We are PiRhoTech`}</p>
             <Lottie animationData={Wave} loop={true} className="w-[30px]" />
             
           </div>

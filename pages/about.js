@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import Navbars from "../components/Navbars";
-import Image from "next/image";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import gsap from "gsap";
 import Button from "@/components/Button";
 import { Footer } from "@/components/Footer";
 import { SingleSplitText } from "@/ui/SingleSplitText";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Navbars from "../components/Navbars";
 
 const members = [
   {
@@ -24,6 +24,11 @@ const members = [
     name: "Fahad Ali",
     img: "fahad.jpeg",
     skill: "Tech Lead",
+  },
+  {
+    name: "Md Jabed Hasan",
+    img: "jabed.jpg",
+    skill: "Lead Software Engineer",
   },
   {
     name: "Hasanuzzaman Roky",
@@ -81,7 +86,7 @@ export default function Home() {
     <main className={`relative z-[999]`}>
       <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhotech - About</title>
+        <title>PiRhoTech - About</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
@@ -199,7 +204,7 @@ export default function Home() {
           </h1>
           <br />
           <p className="text-xl font-[100] opacity-[0.7]">
-            At Phirotech, we truly care about your work and the impact it has.
+            At PiRhoTech, we truly care about your work and the impact it has.
             Our team is committed to delivering high-quality results with
             creativity and precision. We work closely with you to understand
             your goals and ensure every detail aligns with your vision. With our

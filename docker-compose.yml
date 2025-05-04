@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   web:
@@ -7,9 +7,17 @@ services:
       dockerfile: Dockerfile
     container_name: next-app
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./public:/app/public
     restart: unless-stopped
     environment:
-      - NODE_ENV=production 
+      - NODE_ENV=production
+    networks:
+      - default
+      - nginx-proxy-manager_default
+
+networks:
+  default:
+  nginx-proxy-manager_default:
+    external: true

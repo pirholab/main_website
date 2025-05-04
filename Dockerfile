@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY package.json pnpm-lock.yaml* package-lock.json* ./
-RUN npm ci
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -26,4 +26,4 @@ COPY --from=base /app/package.json ./
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"] 
+CMD ["npm", "start"]

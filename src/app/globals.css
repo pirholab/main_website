@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  /* Updated Color Palette - Modern indigo/purple gradients */
+  --background: #0f172a;
+  --foreground: #ffffff;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --accent-light: #818cf8;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+
+  /* Secondary accent colors */
+  --secondary: #06b6d4;
+  --secondary-dark: #0891b2;
+  --secondary-light: #22d3ee;
+
+  /* Tertiary accent colors */
+  --tertiary: #8b5cf6;
+  --tertiary-dark: #7c3aed;
+  --tertiary-light: #a78bfa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(30, 41, 59, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Neomorphism */
+.neumorphic {
+  background: linear-gradient(145deg, #121c36, #0d1424);
+  box-shadow: 5px 5px 10px #0a1220, -5px -5px 10px #141c34;
+  border-radius: 15px;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-box {
+  box-shadow: 0 0 15px var(--accent-dark);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button styling */
+.accent-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.accent-btn:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.outline-btn {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.outline-btn:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* New animation classes */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px 2px var(--accent-dark);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 5px var(--accent);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, var(--accent-dark), var(--accent), var(--tertiary), var(--tertiary-dark));
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--accent), var(--tertiary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

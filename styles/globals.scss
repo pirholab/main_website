@@ -32,6 +32,82 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+/* Blog post styling */
+.prose {
+  /* Headings */
+  h2 {
+    @apply text-2xl sm:text-3xl font-bold mb-6 mt-10 text-white;
+    @apply border-b border-zinc-800 pb-3;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold mb-4 mt-8 text-white;
+  }
+  
+  h4 {
+    @apply text-lg sm:text-xl font-medium mb-3 mt-6 text-cyan-300;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply text-zinc-300 mb-5 leading-relaxed;
+  }
+  
+  /* Lists */
+  ul, ol {
+    @apply mb-6 pl-6 text-zinc-300;
+    
+    li {
+      @apply mb-2;
+      
+      &::before {
+        @apply text-cyan-400;
+      }
+    }
+  }
+  
+  ul {
+    @apply list-disc;
+  }
+  
+  ol {
+    @apply list-decimal;
+  }
+  
+  /* Code blocks */
+  pre {
+    @apply my-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700/50 overflow-x-auto;
+    
+    code {
+      @apply bg-transparent p-0 text-sm text-zinc-300 font-mono;
+    }
+  }
+  
+  /* Inline code */
+  code {
+    @apply bg-zinc-800 text-cyan-300 rounded px-1.5 py-0.5 text-sm font-mono;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+    @apply border-l-4 border-cyan-500 pl-4 italic my-6 text-zinc-400;
+    
+    p {
+      @apply text-zinc-400;
+    }
+  }
+  
+  /* Links */
+  a {
+    @apply text-cyan-400 hover:text-cyan-300 transition-colors underline;
+  }
+  
+  /* Horizontal rule */
+  hr {
+    @apply my-8 border-zinc-800;
+  }
+}
+
 .navanimation {
   display: inline-block;
   position: relative;

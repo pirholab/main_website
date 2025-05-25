@@ -55,6 +55,16 @@ const members = [
     img: "jitu.jpg",
     skill: "Android App Developer",
   },
+  {
+    name: "Md Rashedul Islam",
+    img: "rashed.jpg",
+    skill: "Software Engineer",
+  },
+  {
+    name: "Golam Saruar",
+    img: "saruar.jpg",
+    skill: "Merketing Manager",
+  },
 ];
 
 export default function Home() {

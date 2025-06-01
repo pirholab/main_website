@@ -47,7 +47,7 @@ const config = {
 export default function Faqs() {
 
     return (
-        <div className="px-5 py-3 flex justify-center mt-[100px] sm:mt-[50px]">
+        <div id="faqs" className="px-5 py-3 flex justify-center mt-[100px] sm:mt-[50px]">
             <div className="w-full sm:w-[85%]">
                 <motion.div
                     whileInView={{ y: 0, opacity: 1 }} // Animation starts when in view

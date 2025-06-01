@@ -45,6 +45,15 @@ if (href === '/' && pathName === null) {
         setTimeout(() => {
           router.push(href);
         }, 1000);
+        
+        // Hide the transition element after 2 seconds
+        setTimeout(() => {
+          gsap.to(trRef?.current, {
+            y: "100%",
+            duration: 0.1,
+            onComplete: () => setLoading(false)
+          });
+        }, 2000);
       }
 }
    

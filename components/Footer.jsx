@@ -145,15 +145,15 @@ export function Footer({ loading, setLoading, trRef }) {
 }
 
 const socialLinks = [
-  { name: "LinkedIn", href: "#" },
-  { name: "Facebook", href: "#" },
-  { name: "Instagram", href: "#" },
-  { name: "X", href: "#" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/pirhotech" },
+  { name: "Facebook", href: "https://www.facebook.com/pirhotech" },
+  { name: "Instagram", href: "https://www.instagram.com/pirhotech" },
+  { name: "X", href: "https://x.com/pirhotech" },
 ];
 
 const quickLinks = [
   { name: "Contact", href: "/contact" },
-  { name: "FAQs", href: "/" },
+  { name: "FAQs", href: "/#faqs" },
   { name: "Privacy Policy", href: "/privacy" },
 ];
 

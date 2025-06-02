@@ -10,7 +10,80 @@ import { useRef, useState } from "react";
 const myFont = localFont({ src: "../fonts/old.otf" });
 export default function Contact() {
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    success: false,
+    error: null
+  });
   const trRef = useRef();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus({
+        submitting: false,
+        success: false,
+        error: "Please fill all required fields"
+      });
+      return;
+    }
+
+    setFormStatus({
+      submitting: true,
+      success: false,
+      error: null
+    });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setFormStatus({
+          submitting: false,
+          success: true,
+          error: null
+        });
+        
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          message: ""
+        });
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (error) {
+      setFormStatus({
+        submitting: false,
+        success: false,
+        error: error.message
+      });
+    }
+  };
 
   return (
     <main>
@@ -98,57 +171,75 @@ export default function Contact() {
                 <div class="mx-auto w-full md:max-w-lg">
                   <h1 class="text-4xl font-medium">Contact us</h1>
 
-                  <form
-                    action=""
-                    class="mt-10"
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                    }}
-                  >
-                    <input
-                      type="hidden"
-                      name="access_key"
-                      value="YOUR_ACCESS_KEY_HERE"
-                    />
-                    <div class="grid gap-6 sm:grid-cols-2">
-                      <div class="relative z-0">
-                        <input
-                          type="text"
-                          name="name"
-                          class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
-                          placeholder=" "
-                        />
-                        <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
-                          Your name
-                        </label>
-                      </div>
-                      <div class="relative z-0">
-                        <input
-                          type="text"
-                          name="email"
-                          class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
-                          placeholder=" "
-                        />
-                        <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
-                          Your email
-                        </label>
-                      </div>
-                      <div class="relative z-0 col-span-1 ss:col-span-2">
-                        <textarea
-                          name="message"
-                          rows="5"
-                          class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
-                          placeholder=" "
-                        ></textarea>
-                        <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
-                          Your message
-                        </label>
-                      </div>
+                  {formStatus.success ? (
+                    <div className="mt-10 p-4 bg-green-50 border border-green-500 rounded text-green-700">
+                      <h2 className="text-xl font-semibold mb-2">Message Sent Successfully!</h2>
+                      <p>Thank you for contacting us. We'll get back to you soon.</p>
+                      <button 
+                        onClick={() => setFormStatus(prev => ({...prev, success: false}))}
+                        className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                      >
+                        Send Another Message
+                      </button>
                     </div>
-                    <div className="mt-[30px] sm:mt-[50px]">
-                      <Send>Send Message</Send>
-                    </div>
-                  </form>
+                  ) : (
+                    <form
+                      onSubmit={handleSubmit}
+                      class="mt-10"
+                    >
+                      {formStatus.error && (
+                        <div className="mb-4 p-3 bg-red-50 border border-red-500 rounded text-red-700">
+                          {formStatus.error}
+                        </div>
+                      )}
+                      <div class="grid gap-6 sm:grid-cols-2">
+                        <div class="relative z-0">
+                          <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
+                            placeholder=" "
+                          />
+                          <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
+                            Your name
+                          </label>
+                        </div>
+                        <div class="relative z-0">
+                          <input
+                            type="text"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
+                            placeholder=" "
+                          />
+                          <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
+                            Your email
+                          </label>
+                        </div>
+                        <div class="relative z-0 col-span-1 ss:col-span-2">
+                          <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            rows="5"
+                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
+                            placeholder=" "
+                          ></textarea>
+                          <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
+                            Your message
+                          </label>
+                        </div>
+                      </div>
+                      <div className="mt-[30px] sm:mt-[50px]">
+                        <button type="submit" disabled={formStatus.submitting}>
+                          <Send>{formStatus.submitting ? "Sending..." : "Send Message"}</Send>
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </div>
               </div>
             </div>

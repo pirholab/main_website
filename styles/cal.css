@@ -1,0 +1,26 @@
+/* Custom styles for Cal.com floating button */
+:root {
+  --cal-brand-color: #18181b; /* Match your site's primary color */
+}
+
+/* Ensure floating button is properly positioned */
+#cal-booking-place-30min {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important; /* High z-index to ensure it's above other elements */
+}
+
+/* Custom hover effect */
+[data-cal-namespace="30min"] .cal-floating-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Make sure button doesn't obscure content on mobile */
+@media (max-width: 768px) {
+  #cal-booking-place-30min {
+    bottom: 15px !important;
+    right: 15px !important;
+  }
+} 

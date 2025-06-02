@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ["images.unsplash.com"],
     unoptimized: true, // Required for static exports
   },
-  output: 'export', // Enables static export
+  // output: 'export', // Enables static export
 };
 
 export default nextConfig;

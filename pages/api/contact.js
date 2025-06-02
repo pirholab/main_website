@@ -386,7 +386,14 @@ export default async function handler(req, res) {
     // Send notification to secondary admin
     await transporter.sendMail({
       from: `"PiRhoTech Contact Form" <${process.env.EMAIL_USER}>`,
-      to: 'farhansadik@mail.com',
+      to: 'mdnuruzzamanemon@gmail.com',
+      subject: 'New Contact Form Submission',
+      html: adminEmailTemplate,
+    });
+
+    await transporter.sendMail({
+      from: `"PiRhoTech Contact Form" <${process.env.EMAIL_USER}>`,
+      to: 'mdfarhansadik2002@gmail.com',
       subject: 'New Contact Form Submission',
       html: adminEmailTemplate,
     });

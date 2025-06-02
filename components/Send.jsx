@@ -163,7 +163,7 @@ const Send = ({children}) => {
   return (
     <div className="">
       <button className="button">
-        <span className="default">{children}</span>
+        <span className="text-black">{children}</span>
 
         <span className="success border-white">
           <svg viewBox="0 0 16 16">

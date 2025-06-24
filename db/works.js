@@ -31,16 +31,16 @@ const Works = [
   {
     title: "Cover page generator",
     description: "This app is perfect for students at all universities in Bangladesh, including BUET, DU, NSU, BRAC, and others, who need a fast and reliable tool to generate assignment or lab report or portfolio cover pages. No more wasting time on formatting or using complicated",
-    image: "/cover-page-generator/cover4.png",
+    image: "/cover-page-generator/banner.png",
     // github: "https://github.com",
-    demo: "https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator&hl=en",
+    demo: "https://pirhotech.com/coverpagegenerator",
     className: "md:col-start-1 md:col-end-3 md:row-start-2 h-[401px] md:h-[100%] w-full flex justify-center items-center",
     textStyle: "text-white text-[1rem] text-gray-900",
     extraImages: [
       "/cover-page-generator/cover1.png",
       "/cover-page-generator/cover2.png",
-      "/cover-page-generator/cover3.png",
-
+      "/cover-page-generator/cover3.webp",
+      "/cover-page-generator/cover4.png",
     ],
     tags: ["Productivity", "Task management", "Game", "Real-time"],
     gooyey: true,

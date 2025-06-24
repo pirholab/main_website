@@ -84,22 +84,71 @@ const CoverPageGenerator = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       <Head>
-        <title>Cover Page Generator - PDF | PiRhoTech</title>
+        <title>Cover Page Generator - Professional Assignment Cover Pages | PiRhoTech</title>
         <meta
           name="description"
-          content="Generate professional cover pages for assignments and lab reports for universities in Bangladesh. Over 9,000 downloads on Google Play Store."
+          content="Create professional cover pages for assignments and lab reports for universities in Bangladesh. Over 9,000 downloads, 5.0 star rating. Generate, save, and print cover pages instantly."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
+        
+        {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.ico" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta property="og:title" content="Cover Page Generator - PiRhoTech" />
-        <meta
-          property="og:description"
-          content="Generate professional cover pages for assignments and lab reports for universities in Bangladesh."
-        />
-        <meta property="og:image" content="/cover-page-generator/cover1.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pirhotech.com/coverpagegenerator" />
+        <meta property="og:title" content="Cover Page Generator - Create Professional Cover Pages" />
+        <meta property="og:description" content="Create professional cover pages for assignments and lab reports for universities in Bangladesh. 9K+ downloads with 5.0 star rating." />
+        <meta property="og:image" content="https://pirhotech.com/cover-page-generator/banner.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://pirhotech.com/coverpagegenerator" />
+        <meta name="twitter:title" content="Cover Page Generator - PDF Cover Pages for Universities" />
+        <meta name="twitter:description" content="Generate professional cover pages for assignments and lab reports in seconds. #1 in Bangladesh with 9K+ downloads." />
+        <meta name="twitter:image" content="https://pirhotech.com/cover-page-generator/banner.png" />
+        
+        {/* SEO Keywords */}
+        <meta name="keywords" content="cover page generator, assignment cover page, lab report cover page, Bangladesh university, PDF generator, professional cover page, academic templates" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://pirhotech.com/coverpagegenerator" />
+        
+        {/* Mobile App Metadata */}
+        <meta name="application-name" content="Cover Page Generator" />
+        <meta name="apple-mobile-web-app-title" content="Cover Page Generator" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="theme-color" content="#007d7c" />
+        
+        {/* Structured Data / JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MobileApplication",
+              "name": "Cover Page Generator",
+              "operatingSystem": "Android",
+              "applicationCategory": "EducationalApplication",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BDT"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "Downloads": "9000+"
+              },
+              "description": "Create professional cover pages for assignments and lab reports for universities in Bangladesh.",
+              "downloadUrl": "https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator"
+            })
+          }}
+        />
       </Head>
 
       {/* Animated Background */}

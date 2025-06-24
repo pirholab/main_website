@@ -150,6 +150,8 @@ const CoverPageGenerator = () => {
         </div>
       </nav>
 
+      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -352,6 +354,24 @@ const CoverPageGenerator = () => {
             Download Now - It's Free!
             <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
           </a>
+        </div>
+      </section>
+
+      {/* Banner Image Section */}
+      <section className="relative pt-28 ">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl">
+            <div className="relative aspect-[21/9] w-full">
+              <Image
+                src="/cover-page-generator/banner.png"
+                alt="Cover Page Generator"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

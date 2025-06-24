@@ -51,8 +51,8 @@ const CoverPageGenerator = () => {
 
   const stats = [
     { icon: Users, value: "9K+", label: "Downloads", color: "text-emerald-400" },
-    { icon: Star, value: "4.8", label: "Rating", color: "text-yellow-400" },
-    { icon: Trophy, value: "#1", label: "Productivity", color: "text-blue-400" }
+    { icon: Star, value: "5.0", label: "Rating", color: "text-yellow-400" },
+    { icon: Trophy, value: "#1", label: "In Bangladesh", color: "text-blue-400" }
   ];
 
   const screenshots = [
@@ -362,7 +362,7 @@ const CoverPageGenerator = () => {
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden rounded-2xl shadow-xl">
             <div className="relative aspect-[21/9] w-full">
-              <Image
+              <img
                 src="/cover-page-generator/banner.png"
                 alt="Cover Page Generator"
                 fill

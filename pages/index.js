@@ -20,72 +20,96 @@ export default function Home() {
     <main className={`relative z-[999] `}>
       <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhoTech</title>
+        <title>PiRhoTech | Creative Technology Agency in Bangladesh</title>
         <meta
           name="description"
-          content=""
+          content="PiRhoTech is a leading creative technology agency in Bangladesh specializing in web development, mobile apps, branding, and digital solutions. Home of Cover Page Generator - the #1 app for creating professional assignment cover pages with 9K+ downloads and 5.0 star rating."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon.ico"
-          sizes="96x96"
-        />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/png" href="/favicon.ico" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/logo.png"
-        />
-        <meta name="apple-mobile-web-app-title" content="PiRhoTech.com" />
-        {/* <link rel="manifest" href="/site.webmanifest" /> */}
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+        <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
         
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon.ico"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon.ico"
-        />
-        {/* <link rel="manifest" href="/site.webmanifest" /> */}
-
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="PirRhotech.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pirhotech.com" />
+        <meta property="og:title" content="PiRhoTech | Creative Technology Agency" />
         <meta
           property="og:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="Creative Agency Designing Tomorrow's Visions of the Future. Creators of Cover Page Generator - the top-rated app for university assignments in Bangladesh with over 9,000 downloads."
         />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:url" content="https://yourwebsite.com" />
-        <meta property="og:type" content="website" />
-
+        <meta property="og:image" content="https://pirhotech.com/og-image.png" />
+        
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PirRhotech.com" />
+        <meta name="twitter:url" content="https://pirhotech.com" />
+        <meta name="twitter:title" content="PiRhoTech | Creative Technology Agency" />
         <meta
           name="twitter:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="Creative Agency Designing Tomorrow's Visions of the Future. Creators of Cover Page Generator - the top-rated app for university assignments in Bangladesh with over 9,000 downloads."
         />
-        <meta name="twitter:image" content="/logo.png" />
-
+        <meta name="twitter:image" content="https://pirhotech.com/logo.png" />
+        
         {/* Keywords */}
         <meta
           name="keywords"
-          content="Next.js, SEO, favicon, web development, branding"
+          content="PiRhoTech, creative agency, Bangladesh, web development, mobile apps, Cover Page Generator, technology solutions, branding, UI/UX design, software development"
         />
-
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://pirhotech.com" />
+        
         {/* Author */}
-        <meta name="author" content="Your Name or Company Name" />
+        <meta name="author" content="PiRhoTech" />
+        
+        {/* Structured Data / JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "PiRhoTech",
+              "url": "https://pirhotech.com",
+              "logo": "https://pirhotech.com/logo.png",
+              "description": "Creative Technology Agency Designing Tomorrow's Visions of the Future",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Bangladesh"
+              },
+              "sameAs": [
+                "https://www.facebook.com/pirhotech",
+                "https://twitter.com/pirhotech",
+                "https://www.linkedin.com/company/pirhotech"
+              ],
+              "makesOffer": {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "Cover Page Generator",
+                  "applicationCategory": "EducationalApplication",
+                  "operatingSystem": "Android",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "BDT"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "ratingCount": "9000"
+                  },
+                  "description": "Create professional cover pages for assignments and lab reports for universities in Bangladesh."
+                }
+              }
+            })
+          }}
+        />
       </Head>
       <Navbars loading={loading} setLoading={setLoading} trRef={trRef} />
       <div className="mt-[70px]">

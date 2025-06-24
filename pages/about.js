@@ -23,7 +23,7 @@ const members = [
   {
     name: "Fahad Ali",
     img: "fahad.jpeg",
-    skill: "Tech Lead",
+    skill: "Co-Founder & Tech Lead",
   },
   {
     name: "Md Jabed Hasan",

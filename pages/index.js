@@ -34,7 +34,7 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
         <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://pirhotech.com" />
@@ -44,7 +44,7 @@ export default function Home() {
           content="Creative Agency Designing Tomorrow's Visions of the Future. Creators of Cover Page Generator - the top-rated app for university assignments in Bangladesh with over 9,000 downloads."
         />
         <meta property="og:image" content="https://pirhotech.com/og-image.png" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://pirhotech.com" />
@@ -54,7 +54,7 @@ export default function Home() {
           content="Creative Agency Designing Tomorrow's Visions of the Future. Creators of Cover Page Generator - the top-rated app for university assignments in Bangladesh with over 9,000 downloads."
         />
         <meta name="twitter:image" content="https://pirhotech.com/logo.png" />
-        
+
         {/* Keywords */}
         <meta
           name="keywords"
@@ -63,7 +63,7 @@ export default function Home() {
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://pirhotech.com" />
-        
+
         {/* Author */}
         <meta name="author" content="PiRhoTech" />
         

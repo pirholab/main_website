@@ -333,8 +333,8 @@ function Project() {
         </div>
 
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-[220px] h-[220px] lg:w-[320px] lg:h-[320px] rounded-full   hover:scale-110 transition-all duration-300 ease-in-out pointer-events-auto cursor-pointer">
-            <img src="/bento/circle.svg" alt="" class="w-full  rounded-full" />
+          <div class="w-[220px] h-[220px] lg:w-[320px] lg:h-[320px] rounded-full   hover:scale-110 transition-all duration-300 ease-in-out pointer-events-auto cursor-pointer ">
+            <img src="/bento/circle.svg" alt="" class="w-full  rounded-full animate-spin-slow" />
           </div>
         </div>
       </div>

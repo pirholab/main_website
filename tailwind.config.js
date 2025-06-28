@@ -28,6 +28,7 @@ module.exports = {
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          'spin-slow': 'spin 10s linear infinite',
       },
       keyframes: {
         scroll: {

@@ -355,7 +355,7 @@ const Index = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-3xl floating-element" style={{animationDelay: '2s'}}></div>
       </div>
 
-      <Head>
+       <Head>
         {/* Primary Meta Tags */}
         <title>{data[0]?.title || "PiRhoTech"} - Case Study | PiRhoTech</title>
         <meta
@@ -371,24 +371,24 @@ const Index = () => {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
         <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://pirhotech.com/works/${slug}`} />
         <meta property="og:title" content={`${data[0]?.title || "Project"} Case Study | PiRhoTech`} />
         <meta property="og:description" content={data[0]?.overview || "PiRhoTech project case study showcasing our creative technology solutions."} />
         <meta property="og:image" content={data[0]?.image ? `https://pirhotech.com${data[0].image}` : "https://pirhotech.com/og-image.png"} />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`https://pirhotech.com/works/${slug}`} />
         <meta name="twitter:title" content={`${data[0]?.title || "Project"} Case Study | PiRhoTech`} />
         <meta name="twitter:description" content={data[0]?.overview || "PiRhoTech project case study showcasing our creative technology solutions."} />
         <meta name="twitter:image" content={data[0]?.image ? `https://pirhotech.com${data[0].image}` : "https://pirhotech.com/logo.png"} />
-        
+
         {/* Keywords */}
         <meta name="keywords" content={`PiRhoTech, ${data[0]?.title || "project"}, case study, ${data[0]?.tags?.join(", ") || "technology"}`} />
-        
+
         {/* Author */}
         <meta name="author" content="PiRhoTech" />
       </Head>
@@ -622,7 +622,7 @@ const Index = () => {
                     >
                       <div className="relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                        <Image
+                    <Image
                           src={img}
                           width={600}
                           height={400}
@@ -714,8 +714,8 @@ const Index = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                  </div>
+                ))}
                 </div>
               </div>
             )}
@@ -771,9 +771,9 @@ const Index = () => {
                   </Link>
                 </div>
               </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       <Footer />
     </main>

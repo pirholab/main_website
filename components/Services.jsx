@@ -1,66 +1,50 @@
 "use client"
-import { useEffect, useRef } from 'react';
-import Card from './Card';
+import Lenis from '@studio-freight/lenis';
 import { motion, useScroll } from 'framer-motion';
-import Lenis from '@studio-freight/lenis'
+import { useEffect, useRef } from 'react';
 import { SplitText } from '../ui/SplitText';
+import Card from './Card';
 
 
 export default function Services() {
     const actual_data = [
         {
             id: 1,
-            image: "/project.mp4",
+            image: "/services/card-design.svg",
             title: "Web Design & Development ",
+            style: "md:top-14 md:left-16 top-20 left-8 md:w-[220px] sm:w-[160px] w-[120px]",
             description: `Transform your ideas into dynamic, high-performing websites
         with our expert team, ensuring seamless delivery and
         exceptional results that drive your business forward.`,
-            tags: [
-                " Creative web design",
-                "Web development",
-                "CopyWriting",
-                "E-commerce",
-                "Wordpress",
-            ],
+            tags:"/services/service-tag.svg",
+            resTags:"/services/res-service-tag.svg",
         },
         {
             id: 1,
-            image: "/project3.mp4",
+            image: "/services/digital-card-design.svg",
             title: "Digital Marketing",
+            style: "md:top-36 md:left-0 top-36 left-0 md:w-[160px] sm:w-[120px] w-[100px]",
             description: `Boost your brand's online visibility with marketing strategies that work for you. Whether it’s through SEO, social media, or ads, we help you reach the right people and grow your business.`,
-            tags: [
-                " Creative web design",
-                "Web development",
-                "CopyWriting",
-                "E-commerce",
-                "Wordpress",
-            ],
+            tags: "/services/digital-service-tag.svg",
+            resTags:"/services/res-digital-service-tag.svg",
         },
         {
             id: 1,
-            image: "/project1.mp4",
-            title: "Branding",
+            image: "/services/branding-card-design.svg ",
+            title: "Automation",
+            style: "md:top-36 md:left-0 top-36 left-0 md:w-[160px] sm:w-[120px] w-[100px]",
             description: `Create a lasting impression with a strong, authentic brand. We help you define your identity, tell your story, and connect with your audience in a way that stands out and builds trust.`,
-            tags: [
-                " Creative web design",
-                "Web development",
-                "CopyWriting",
-                "E-commerce",
-                "Wordpress",
-            ],
+            tags: "/services/automation-service-tag.svg",
+            resTags:"/services/res-automation-service-tag.svg",
         },
         {
             id: 1,
-            image: "/project2.mp4",
-            title: "Android App Development",
+            image: "/services/android-card-design.svg",
+            title: "Mobile App Development",
+            style: "md:top-28 md:left-16 top-28 left-8 md:w-[120px] sm:w-[100px] w-[80px]",
             description: `Turn your app ideas into reality with custom Android solutions. Our team builds intuitive, high-performance apps that provide seamless user experiences and drive engagement.`,
-            tags: [
-                " Creative web design",
-                "Web development",
-                "CopyWriting",
-                "E-commerce",
-                "Wordpress",
-            ],
+            tags: "/services/mobile-service-tag.svg",
+            resTags:"/services/res-mobile-service-tag.svg",
         },
         
         

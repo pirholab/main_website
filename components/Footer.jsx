@@ -6,7 +6,7 @@ import Link from "next/link";
 export function Footer({ loading, setLoading, trRef }) {
   
   return (
-    <footer className="bg-[#1d1d3b] text-white ">
+    <footer className="bg-[url(/footer/footer-bg.svg)] bg-cover  md:bg-right-top bg-left-top  text-white ">
       <div className="relative flex flex-row items-start justify-end">
         <svg
           id="Layer_1"
@@ -30,13 +30,14 @@ export function Footer({ loading, setLoading, trRef }) {
           hello@pirhotech.com
         </Link>
       </div>
-      <div className="max-w-7xl mx-auto pl-3 pb-16">
+      <div className="max-w-7xl mx-auto  pl-16 lg:pl-20  pb-16">
         {/* Top Section with Logo and Email */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-7 mb-20">
+        {/* <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-7 mb-20">
           <div className="text-2xl font-bold border border-white p-2 mb-6 md:mb-0">
             PiRhoTech
           </div>
-        </div>
+        </div> */}
+        <div className="h-[100px] w-1"></div>
 
         {/* Middle Section with Links */}
         <div className="flex">
@@ -89,7 +90,7 @@ export function Footer({ loading, setLoading, trRef }) {
             </div>
           </div>
         </div>
-        <h1 className="mt-[50px] sm:mt-0 text-[1.5rem] sm:text-[2.77rem] lg:text-[4.8rem]">
+        <h1 className="mt-[50px] sm:mt-0 text-[1.5rem] sm:text-[2.77rem] lg:text-[4.5rem]">
           <span>Crafting brands,</span>
           <span>designing success</span>
         </h1>

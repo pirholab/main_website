@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 // Enhanced SingleSplitText component with better animations
 const SingleSplitText = ({ textBody, className, children }) => {
@@ -299,7 +299,7 @@ function Project() {
   ];
 
   return (
-    <div className="bg-[#1e2235] flex items-center justify-center p-4 sm:p-8 md:p-16 lg:p-24">
+    <div className="bg-[#1d1d3b] flex items-center justify-center p-4 sm:p-8 md:p-16 lg:p-24">
       {/* Large screens - Bento grid */}
       <div className="hidden lg:grid grid-cols-4 grid-rows-10 gap-6 aspect-[4/3] w-full max-w-7xl relative">
         <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">

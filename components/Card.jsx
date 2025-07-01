@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Montserrat, Roboto } from "next/font/google";
-import Image from "next/image";
-import { useTransform, motion, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+const roboto = Roboto({ weight: "700", subsets: ["latin"] });
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
@@ -39,12 +38,14 @@ function useWindowSize() {
 }
 export default function Card({
   title,
+  style,
   targetScale,
   progress,
   totalCards,
   description,
   image,
   tags,
+  resTags,
   i,
   range,
 }) {
@@ -60,28 +61,28 @@ export default function Card({
 
   // console.log("not working", progress.current, range, targetScale)
 
-  console.log(range)
+  console.log(range);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   // console.log(scale)
   const size = useWindowSize();
 
   const getTopStyle = (index) => {
-    console.log(i)
+    console.log(i);
     if (size.width < 584) {
       // For mobile, set the first card's position at 25px and adjust the others based on the index
       if (index === 0) {
         return `25px`; // Position the first card at 25px
       }
-      console.log(index === 3 && "if the index is 4")
-      
-      if (index === 3){
+      console.log(index === 3 && "if the index is 4");
+
+      if (index === 3) {
         return `clamp(${index * 40}px, calc(-5vh + ${index * 45}px), 100px)`;
       }
     }
 
     // For desktop or larger screens, use a more flexible approach with `clamp`
-    return `clamp(${index * (30)}px, calc(-5vh + ${index * 45}px), 100px)`;
+    return `clamp(${index * 30}px, calc(-5vh + ${index * 45}px), 100px)`;
   };
 
   return (
@@ -90,61 +91,34 @@ export default function Card({
       className="h-screen sticky top-0 flex flex-col justify-center items-center"
     >
       <motion.div
-        className="flex flex-col semi:flex-row-reverse bg-zinc-700 w-[90%] sm:h-[80%] rounded-[30px] ss:rounded-[50px] items-center justify-between pl-[10px] semi:pr-[30px] pr-[10px] relative"
+        className="flex flex-col semi:flex-row-reverse bg-[url(/services/card-bg.svg)] bg-cover w-[90%] sm:h-[80%] rounded-[30px] h-[70%] ss:rounded-[50px] items-center justify-between pl-[10px] semi:pr-[30px] pr-[10px] relative"
         style={{
           top: getTopStyle(i),
           scale: scale,
-          boxShadow: "0px 0px 9px 0px #18181b",
+         
         }}
       >
-        <div className="flex justify-center items-center w-full relative top-[10px] ss:top-[0px] semi:w-[50%] h-[45%] semi:h-[90%] ss:mt-[10px] rounded-3xl overflow-hidden">
-          <motion.div
-            // initial={{ opacity: 0, }}
-            // animate={{ opacity: 1, }}
-            className="w-[100%] h-[100%] flex justify-center items-center mt-[20px] ss:mt-0 "
-            style={{ scale: 1.5 }}
-          >
-            {/* <Image
-              src={`${image}`}
-              alt={title}
-              className="w-[100%] h-full object-cover md:h-[90%] pb-[10px] rounded-[30px] ss:rounded-[0px] sm:pb-0"
-              style={{ height: "100%" }}
-              width={500}
-              height={500}
-              priority={true}
-            /> */}
-            <video
-              width="320"
-              height="240"
-              className="w-full h-full object-cover group-hover:scale-110 transition-all"
-              autoPlay
-              loop
-              playsInline
-              muted
-            >
-              <source src={`${image}`} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
-        </div>
-        <div className="p-5 w-full semi:w-[50%] transition-all">
+        <img
+          src={image}
+          alt=""
+          className={`absolute ${style}`}
+        />
+
+        <div className="absolute top-20 md:right-16 md:top-14 right-10 w-[65%]">
           <h5
-            className={`${roboto.className} mb-2 flex-row sm:flex-col tracking-tight text-gray-900 dark:text-white`}
-            style={{ fontSize: "clamp(2.5rem,6.1vw,6.5rem)" }}
+            className={`${roboto.className}  mb-2 flex-row sm:flex-col tracking-tight text-right pl-8  text-white`}
+            style={{ fontSize: "clamp(1.5rem,4.1vw,4.5rem)" }}
           >
             {title}
           </h5>
-          <p>{description}</p>
-          <div className="flex gap-[10px] flex-wrap mt-7">
-            {tags?.map((e, i) => (
-              <p
-                key={i}
-                className="rounded-full p-[5px] px-[7px] border border-zinc-500"
-              >
-                {e}
-              </p>
-            ))}
-          </div>
+
+          <p className="text-[#B2A1FD] font-light font-sans  md:text-2xl sm:text-xl text-lg  lg:text-4xl text-justify ">{description}</p>
+        </div>
+        
+        {/* Responsive image - show different image based on screen size */}
+        <div className="absolute bottom-10 w-full md:pl-16 pl-6 pr-6  ">
+          <img className="hidden lg:block w-full" src={tags} alt="" />
+          <img className="block lg:hidden w-full" src={resTags} alt="" />
         </div>
       </motion.div>
     </div>

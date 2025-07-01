@@ -1,21 +1,19 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import gsap from "gsap";
-import { Pivot as Hamburger } from "hamburger-react";
 import Button from "@/components/Button";
 import TransitionLink from "@/ui/TransitionLink";
-import { SingleSplitText } from "@/ui/SingleSplitText";
+import gsap from "gsap";
+import { Pivot as Hamburger } from "hamburger-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 var noScroll = require("no-scroll");
 
 const Navbars = ({ loading, setLoading, trRef }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [height, setHeight] = useState("65px");
+  const [height, setHeight] = useState("70px");
   const [width, setWidth] = useState("85%");
   const [top, setTop] = useState("10px");
 
@@ -183,7 +181,7 @@ const Navbars = ({ loading, setLoading, trRef }) => {
           backdropFilter: lastScrollY > 0 ? "blur(15px)" : "blur(0px)",
           borderRadius: lastScrollY > 0 ? "9999px" : "0px",
           top: lastScrollY > 0 ? "10px" : top,
-          height: "65px",
+          height: "80px",
           width: lastScrollY > 0 ? "70%" : width,
         }}
         ref={navbarRef}

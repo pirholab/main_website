@@ -1,0 +1,12 @@
+@media (max-width: 1350px) {
+  .circle-responsive {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+@media (max-width: 1150px) {
+  .circle-responsive {
+    width: 200px !important;
+    height: 200px !important;
+  }
+} 

@@ -3,6 +3,7 @@ import "@/styles/cal.css";
 import localFont from "next/font/local";
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import '../styles/project-custom.css';
 
 const myFont = localFont({ src: "../fonts/old.otf", weight: "500" });
 

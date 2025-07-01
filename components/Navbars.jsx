@@ -22,7 +22,7 @@ const Navbars = ({ loading, setLoading, trRef }) => {
   const linksRef = useRef(null);
   const adjustHeight = () => {
     if (window.innerWidth <= 767) {
-      setHeight("65px");
+      setHeight("70px");
       setWidth("100%");
       setTop("0px");
     } else {
@@ -181,7 +181,7 @@ const Navbars = ({ loading, setLoading, trRef }) => {
           backdropFilter: lastScrollY > 0 ? "blur(15px)" : "blur(0px)",
           borderRadius: lastScrollY > 0 ? "9999px" : "0px",
           top: lastScrollY > 0 ? "10px" : top,
-          height: "80px",
+          height: "70px",
           width: lastScrollY > 0 ? "70%" : width,
         }}
         ref={navbarRef}

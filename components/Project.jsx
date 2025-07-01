@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // Enhanced SingleSplitText component with better animations
 const SingleSplitText = ({ textBody, className, children }) => {
@@ -302,35 +303,51 @@ function Project() {
       {/* Large screens - Bento grid */}
       <div className="hidden lg:grid grid-cols-4 grid-rows-10 gap-6 aspect-[4/3] w-full max-w-7xl relative">
         <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card1.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="/works/cover-page-generator">
+            <img src="/bento/card1.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
 
         <div className="rounded-3xl col-span-2 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card2.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="#">
+            <img src="/bento/card2.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
         
         <div className="rounded-3xl col-span-1 row-span-2 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card3.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="/works/biddarthi">
+            <img src="/bento/card3.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
 
         <div className="rounded-3xl col-span-1 row-span-3 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card4.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="#">
+            <img src="/bento/card4.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
         
         <div className="rounded-3xl col-span-1 row-span-3 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card5.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="/works/e-commerce-platform">
+            <img src="/bento/card5.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
 
         <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card7.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="#">
+            <img src="/bento/card7.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
         
         <div className="rounded-3xl col-span-2 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card8.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="#">
+            <img src="/bento/card8.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
         
         <div className="rounded-3xl col-span-1 row-span-2 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card6.svg" alt="" className="w-full rounded-3xl" />
+          <Link href="/works/trufslot">
+            <img src="/bento/card6.svg" alt="" className="w-full rounded-3xl" />
+          </Link>
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -343,29 +360,44 @@ function Project() {
       {/* Medium and Small screens - Simple stacked */}
       <div className="flex flex-col gap-6 w-full max-w-md md:max-w-lg mx-auto md:py-8 md:px-2 lg:hidden">
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card1.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="/works/cover-page-generator">
+            <img src="/bento/card1.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/ai.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
-        </div>
-        
-        <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card3.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="#">
+            <img src="/bento/ai.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card4.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="/works/biddarthi">
+            <img src="/bento/card3.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card5.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="#">
+            <img src="/bento/card4.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card6.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="/works/e-commerce-platform">
+            <img src="/bento/card5.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/nanoscan.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="/works/trufslot">
+            <img src="/bento/card6.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
         <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/allwork.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          <Link href="#">
+            <img src="/bento/nanoscan.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
+        </div>
+        <div className="rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <Link href="#">
+            <img src="/bento/allwork.svg" alt="" className="w-full rounded-xl md:rounded-2xl" />
+          </Link>
         </div>
       </div>
     </div>

@@ -60,7 +60,7 @@ export default function Poster() {
   }, []);
 
   return (
-    <div className="bg-zinc-900 text-white -mt-[15px]">
+    <div className="bg-[#03061c] text-white -mt-[15px]">
       <section className="flex w-full items-center content-center justify-center">
         <div className="w-[100%] md:w-[85%]">
           <div className="flex pl-[1.5rem] lg:pl-[2rem] z-[9] items-center relative gap-[10px] top-[39px]">
@@ -68,14 +68,14 @@ export default function Poster() {
             <Lottie animationData={Wave} loop={true} className="w-[30px]" />
             
           </div>
-          <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-[1rem] pr-[1rem] bg-zinc-900">
+          <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-[1rem] pr-[1rem] bg-[#03061c]">
             <div className="z-10 top-[50px] absolute w-[95%]">
               <div className="gooey-container h-[50dvh]">
                 <div className="flex">
 
                   <div className="relative overflow-hidden ">
                     <h1
-                      className={`gooey-text text-[1.25rem] sml:text-[1.5rem] lg:text-6xl dm:text-5xl sm:text-4xl ss:text-2xl bg-zinc-900 inline tracking-tight rounded-bl-none ${pop.className}`}
+                      className={`gooey-text text-[1.25rem] sml:text-[1.5rem] lg:text-6xl dm:text-5xl sm:text-4xl ss:text-2xl bg-[#03061c] inline tracking-tight rounded-bl-none ${pop.className}`}
                       style={{
                         lineHeight: 1.3,
                         paddingBottom: "25px",
@@ -119,7 +119,7 @@ export default function Poster() {
                       >
                         <path
                           d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                          fill="#18171b"
+                          fill="#03061c"
                         ></path>
                       </svg>
                     </div>
@@ -158,7 +158,7 @@ export default function Poster() {
                   >
                     <path
                       d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                      fill="#18171b"
+                      fill="#03061c"
                     ></path>
                   </svg>
                 </div>

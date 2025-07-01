@@ -119,7 +119,7 @@ export function ProjectCard(props) {
                   viewBox="0 0 100 100"
                 >
                   <path
-                    fill="#18171b"
+                    fill="#03061c"
                     d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
                     className="transition-all duration-300 group-hover:fill-blue-400"
                   />
@@ -298,44 +298,127 @@ function Project() {
   ];
 
   return (
-    <div class="  bg-[#1e2235] flex items-center justify-center p-24">
-      <div class="grid grid-cols-4 grid-rows-10 gap-6 w-full max-h-screen max-w-7xl relative">
-        <div class="rounded-3xl col-span-1 row-span-5 hover: hover:scale-105  hover: transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card1.svg" alt="" class="w-full   rounded-3xl" />
+    <div className="bg-[#1e2235] flex items-center justify-center p-4 sm:p-8 md:p-16 lg:p-24">
+      {/* Large screens - Bento grid */}
+      <div className="hidden lg:grid grid-cols-4 grid-rows-10 gap-6 w-full max-h-screen max-w-7xl relative">
+        <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card1.svg" alt="" className="w-full rounded-3xl" />
         </div>
 
-        <div class=" rounded-3xl col-span-2 row-span-5 hover: hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card2.svg" alt="" class="w-full  rounded-3xl" />
+        <div className="rounded-3xl col-span-2 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card2.svg" alt="" className="w-full rounded-3xl" />
         </div>
         
-        <div class="rounded-3xl col-span-1 row-span-2 hover: hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card3.svg" alt="" class="w-full  rounded-3xl" />
+        <div className="rounded-3xl col-span-1 row-span-2 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card3.svg" alt="" className="w-full rounded-3xl" />
         </div>
 
-        <div class=" rounded-3xl col-span-1 row-span-3 hover: hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card4.svg" alt="" class="w-full rounded-3xl" />
+        <div className="rounded-3xl col-span-1 row-span-3 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card4.svg" alt="" className="w-full rounded-3xl" />
         </div>
         
-        <div class=" rounded-3xl col-span-1 row-span-3 hover: hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card5.svg" alt="" class="w-full rounded-3xl" />
+        <div className="rounded-3xl col-span-1 row-span-3 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card5.svg" alt="" className="w-full rounded-3xl" />
         </div>
 
-        <div class=" rounded-3xl col-span-1 row-span-5 hover: hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card7.svg" alt="" class="w-full  rounded-3xl" />
+        <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card7.svg" alt="" className="w-full rounded-3xl" />
         </div>
         
-        <div class="rounded-3xl col-span-2 row-span-5 hover: hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card8.svg" alt="" class="w-full  rounded-3xl" />
+        <div className="rounded-3xl col-span-2 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card8.svg" alt="" className="w-full rounded-3xl" />
         </div>
         
-        <div class=" rounded-3xl col-span-1 row-span-2 hover: hover:scale-105  transition-all duration-300 ease-in-out cursor-pointer">
-          <img src="/bento/card6.svg" alt="" class="w-full  rounded-3xl" />
+        <div className="rounded-3xl col-span-1 row-span-2 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card6.svg" alt="" className="w-full rounded-3xl" />
         </div>
 
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-[220px] h-[220px] lg:w-[320px] lg:h-[320px] rounded-full   hover:scale-110 transition-all duration-300 ease-in-out pointer-events-auto cursor-pointer ">
-            <img src="/bento/circle.svg" alt="" class="w-full  rounded-full animate-spin-slow" />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[220px] h-[220px] lg:w-[320px] lg:h-[320px] rounded-full hover:scale-110 transition-all duration-300 ease-in-out pointer-events-auto cursor-pointer">
+            <img src="/bento/circle.svg" alt="" className="w-full rounded-full animate-spin-slow" />
           </div>
+        </div>
+      </div>
+
+      {/* Medium screens - Simplified grid */}
+      <div className="hidden md:grid lg:hidden grid-cols-2 gap-4 w-full max-w-3xl mx-auto">
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card1.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card2.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card3.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card4.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card5.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card6.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card7.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="rounded-2xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card8.svg" alt="" className="w-full rounded-2xl" />
+        </div>
+        
+        <div className="col-span-2 flex justify-center my-4">
+          <div className="w-[180px] h-[180px] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+            <img src="/bento/circle.svg" alt="" className="w-full rounded-full animate-spin-slow" />
+          </div>
+        </div>
+      </div>
+      
+      {/* Small screens - Simple stacked */}
+      <div className="flex flex-col gap-4 w-full md:hidden max-w-sm mx-auto">
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card1.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card2.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="flex justify-center my-4">
+          <div className="w-[150px] h-[150px] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+            <img src="/bento/circle.svg" alt="" className="w-full rounded-full animate-spin-slow" />
+          </div>
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card3.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card4.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card5.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card6.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card7.svg" alt="" className="w-full rounded-xl" />
+        </div>
+        
+        <div className="rounded-xl hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+          <img src="/bento/card8.svg" alt="" className="w-full rounded-xl" />
         </div>
       </div>
     </div>

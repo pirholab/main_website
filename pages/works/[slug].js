@@ -346,7 +346,7 @@ const Index = () => {
   return (
     <main 
       ref={containerRef}
-      className="bg-gradient bg-gradient-to-br from-[#0a0a0f] via-[#18171b] to-[#1a1a1f] text-white min-h-screen relative overflow-hidden"
+      className="bg-gradient bg-gradient-to-br from-[#0a0a0f] via-[#03061c] to-[#1a1a1f] text-white min-h-screen relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="fixed inset-0 z-0">

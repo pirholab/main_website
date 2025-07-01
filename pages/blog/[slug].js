@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Footer } from '@/components/Footer';
+import Navbars from '@/components/Navbars';
 import blogData from '@/db/blogs.json';
 import { motion } from 'framer-motion';
-import Navbars from '@/components/Navbars';
-import { Footer } from '@/components/Footer';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
@@ -118,13 +118,13 @@ const BlogPost = () => {
         return (
             <>
                 <Navbars loading={navLoading} setLoading={setNavLoading} trRef={trRef} />
-                <div className="min-h-screen bg-zinc-900 pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+                <div className="min-h-screen bg-[#03061c] pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
                     <div className="animate-pulse">Loading...</div>
                 </div>
                 <Footer />
                 <div
                     ref={trRef}
-                    className="fixed top-0 left-0 w-full h-full bg-zinc-900 z-[99999999999999]"
+                    className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
                     style={{ transform: "translateY(100%)" }}
                 ></div>
             </>
@@ -135,7 +135,7 @@ const BlogPost = () => {
         return (
             <>
                 <Navbars loading={navLoading} setLoading={setNavLoading} trRef={trRef} />
-                <div className="min-h-screen bg-zinc-900 pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+                <div className="min-h-screen bg-[#03061c] pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
                     <h1 className="text-3xl font-bold text-white mb-4">Blog post not found</h1>
                     <p className="text-zinc-300 mb-8">The blog post you're looking for doesn't exist or has been moved.</p>
                     <Link href="/blogs">
@@ -147,7 +147,7 @@ const BlogPost = () => {
                 <Footer />
                 <div
                     ref={trRef}
-                    className="fixed top-0 left-0 w-full h-full bg-zinc-900 z-[99999999999999]"
+                    className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
                     style={{ transform: "translateY(100%)" }}
                 ></div>
             </>
@@ -225,7 +225,7 @@ const BlogPost = () => {
             </div>
 
             {/* Content Section */}
-            <div className="bg-zinc-900 relative">
+            <div className="bg-[#03061c] relative">
                 {/* Description Section with Blur */}
                 <div className="relative border-b border-cyan-500/10">
                    
@@ -297,7 +297,7 @@ const BlogPost = () => {
             <Footer />
             <div
                 ref={trRef}
-                className="fixed top-0 left-0 w-full h-full bg-zinc-900 z-[99999999999999]"
+                className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
                 style={{ transform: "translateY(100%)" }}
             ></div>
         </>

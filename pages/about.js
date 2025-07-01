@@ -179,7 +179,7 @@ export default function Home() {
                     viewBox="0 0 100 100"
                   >
                     <path
-                      fill="#18171b"
+                      fill="#03061c"
                       d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
                     />
                   </svg>
@@ -198,7 +198,7 @@ export default function Home() {
                       viewBox="0 0 100 100"
                     >
                       <path
-                        fill="#18171b"
+                        fill="#03061c"
                         d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
                       />
                     </svg>

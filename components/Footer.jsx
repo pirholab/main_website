@@ -1,13 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import TransitionLink from "@/ui/TransitionLink";
+import Link from "next/link";
 
 export function Footer({ loading, setLoading, trRef }) {
   
   return (
-    <footer className="bg-black text-white ">
+    <footer className="bg-[#1d1d3b] text-white ">
       <div className="relative flex flex-row items-start justify-end">
         <svg
           id="Layer_1"
@@ -19,14 +18,14 @@ export function Footer({ loading, setLoading, trRef }) {
           viewBox="0 0 100 100"
         >
           <path
-            fill="#18171b"
+            fill="#03061c"
             d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
           ></path>
         </svg>
         <Link
           href={"mailto:hello@pirhotech.com"}
           target="_blank"
-          className="text-[1.7rem] sml:text-3xl md:text-5xl rounded-bl-[30px] bg-[#18171b] p-[12px] lg:text-6xl font-light tracking-tight"
+          className="text-[1.7rem] sml:text-3xl md:text-5xl rounded-bl-[30px] bg-[#03061c] p-[12px] lg:text-6xl font-light tracking-tight"
         >
           hello@pirhotech.com
         </Link>

@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
 import BlogCard from '@/components/BlogCard';
+import { Footer } from '@/components/Footer';
+import Navbars from '@/components/Navbars';
 import blogData from '@/db/blogs.json';
 import { motion } from 'framer-motion';
-import Navbars from '@/components/Navbars';
-import { Footer } from '@/components/Footer';
+import { useEffect, useRef, useState } from 'react';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -115,7 +115,7 @@ const Blogs = () => {
             <Footer />
             <div
                 ref={trRef}
-                className="fixed top-0 left-0 w-full h-full bg-zinc-900 z-[99999999999999]"
+                className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
                 style={{ transform: "translateY(100%)" }}
             ></div>
         </>

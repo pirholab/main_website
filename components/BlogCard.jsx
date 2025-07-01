@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function BlogCard({ title, description, image, tags, author, date, slug }) {
   return (
@@ -41,7 +40,7 @@ export default function BlogCard({ title, description, image, tags, author, date
           ))}
         </div>
         <Link href={`/blog/${slug}`} className="self-start">
-          <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-900 rounded-lg transition-colors">
+          <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-zinc-800 hover:bg-[#03061c] rounded-lg transition-colors">
             Read more
             <svg className="w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />

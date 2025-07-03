@@ -16,7 +16,7 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 // Array of image URLs
-const imageArray = ["/image1.png", "/image2.png", "/image3.png"];
+const imageArray = ["/deliver/design.png", "/deliver/impact.png", "/deliver/security.png"];
 
 const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");

@@ -423,7 +423,7 @@ const Index = () => {
                     {/* Title will be animated via GSAP */}
                   </h1>
                   
-                  <p className="text-2xl md:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
+                  <p className="text-2xl text-justify md:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
                     {project.overview || project.description}
                   </p>
                 </div>
@@ -500,7 +500,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5"></div>
                 <div className="relative z-10">
                   <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Project Overview</h2>
-                  <p className="text-2xl text-gray-300 leading-relaxed mb-16 font-light">
+                  <p className="text-2xl text-justify text-gray-300 leading-relaxed mb-16 font-light">
                     {project.description}
                   </p>
                   
@@ -545,7 +545,7 @@ const Index = () => {
                         </div>
                         <h2 className="text-4xl font-bold text-red-400">The Problem</h2>
                       </div>
-                      <p className="text-xl text-gray-300 leading-relaxed font-light">
+                      <p className="text-xl text-gray-300 text-justify leading-relaxed font-light">
                         {project.problem}
                       </p>
                     </div>
@@ -566,7 +566,7 @@ const Index = () => {
                         </div>
                         <h2 className="text-4xl font-bold text-green-400">The Results</h2>
                       </div>
-                      <p className="text-xl text-gray-300 leading-relaxed font-light">
+                      <p className="text-xl text-gray-300 text-justify leading-relaxed font-light">
                         {project.results}
                       </p>
                     </div>
@@ -667,7 +667,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5"></div>
                   <div className="relative z-10">
                     <h2 className="text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">What Makes This Project Special</h2>
-                    <p className="text-2xl text-gray-300 leading-relaxed text-center max-w-4xl mx-auto font-light">
+                    <p className="text-2xl text-justify text-gray-300 leading-relaxed text-center max-w-4xl mx-auto font-light">
                       {project.specialFeatures}
                     </p>
                   </div>

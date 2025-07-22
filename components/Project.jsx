@@ -223,80 +223,80 @@ function Project() {
   const [loading, setLoading] = useState(false);
 
   // Sample works data
-  const Works = [
-    {
-      title: "Neural Network Visualizer",
-      description:
-        "Interactive visualization of neural network architectures with real-time training data",
-      textBody: "AI/ML • Visualization",
-      className:
-        "md:col-span-2 md:row-span-2 bg-gradient-to-br from-blue-900/20 to-purple-900/20",
-      textStyle: "text-blue-400 font-bold",
-      gooyey: true,
-      slug: "neural-visualizer",
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=400&fit=crop",
-      linkStyle: "hover:shadow-blue-500/20",
-    },
-    {
-      title: "3D Portfolio",
-      textBody: "WebGL • Three.js",
-      className:
-        "md:col-span-2 bg-gradient-to-r from-green-900/20 to-teal-900/20",
-      textStyle: "text-green-400 font-semibold",
-      gooyey: false,
-    },
-    {
-      title: "E-commerce Platform",
-      description:
-        "Full-stack e-commerce solution with modern payment integration",
-      textBody: "React • Node.js • Stripe",
-      className:
-        "md:col-span-2 md:row-span-2 bg-gradient-to-bl from-orange-900/20 to-red-900/20",
-      textStyle: "text-orange-400 font-bold",
-      gooyey: true,
-      slug: "ecommerce-platform",
-      video:
-        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      linkStyle: "hover:shadow-orange-500/20",
-    },
-    {
-      title: "Mobile App",
-      textBody: "React Native • Firebase",
-      className:
-        "md:col-span-1 bg-gradient-to-t from-pink-900/20 to-purple-900/20",
-      textStyle: "text-pink-400 font-medium",
-      gooyey: false,
-    },
-    {
-      title: "Data Dashboard",
-      description:
-        "Real-time analytics dashboard with interactive charts and metrics",
-      textBody: "D3.js • Analytics",
-      className:
-        "md:col-span-1 bg-gradient-to-b from-cyan-900/20 to-blue-900/20",
-      textStyle: "text-cyan-400 font-bold",
-      gooyey: true,
-      slug: "data-dashboard",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop",
-      linkStyle: "hover:shadow-cyan-500/20",
-    },
-    {
-      title: "Blockchain App",
-      description:
-        "Decentralized application built on Ethereum with smart contracts",
-      textBody: "Web3 • Solidity • DeFi",
-      className:
-        "md:col-span-2 bg-gradient-to-r from-yellow-900/20 to-orange-900/20",
-      textStyle: "text-yellow-400 font-bold",
-      gooyey: true,
-      slug: "blockchain-app",
-      image:
-        "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&h=400&fit=crop",
-      linkStyle: "hover:shadow-yellow-500/20",
-    },
-  ];
+  // const Works = [
+  //   {
+  //     title: "Neural Network Visualizer",
+  //     description:
+  //       "Interactive visualization of neural network architectures with real-time training data",
+  //     textBody: "AI/ML • Visualization",
+  //     className:
+  //       "md:col-span-2 md:row-span-2 bg-gradient-to-br from-blue-900/20 to-purple-900/20",
+  //     textStyle: "text-blue-400 font-bold",
+  //     gooyey: true,
+  //     slug: "neural-visualizer",
+  //     image:
+  //       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=400&fit=crop",
+  //     linkStyle: "hover:shadow-blue-500/20",
+  //   },
+  //   {
+  //     title: "3D Portfolio",
+  //     textBody: "WebGL • Three.js",
+  //     className:
+  //       "md:col-span-2 bg-gradient-to-r from-green-900/20 to-teal-900/20",
+  //     textStyle: "text-green-400 font-semibold",
+  //     gooyey: false,
+  //   },
+  //   {
+  //     title: "E-commerce Platform",
+  //     description:
+  //       "Full-stack e-commerce solution with modern payment integration",
+  //     textBody: "React • Node.js • Stripe",
+  //     className:
+  //       "md:col-span-2 md:row-span-2 bg-gradient-to-bl from-orange-900/20 to-red-900/20",
+  //     textStyle: "text-orange-400 font-bold",
+  //     gooyey: true,
+  //     slug: "ecommerce-platform",
+  //     video:
+  //       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  //     linkStyle: "hover:shadow-orange-500/20",
+  //   },
+  //   {
+  //     title: "Mobile App",
+  //     textBody: "React Native • Firebase",
+  //     className:
+  //       "md:col-span-1 bg-gradient-to-t from-pink-900/20 to-purple-900/20",
+  //     textStyle: "text-pink-400 font-medium",
+  //     gooyey: false,
+  //   },
+  //   {
+  //     title: "Data Dashboard",
+  //     description:
+  //       "Real-time analytics dashboard with interactive charts and metrics",
+  //     textBody: "D3.js • Analytics",
+  //     className:
+  //       "md:col-span-1 bg-gradient-to-b from-cyan-900/20 to-blue-900/20",
+  //     textStyle: "text-cyan-400 font-bold",
+  //     gooyey: true,
+  //     slug: "data-dashboard",
+  //     image:
+  //       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop",
+  //     linkStyle: "hover:shadow-cyan-500/20",
+  //   },
+  //   {
+  //     title: "Blockchain App",
+  //     description:
+  //       "Decentralized application built on Ethereum with smart contracts",
+  //     textBody: "Web3 • Solidity • DeFi",
+  //     className:
+  //       "md:col-span-2 bg-gradient-to-r from-yellow-900/20 to-orange-900/20",
+  //     textStyle: "text-yellow-400 font-bold",
+  //     gooyey: true,
+  //     slug: "blockchain-app",
+  //     image:
+  //       "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&h=400&fit=crop",
+  //     linkStyle: "hover:shadow-yellow-500/20",
+  //   },
+  // ];
 
   return (
     <div className="bg-[#1d1d3b] flex items-center justify-center p-4 sm:p-8 md:p-16 lg:p-24">
@@ -321,7 +321,7 @@ function Project() {
         </div>
 
         <div className="rounded-3xl col-span-1 row-span-3 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <Link href="#">
+          <Link href="/works/kormi-koi-find-trusted-service-providers">
             <img src="/bento/card4.svg" alt="" className="w-full rounded-3xl" />
           </Link>
         </div>
@@ -333,7 +333,7 @@ function Project() {
         </div>
 
         <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <Link href="#">
+          <Link href="/works/nanoscan-pdf-scanner-tools">
             <img src="/bento/card7.svg" alt="" className="w-full rounded-3xl" />
           </Link>
         </div>

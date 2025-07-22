@@ -734,7 +734,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/5 to-blue-600/5"></div>
                   <div className="relative z-10">
                     <h2 className="text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">Future Plans</h2>
-                    <p className="text-2xl text-gray-300 leading-relaxed text-center max-w-4xl mx-auto font-light">
+                    <p className="text-2xl text-gray-300 leading-relaxed text-justify max-w-4xl mx-auto font-light">
                       {project.futurePlans}
                     </p>
                   </div>

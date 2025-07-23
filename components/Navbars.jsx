@@ -6,11 +6,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 const Button = ({ href, className, children, ...props }) => (
   <a 
     href={href} 
-    className={`relative overflow-hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20 text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:from-blue-500/30 hover:to-purple-500/30 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 ${className}`}
+    className={`relative p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFB266] to-[#D96263] transition-all duration-300 hover:scale-105 ${className}`}
     {...props}
   >
-    <span className="relative z-10">{children}</span>
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+    <div className="flex h-full w-full items-center justify-center rounded-[38px] bg-[#2b3254] px-6 py-2 text-xl font-medium">
+      <span className="relative z-10">{children}</span>
+    </div>
   </a>
 );
 
@@ -238,10 +239,7 @@ const LiquidGlassNavbar = ({ loading = false, setLoading = () => {}, trRef = nul
                 className="text-white flex items-center gap-3 font-bold text-xl hover:opacity-90 transition-all duration-300 group"
               >
                 <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white text-lg font-bold">P</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                  <img src="/pirhotech/logo.png" alt="PiRhoTech Logo" className="w-12 h-12" />
                 </div>
                 <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
                   PiRhoTech

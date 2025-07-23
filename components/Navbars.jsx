@@ -1,297 +1,336 @@
 "use client";
 
-import Button from "@/components/Button";
-import TransitionLink from "@/ui/TransitionLink";
-import gsap from "gsap";
-import { Pivot as Hamburger } from "hamburger-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
-var noScroll = require("no-scroll");
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-const Navbars = ({ loading, setLoading, trRef }) => {
+// Mock components for dependencies
+const Button = ({ href, className, children, ...props }) => (
+  <a 
+    href={href} 
+    className={`relative overflow-hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20 text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:from-blue-500/30 hover:to-purple-500/30 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 ${className}`}
+    {...props}
+  >
+    <span className="relative z-10">{children}</span>
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+  </a>
+);
+
+const TransitionLink = ({ href, className, children, onClick, ...props }) => (
+  <a 
+    href={href} 
+    className={className}
+    onClick={onClick}
+    {...props}
+  >
+    {children}
+  </a>
+);
+
+// Hamburger menu component with glass effect
+const Hamburger = ({ size, toggled, toggle, color }) => (
+  <button
+    onClick={() => toggle(!toggled)}
+    className="relative w-10 h-10 flex flex-col justify-center items-center space-y-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-110"
+    aria-label={toggled ? "Close menu" : "Open menu"}
+  >
+    <span 
+      className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
+        toggled ? 'rotate-45 translate-y-1.5' : ''
+      }`}
+      style={{ color }}
+    />
+    <span 
+      className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
+        toggled ? 'opacity-0' : ''
+      }`}
+      style={{ color }}
+    />
+    <span 
+      className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
+        toggled ? '-rotate-45 -translate-y-1.5' : ''
+      }`}
+      style={{ color }}
+    />
+  </button>
+);
+
+const NAVIGATION_ITEMS = [
+  { href: "/", label: "Home", useTransition: true },
+  { href: "/projects", label: "Projects", useTransition: true },
+  { href: "/about", label: "About", useTransition: true },
+  { href: "/blog", label: "Blog", useTransition: true },
+  { href: "/contact", label: "Contact", useTransition: true },
+];
+
+const LiquidGlassNavbar = ({ loading = false, setLoading = () => {}, trRef = null }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [height, setHeight] = useState("70px");
-  const [width, setWidth] = useState("85%");
-  const [top, setTop] = useState("10px");
-
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isScrolled, setIsScrolled] = useState(false);
+  
   const navbarRef = useRef(null);
-
   const linksRef = useRef(null);
-  const adjustHeight = () => {
-    if (window.innerWidth <= 767) {
-      setHeight("70px");
-      setWidth("100%");
-      setTop("0px");
-    } else {
-      setWidth("85%");
-      setHeight("50px");
-      setTop("10px");
+
+  // Handle mouse movement for liquid effect
+  const handleMouseMove = useCallback((e) => {
+    if (navbarRef.current) {
+      const rect = navbarRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: ((e.clientX - rect.left) / rect.width) * 100,
+        y: ((e.clientY - rect.top) / rect.height) * 100,
+      });
     }
-  };
+  }, []);
+
+  // Control navbar visibility on scroll
   const controlNavbar = useCallback(() => {
-    if (isMenuOpen) return; // Skip navbar control when menu is open
+    if (isMenuOpen) return;
+    
     const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY && currentScrollY > 300) {
+    setIsScrolled(currentScrollY > 50);
+    
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
       setIsVisible(false);
     } else if (currentScrollY < lastScrollY) {
       setIsVisible(true);
     }
+    
     setLastScrollY(currentScrollY);
   }, [lastScrollY, isMenuOpen]);
 
+  // Setup event listeners
   useEffect(() => {
-    adjustHeight();
     const handleScroll = () => {
       window.requestAnimationFrame(controlNavbar);
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", adjustHeight);
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", adjustHeight);
     };
   }, [controlNavbar]);
-  const tl = gsap.timeline();
+
+  // Handle menu animations and body scroll
   useEffect(() => {
-    const navbar = document.querySelector("#navOption");
-    const navbarCom = navbarRef.current;
     if (isMenuOpen) {
-      noScroll.on();
-
-      gsap.to("body", { overflow: "hidden" });
-
-      if (lastScrollY > 0) {
-        console.log("opening in 70 percent");
-        tl.fromTo(
-          navbarCom,
-          {
-            width: "100%",
-            backgroundColor: "rgba(29, 28, 28, 0.596)",
-            backdropFilter: "blur(30px)",
-            borderRadius: "0px",
-          },
-          {
-            width: "100%",
-            duration: 0.1,
-            top: top,
-            ease: "power1.out",
-            onComplete: () => {
-              document.documentElement.style.overflow = "hidden";
-              navbar.style.background = "rgba(29, 28, 28, 0.596)";
-              navbar.style.backdropFilter = "blur(30px)";
-            },
-          }
-        )
-          .to(
-            navbarRef.current,
-            {
-              duration: 0.1,
-              delay: 0.2,
-              height: "100%", // Set height here
-            },
-            "+=0.1"
-          )
-          .fromTo(
-            linksRef.current,
-            {
-              opacity: 0,
-            },
-            {
-              opacity: 1,
-              duration: 0.1,
-              delay: 0.2,
-              ease: "power1.out",
-            }
-          );
-      } else {
-        console.log("opening in 100 percent");
-        document.body.style.scrolling = "no";
-        navbar.style.width = "100%";
-        navbar.style.height = "100%";
-        navbar.style.position = "fixed";
-        navbar.style.top = top;
-        navbar.style.left = "0";
-        navbar.style.background = "rgba(29, 28, 28, 0.596)";
-        navbar.style.backdropFilter = "blur(30px)";
-        navbar.style.zIndex = "99999999";
-        navbar.style.borderRadius = "0px";
-        tl.fromTo(
-          linksRef.current,
-          {
-            opacity: 0,
-            duration: 0.1,
-          },
-          {
-            opacity: 1,
-            duration: 0.1,
-            delay: 0.2,
-            ease: "power1.out",
-            onComplete: () => {
-              document.documentElement.style.overflow = "hidden";
-            },
-          }
-        );
+      document.body.style.overflow = "hidden";
+      
+      if (linksRef.current) {
+        linksRef.current.style.opacity = "1";
+        linksRef.current.style.transform = "translateY(0)";
       }
     } else {
-      noScroll.off();
-
       document.body.style.overflow = "unset";
-      if (lastScrollY > 0) {
-        console.log("closeing in 70 percent");
-        navbar.style.width = "70%";
-        navbar.style.height = height;
-        navbar.style.position = "fixed";
-        navbar.style.top = "10px";
-        navbar.style.left = "0";
-        navbar.style.borderRadius = "9999px";
-        navbar.style.background = "rgba(29, 28, 28, 0.596)";
-        navbar.style.backdropFilter = "blur(30px)";
-        navbar.style.zIndex = "99999999";
-      } else {
-        console.log("closing in 100%");
-        // navbar.style.width = "100%";
-        navbar.style.height = height;
-        navbar.style.borderRadius = "0px";
-        navbar.style.position = "fixed";
-        navbar.style.top = top;
-        navbar.style.left = "0";
-        navbar.style.background = "transparent";
-        navbar.style.backdropFilter = "blur(30px)";
-        navbar.style.zIndex = "999999999";
+      
+      if (linksRef.current) {
+        linksRef.current.style.opacity = "0";
+        linksRef.current.style.transform = "translateY(-20px)";
       }
     }
+
     return () => {
       document.body.style.overflow = "unset";
-      tl.kill();
     };
   }, [isMenuOpen]);
-  return (
-    <div>
-      <nav
-        className={`fixed h-[65px] md:h-auto ${
-          lastScrollY > 0 ? "w-[70%] md:w-[70%]" : "w-full md:w-[85%]"
-        } top-5 left-0 right-0 transition-all duration-300 ease-in-out mx-auto z-[9999999999999]`}
-        style={{
-          transform: isVisible ? "translateY(0)" : "translateY(-150%)",
-          backgroundColor:
-            lastScrollY > 0 ? "rgba(29, 28, 28, 0.596)" : "rgba(87, 86, 86, 0)",
-          backdropFilter: lastScrollY > 0 ? "blur(15px)" : "blur(0px)",
-          borderRadius: lastScrollY > 0 ? "9999px" : "0px",
-          top: lastScrollY > 0 ? "10px" : top,
-          height: "70px",
-          width: lastScrollY > 0 ? "70%" : width,
-        }}
-        ref={navbarRef}
-        id="navOption"
+
+  const handleMenuItemClick = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
+
+  const renderNavItem = (item, className = "", isMobileMenu = false) => {
+    const baseClassName = `relative group transition-all duration-300 hover:text-white ${className}`;
+    
+    const linkContent = (
+      <span className="relative z-10">
+        {item.label}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+      </span>
+    );
+
+    if (item.useTransition) {
+      return (
+        <TransitionLink
+          key={item.href}
+          href={item.href}
+          className={baseClassName}
+          onClick={isMobileMenu ? handleMenuItemClick : undefined}
+        >
+          {linkContent}
+        </TransitionLink>
+      );
+    }
+    
+    return (
+      <a
+        key={item.href}
+        href={item.href}
+        className={baseClassName}
+        onClick={isMobileMenu ? handleMenuItemClick : undefined}
       >
-        <div className="relative md:top-auto mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center pl-[8px] sm:pl-[0px]">
-              
+        {linkContent}
+      </a>
+    );
+  };
+
+  return (
+    <>
+      {/* Liquid Glass Navbar */}
+      <nav
+        ref={navbarRef}
+        onMouseMove={handleMouseMove}
+        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-out ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        } ${
+          isScrolled ? 'w-[90%] max-w-6xl' : 'w-[95%] max-w-7xl'
+        }`}
+        style={{
+          background: `
+            radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, 
+              rgba(255, 255, 255, 0.15) 0%, 
+              rgba(255, 255, 255, 0.05) 50%, 
+              transparent 100%),
+            linear-gradient(135deg, 
+              rgba(255, 255, 255, 0.1) 0%, 
+              rgba(255, 255, 255, 0.05) 50%, 
+              rgba(255, 255, 255, 0.02) 100%)
+          `,
+          backdropFilter: 'blur(20px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: '24px',
+          boxShadow: `
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 0 1px rgba(255, 255, 255, 0.05)
+          `,
+        }}
+      >
+        {/* Animated background blobs */}
+        <div className="absolute inset-0 overflow-hidden rounded-3xl">
+          <div 
+            className="absolute w-32 h-32 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse"
+            style={{
+              left: `${mousePosition.x * 0.5}%`,
+              top: `${mousePosition.y * 0.3}%`,
+              transform: 'translate(-50%, -50%)',
+              transition: 'all 0.3s ease-out',
+            }}
+          ></div>
+          <div 
+            className="absolute w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-pulse"
+            style={{
+              right: `${(100 - mousePosition.x) * 0.4}%`,
+              bottom: `${(100 - mousePosition.y) * 0.2}%`,
+              transform: 'translate(50%, 50%)',
+              transition: 'all 0.4s ease-out',
+              animationDelay: '0.5s',
+            }}
+          ></div>
+        </div>
+
+        <div className="relative px-6 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center space-x-3">
               <TransitionLink
-                  href="/"
-                  className="text-white flex items-start justify-center gap-3 font-bold text-lg"
-                  trRef={trRef}
-                  loading={loading}
-                  setLoading={setLoading}
-                >
-                
-               <Image src={"/logo.svg"} alt="pirhotech.com" width={20} height={20}/>
-                PiRhoTech
-                </TransitionLink>
-              
+                href="/"
+                className="text-white flex items-center gap-3 font-bold text-xl hover:opacity-90 transition-all duration-300 group"
+              >
+                <div className="relative">
+                  <div className="w-10 h-10 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white text-lg font-bold">P</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                </div>
+                <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+                  PiRhoTech
+                </span>
+              </TransitionLink>
             </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4 text-white">
-                <TransitionLink
-                  href="/"
-                  className="navanimation py-2 px-3 text-3xl md:text-base"
-                  trRef={trRef}
-                  loading={loading}
-                  setLoading={setLoading}
-                >
-                  Home
-                </TransitionLink>
-                <TransitionLink
-                  href="/about"
-                  className="navanimation py-2 px-3 text-3xl md:text-base"
-                  trRef={trRef}
-                  loading={loading}
-                  setLoading={setLoading}
-                >
-                  About
-                </TransitionLink>
-                <Link
-                  href="/blogs"
-                  className="navanimation py-2 px-3 text-3xl md:text-base"
-                >
-                  Blogs
-                </Link>
-                <TransitionLink
-                  href="/contact"
-                  className="navanimation py-2 px-3 text-3xl md:text-base"
-                  trRef={trRef}
-                  loading={loading}
-                  setLoading={setLoading}
-                >
-                  Contact
-                </TransitionLink>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {NAVIGATION_ITEMS.map((item) =>
+                renderNavItem(item, "text-white/80 hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-300")
+              )}
+            </div>
+
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              <Button 
+                href="/contact" 
+                className="hidden lg:block"
+              >
+                Get Started
+              </Button>
+
+              {/* Mobile Menu Toggle */}
+              <div className="block md:hidden">
+                <Hamburger
+                  size={20}
+                  toggled={isMenuOpen}
+                  toggle={setIsMenuOpen}
+                  color="white"
+                />
               </div>
             </div>
-            <Button href={"/contact"} className="hidden lg:flex text-nowrap">Get Started</Button>
-            <div className="block md:hidden">
-              <Hamburger
-                size={17}
-                onToggle={(toggled) => {
-                  setIsMenuOpen(toggled);
-                }}
-              />
-            </div>
-          </div>
-          <div
-            className={`text-white text-lg z-50 flex-col items-center h-[50dvh] ${
-              isMenuOpen ? "flex" : "hidden"
-            } justify-center`}
-            ref={linksRef}
-          >
-            <TransitionLink
-              href="/"
-              className="navanimation pt-[30px] text-5xl"
-              trRef={trRef}
-              loading={loading}
-              setLoading={setLoading}
-            >
-              Home
-            </TransitionLink>
-            <TransitionLink
-              href="/about"
-              className="navanimation pt-[30px] text-5xl"
-              trRef={trRef}
-              loading={loading}
-              setLoading={setLoading}
-            >
-              About
-            </TransitionLink>
-            <Link href="/blogs" className="navanimation pt-[30px] text-5xl">
-              Blogs
-            </Link>
-            <TransitionLink
-              href="/contact"
-              className="navanimation pt-[30px] text-5xl"
-              trRef={trRef}
-              loading={loading}
-              setLoading={setLoading}
-            >
-              Contact
-            </TransitionLink>
           </div>
         </div>
       </nav>
-    </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Mobile Menu */}
+          <div 
+            className="fixed top-20 left-4 right-4 rounded-3xl overflow-hidden"
+            style={{
+              background: `
+                linear-gradient(135deg, 
+                  rgba(255, 255, 255, 0.15) 0%, 
+                  rgba(255, 255, 255, 0.08) 50%, 
+                  rgba(255, 255, 255, 0.05) 100%)
+              `,
+              backdropFilter: 'blur(20px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              boxShadow: `
+                0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2)
+              `,
+            }}
+          >
+            <div
+              ref={linksRef}
+              className="px-6 py-8 space-y-6 transition-all duration-300"
+              style={{
+                opacity: "0",
+                transform: "translateY(-20px)",
+              }}
+            >
+              {NAVIGATION_ITEMS.map((item) =>
+                renderNavItem(item, "block text-white/90 hover:text-white text-2xl font-medium py-3 hover:bg-white/5 rounded-lg px-4 transition-all duration-300", true)
+              )}
+              
+              {/* Mobile CTA */}
+              <div className="pt-4 border-t border-white/10">
+                <Button href="/contact" className="w-full text-center justify-center">
+                  Get Started
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
-export default Navbars;
+export default LiquidGlassNavbar;

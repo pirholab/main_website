@@ -339,7 +339,7 @@ function Project() {
         </div>
         
         <div className="rounded-3xl col-span-2 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
-          <Link href="#">
+          <Link href="/projects">
             <img src="/bento/card8.svg" alt="" className="w-full rounded-3xl" />
           </Link>
         </div>

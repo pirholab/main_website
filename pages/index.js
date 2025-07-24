@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 import Brand from "../components/Brand";
+import CustomCursor from "../components/CustomCursor";
 import Navbars from "../components/Navbars";
 import Poster from "../components/Poster";
 import Who from "../components/Who";
@@ -17,7 +18,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const trRef = useRef();
   return (
-    <main className={`relative z-[999] `}>
+    <main className={`relative z-[999] cursor-none`}>
+      <CustomCursor />
       <Head>
         {/* Primary Meta Tags */}
         <title>PiRhoTech | Creative Technology Agency in Bangladesh</title>
@@ -111,8 +113,18 @@ export default function Home() {
           }}
         />
       </Head>
+      <style jsx global>{`
+        * {
+          cursor: none !important;
+        }
+        
+        /* Preserve system cursor for text selection */
+        *:active, *:focus {
+          cursor: auto !important;
+        }
+      `}</style>
       <Navbars loading={loading} setLoading={setLoading} trRef={trRef} />
-      <div className="mt-[70px]">
+      <div className="mt-[100px]">
         <Poster />
         <br />
         <Who />

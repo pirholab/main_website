@@ -543,7 +543,7 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 relative overflow-hidden">
+    <div className="mt-[100px] min-h-screen bg-gray-950 relative overflow-hidden">
       <Navbars/>
       {/* Enhanced background elements */}
       <div className="absolute inset-0">
@@ -563,118 +563,150 @@ const ProjectsPage = () => {
       </div>
 
       {/* Enhanced header */}
-      <div className="relative z-10 pt-20 pb-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-sm font-medium mb-6">
-              <Award className="w-4 h-4" />
+      <div className="relative z-10 pt-16 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Title section */}
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
+              <Award className="w-3 h-3" />
               Our Portfolio
             </div>
-            <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
               Featured{' '}
               <span className="text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
                 Projects
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
               </span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
               Explore our comprehensive collection of mobile & web applications—each designed for real-world impact, 
-              built with cutting-edge technology, and delivered with exceptional attention to detail.
+              built with cutting-edge technology.
             </p>
-            
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mt-12">
+          </div>
+          
+          {/* Stats bar */}
+          <div className="flex justify-center mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">{projects.length}+</div>
-                <div className="text-gray-400 text-sm">Projects</div>
+                <div className="text-2xl font-bold text-white mb-0.5">{projects.length}+</div>
+                <div className="text-gray-400 text-xs">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-1">100K+</div>
-                <div className="text-gray-400 text-sm">Active Users</div>
+                <div className="text-2xl font-bold text-purple-400 mb-0.5">100K+</div>
+                <div className="text-gray-400 text-xs">Active Users</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400 mb-1">4.8</div>
-                <div className="text-gray-400 text-sm">Avg Rating</div>
+                <div className="text-2xl font-bold text-orange-400 mb-0.5">4.8</div>
+                <div className="text-gray-400 text-xs">Avg Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400 mb-1">99.7%</div>
-                <div className="text-gray-400 text-sm">Uptime</div>
+                <div className="text-2xl font-bold text-green-400 mb-0.5">99.7%</div>
+                <div className="text-gray-400 text-xs">Uptime</div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Enhanced controls */}
-      <div className="relative z-10 mb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Search and filters */}
-          <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-gray-800/50 p-6 mb-8">
-            <div className="flex flex-col lg:flex-row gap-6">
+          {/* Controls Section */}
+          <div className="bg-gray-900/60 backdrop-blur-xl rounded-xl border border-gray-800/50 p-5">
+            <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="flex-1 relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search projects, technologies, or features..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none transition-all duration-300"
+                  className="w-full pl-9 pr-3 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none text-sm"
                 />
               </div>
               
               {/* Sort */}
-              <div className="relative">
+              <div className="md:w-48">
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-gray-800/50 border border-gray-700/50 rounded-xl px-4 py-3 text-white focus:border-purple-500/50 focus:outline-none transition-all duration-300 cursor-pointer"
+                  className="w-full appearance-none bg-gray-800/50 border border-gray-700/50 rounded-lg px-3 py-3 text-white focus:border-purple-500/50 focus:outline-none text-sm"
                 >
                   <option value="newest">Newest First</option>
                   <option value="oldest">Oldest First</option>
                   <option value="rating">Highest Rated</option>
                   <option value="users">Most Users</option>
                 </select>
-                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  <ChevronDown className="w-4 h-4 text-gray-400" />
+                </div>
               </div>
             </div>
             
             {/* Filter tags */}
-            <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-gray-800/30">
-              <div className="flex items-center gap-2 text-gray-400 mr-2">
-                <Filter className="w-4 h-4" />
-                <span className="text-sm font-medium">Filter:</span>
+            <div className="mt-4 pt-4 border-t border-gray-800/30">
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="flex items-center gap-1 text-gray-400 mr-1">
+                  <Filter className="w-3 h-3" />
+                  <span className="text-xs font-medium">Filter:</span>
+                </div>
+                <div className="flex flex-wrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                  {allTags.map(tag => (
+                    <button
+                      key={tag}
+                      onClick={() => {
+                        setSelectedFilter(tag);
+                        setVisibleProjects(6);
+                      }}
+                      className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
+                        selectedFilter === tag
+                          ? 'bg-gradient-to-r from-purple-600 to-orange-600 text-white'
+                          : 'bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50'
+                      }`}
+                    >
+                      {tag}
+                      {selectedFilter === tag && <span className="ml-1">✓</span>}
+                    </button>
+                  ))}
+                </div>
               </div>
-              {allTags.map(tag => (
-                <button
-                  key={tag}
-                  onClick={() => {
-                    setSelectedFilter(tag);
-                    setVisibleProjects(6);
-                  }}
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                    selectedFilter === tag
-                      ? 'bg-gradient-to-r from-purple-600 to-orange-600 text-white shadow-lg shadow-purple-500/25 scale-105'
-                      : 'bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50 hover:border-purple-500/30 hover:scale-105'
-                  }`}
-                >
-                  {tag}
-                  {selectedFilter === tag && <span className="ml-2">✓</span>}
-                </button>
-              ))}
             </div>
           </div>
-
+          
           {/* Results info */}
-          <div className="flex items-center justify-between mb-8">
-            <div className="text-gray-400">
+          <div className="flex justify-between items-center mt-4 mb-8 px-1">
+            <div className="text-sm text-gray-400">
               Showing <span className="text-white font-semibold">{displayedProjects.length}</span> of{' '}
               <span className="text-white font-semibold">{filteredProjects.length}</span> projects
               {searchTerm && (
-                <span className="ml-2">
+                <span className="ml-1">
                   for "<span className="text-purple-400">{searchTerm}</span>"
                 </span>
               )}
+            </div>
+            
+            {/* View mode toggle */}
+            <div className="flex items-center gap-2">
+              <button 
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-500 hover:text-gray-300'}`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button 
+                onClick={() => setViewMode('list')}
+                className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-500 hover:text-gray-300'}`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
             </div>
           </div>
         </div>

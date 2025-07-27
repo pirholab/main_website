@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useRef, useState } from 'react';
+import Head from "next/head";
 
 import { Footer } from '@/components/Footer';
 import Navbars from '@/components/Navbars';
@@ -41,7 +42,7 @@ const ProjectsPage = () => {
       video: "/cover-page-generator/video.mp4",
       tags: ["Productivity", "PDF", "AI", "Design"],
       link: "#case-study",
-      demoLink: "#demo",
+      demoLink: "https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator",
       category: "Web App",
       status: "Live",
       year: 2024,
@@ -470,10 +471,10 @@ const ProjectsPage = () => {
             )}
             
             {project.demoLink && (
-              <button className="flex-1 px-4 py-3 bg-gray-800/60 hover:bg-gray-700 text-gray-300 hover:text-white text-sm font-semibold rounded-xl border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 hover:-translate-y-0.5">
+              <a href={project.demoLink} target="_blank" className="flex-1 px-4 py-3 bg-gray-800/60 hover:bg-gray-700 text-gray-300 hover:text-white text-sm font-semibold rounded-xl border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 hover:-translate-y-0.5">
                 Live Demo
-                <ExternalLink className="w-4 h-4" />
-              </button>
+                <ExternalLink className="w-4 h-4"/>
+              </a>
             )}
             
             {!project.link && !project.demoLink && (
@@ -543,276 +544,282 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="mt-[100px] min-h-screen bg-gray-950 relative overflow-hidden">
-      <Navbars/>
-      {/* Enhanced background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/3 right-0 w-48 h-48 bg-gradient-to-l from-orange-500/15 to-purple-500/15 rounded-full blur-2xl"></div>
-        
-        {/* Animated grid */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }}></div>
-        </div>
-      </div>
-
-      {/* Enhanced header */}
-      <div className="relative z-10 pt-16 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Title section */}
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
-              <Award className="w-3 h-3" />
-              Our Portfolio
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
-              Featured{' '}
-              <span className="text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
-                Projects
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
-              Explore our comprehensive collection of mobile & web applications—each designed for real-world impact, 
-              built with cutting-edge technology.
-            </p>
-          </div>
+    <>
+    <Head>
+      <title>Our Projects | Portfolio</title>
+      <meta name="description" content="" />
+    </Head>
+      <div className="mt-[100px] min-h-screen bg-gray-950 relative overflow-hidden">
+        <Navbars/>
+        {/* Enhanced background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-0 w-48 h-48 bg-gradient-to-l from-orange-500/15 to-purple-500/15 rounded-full blur-2xl"></div>
           
-          {/* Stats bar */}
-          <div className="flex justify-center mb-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-0.5">{projects.length}+</div>
-                <div className="text-gray-400 text-xs">Projects</div>
+          {/* Animated grid */}
+          <div className="absolute inset-0 opacity-[0.02]">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
+                                linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)`,
+              backgroundSize: '50px 50px'
+            }}></div>
+          </div>
+        </div>
+
+        {/* Enhanced header */}
+        <div className="relative z-10 pt-16 pb-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            {/* Title section */}
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
+                <Award className="w-3 h-3" />
+                Our Portfolio
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400 mb-0.5">100K+</div>
-                <div className="text-gray-400 text-xs">Active Users</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-400 mb-0.5">4.8</div>
-                <div className="text-gray-400 text-xs">Avg Rating</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-400 mb-0.5">99.7%</div>
-                <div className="text-gray-400 text-xs">Uptime</div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+                Featured{' '}
+                <span className="text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
+                  Projects
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                Explore our comprehensive collection of mobile & web applications—each designed for real-world impact, 
+                built with cutting-edge technology.
+              </p>
+            </div>
+            
+            {/* Stats bar */}
+            <div className="flex justify-center mb-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-0.5">{projects.length}+</div>
+                  <div className="text-gray-400 text-xs">Projects</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-400 mb-0.5">100K+</div>
+                  <div className="text-gray-400 text-xs">Active Users</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-orange-400 mb-0.5">4.8</div>
+                  <div className="text-gray-400 text-xs">Avg Rating</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-400 mb-0.5">99.7%</div>
+                  <div className="text-gray-400 text-xs">Uptime</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Controls Section */}
-          <div className="bg-gray-900/60 backdrop-blur-xl rounded-xl border border-gray-800/50 p-5">
-            <div className="flex flex-col md:flex-row gap-4">
-              {/* Search */}
-              <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search projects, technologies, or features..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-9 pr-3 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none text-sm"
-                />
+            {/* Controls Section */}
+            <div className="bg-gray-900/60 backdrop-blur-xl rounded-xl border border-gray-800/50 p-5">
+              <div className="flex flex-col md:flex-row gap-4">
+                {/* Search */}
+                <div className="flex-1 relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search projects, technologies, or features..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-9 pr-3 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none text-sm"
+                  />
+                </div>
+                
+                {/* Sort */}
+                <div className="md:w-48">
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full appearance-none bg-gray-800/50 border border-gray-700/50 rounded-lg px-3 py-3 text-white focus:border-purple-500/50 focus:outline-none text-sm"
+                  >
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="rating">Highest Rated</option>
+                    <option value="users">Most Users</option>
+                  </select>
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <ChevronDown className="w-4 h-4 text-gray-400" />
+                  </div>
+                </div>
               </div>
               
-              {/* Sort */}
-              <div className="md:w-48">
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full appearance-none bg-gray-800/50 border border-gray-700/50 rounded-lg px-3 py-3 text-white focus:border-purple-500/50 focus:outline-none text-sm"
-                >
-                  <option value="newest">Newest First</option>
-                  <option value="oldest">Oldest First</option>
-                  <option value="rating">Highest Rated</option>
-                  <option value="users">Most Users</option>
-                </select>
-                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <ChevronDown className="w-4 h-4 text-gray-400" />
+              {/* Filter tags */}
+              <div className="mt-4 pt-4 border-t border-gray-800/30">
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex items-center gap-1 text-gray-400 mr-1">
+                    <Filter className="w-3 h-3" />
+                    <span className="text-xs font-medium">Filter:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                    {allTags.map(tag => (
+                      <button
+                        key={tag}
+                        onClick={() => {
+                          setSelectedFilter(tag);
+                          setVisibleProjects(6);
+                        }}
+                        className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
+                          selectedFilter === tag
+                            ? 'bg-gradient-to-r from-purple-600 to-orange-600 text-white'
+                            : 'bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50'
+                        }`}
+                      >
+                        {tag}
+                        {selectedFilter === tag && <span className="ml-1">✓</span>}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
             
-            {/* Filter tags */}
-            <div className="mt-4 pt-4 border-t border-gray-800/30">
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="flex items-center gap-1 text-gray-400 mr-1">
-                  <Filter className="w-3 h-3" />
-                  <span className="text-xs font-medium">Filter:</span>
-                </div>
-                <div className="flex flex-wrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
-                  {allTags.map(tag => (
-                    <button
-                      key={tag}
-                      onClick={() => {
-                        setSelectedFilter(tag);
-                        setVisibleProjects(6);
-                      }}
-                      className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
-                        selectedFilter === tag
-                          ? 'bg-gradient-to-r from-purple-600 to-orange-600 text-white'
-                          : 'bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50'
-                      }`}
-                    >
-                      {tag}
-                      {selectedFilter === tag && <span className="ml-1">✓</span>}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Results info */}
-          <div className="flex justify-between items-center mt-4 mb-8 px-1">
-            <div className="text-sm text-gray-400">
-              Showing <span className="text-white font-semibold">{displayedProjects.length}</span> of{' '}
-              <span className="text-white font-semibold">{filteredProjects.length}</span> projects
-              {searchTerm && (
-                <span className="ml-1">
-                  for "<span className="text-purple-400">{searchTerm}</span>"
-                </span>
-              )}
-            </div>
-            
-            {/* View mode toggle */}
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={() => setViewMode('grid')}
-                className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-500 hover:text-gray-300'}`}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="7" height="7"></rect>
-                  <rect x="14" y="3" width="7" height="7"></rect>
-                  <rect x="3" y="14" width="7" height="7"></rect>
-                  <rect x="14" y="14" width="7" height="7"></rect>
-                </svg>
-              </button>
-              <button 
-                onClick={() => setViewMode('list')}
-                className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-500 hover:text-gray-300'}`}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="8" y1="6" x2="21" y2="6"></line>
-                  <line x1="8" y1="12" x2="21" y2="12"></line>
-                  <line x1="8" y1="18" x2="21" y2="18"></line>
-                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced projects grid */}
-      <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {displayedProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
-
-          {/* Empty state */}
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-20">
-              <div className="w-24 h-24 bg-gray-800/50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Search className="w-10 h-10 text-gray-500" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">No projects found</h3>
-              <p className="text-gray-400 mb-6">
-                Try adjusting your search terms or filters to find what you're looking for.
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setSelectedFilter('All');
-                }}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
-              >
-                Clear Filters
-              </button>
-            </div>
-          )}
-
-          {/* Enhanced Load more / View all */}
-          {visibleProjects < filteredProjects.length && (
-            <div className="text-center space-y-4">
-              <button
-                onClick={loadMore}
-                disabled={isLoading}
-                className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600/20 to-orange-600/20 hover:from-purple-600/30 hover:to-orange-600/30 text-white font-semibold rounded-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isLoading ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin"></div>
-                    Loading Projects...
-                  </>
-                ) : (
-                  <>
-                    Load More Projects
-                    <ArrowRight className="w-5 h-5" />
-                  </>
+            {/* Results info */}
+            <div className="flex justify-between items-center mt-4 mb-8 px-1">
+              <div className="text-sm text-gray-400">
+                Showing <span className="text-white font-semibold">{displayedProjects.length}</span> of{' '}
+                <span className="text-white font-semibold">{filteredProjects.length}</span> projects
+                {searchTerm && (
+                  <span className="ml-1">
+                    for "<span className="text-purple-400">{searchTerm}</span>"
+                  </span>
                 )}
-              </button>
-              <p className="text-gray-400 text-sm">
-                {filteredProjects.length - visibleProjects} more projects available
-              </p>
-            </div>
-          )}
-          
-          {visibleProjects >= filteredProjects.length && filteredProjects.length > 6 && (
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center gap-3 px-10 py-4 bg-gray-800/30 text-gray-400 font-semibold rounded-2xl border border-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                All projects loaded ({filteredProjects.length} total)
               </div>
-              <p className="text-gray-500 text-sm">
-                You've seen all available projects in this category
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Call to action section */}
-      <div className="relative z-10 mt-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="relative bg-gradient-to-r from-purple-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl border border-gray-800/50 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-orange-500/10"></div>
-            <div className="relative p-12 text-center">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Have a Project in Mind?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Let's collaborate to bring your vision to life with cutting-edge technology 
-                and exceptional design.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1">
-                  Start a Project
+              
+              {/* View mode toggle */}
+              <div className="flex items-center gap-2">
+                <button 
+                  onClick={() => setViewMode('grid')}
+                  className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-500 hover:text-gray-300'}`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                  </svg>
                 </button>
-                <button className="px-8 py-4 bg-gray-800/60 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
-                  Schedule Consultation
+                <button 
+                  onClick={() => setViewMode('list')}
+                  className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-500 hover:text-gray-300'}`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom spacing */}
-      <div className="h-24"></div>
-      <Footer />
-    </div>
+        {/* Enhanced projects grid */}
+        <div className="relative z-10">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {displayedProjects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </div>
+
+            {/* Empty state */}
+            {filteredProjects.length === 0 && (
+              <div className="text-center py-20">
+                <div className="w-24 h-24 bg-gray-800/50 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Search className="w-10 h-10 text-gray-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">No projects found</h3>
+                <p className="text-gray-400 mb-6">
+                  Try adjusting your search terms or filters to find what you're looking for.
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedFilter('All');
+                  }}
+                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
+
+            {/* Enhanced Load more / View all */}
+            {visibleProjects < filteredProjects.length && (
+              <div className="text-center space-y-4">
+                <button
+                  onClick={loadMore}
+                  disabled={isLoading}
+                  className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600/20 to-orange-600/20 hover:from-purple-600/30 hover:to-orange-600/30 text-white font-semibold rounded-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin"></div>
+                      Loading Projects...
+                    </>
+                  ) : (
+                    <>
+                      Load More Projects
+                      <ArrowRight className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+                <p className="text-gray-400 text-sm">
+                  {filteredProjects.length - visibleProjects} more projects available
+                </p>
+              </div>
+            )}
+            
+            {visibleProjects >= filteredProjects.length && filteredProjects.length > 6 && (
+              <div className="text-center space-y-4">
+                <div className="inline-flex items-center gap-3 px-10 py-4 bg-gray-800/30 text-gray-400 font-semibold rounded-2xl border border-gray-700">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  All projects loaded ({filteredProjects.length} total)
+                </div>
+                <p className="text-gray-500 text-sm">
+                  You've seen all available projects in this category
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Call to action section */}
+        <div className="relative z-10 mt-24">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="relative bg-gradient-to-r from-purple-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl border border-gray-800/50 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-orange-500/10"></div>
+              <div className="relative p-12 text-center">
+                <h2 className="text-4xl font-bold text-white mb-6">
+                  Have a Project in Mind?
+                </h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Let's collaborate to bring your vision to life with cutting-edge technology 
+                  and exceptional design.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1">
+                    Start a Project
+                  </button>
+                  <button className="px-8 py-4 bg-gray-800/60 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
+                    Schedule Consultation
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom spacing */}
+        <div className="h-24"></div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

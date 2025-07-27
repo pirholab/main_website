@@ -1,10 +1,11 @@
 "use client";
 
+import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 // Mock components for dependencies
 const Button = ({ href, className, children, ...props }) => (
-  <a 
+  <Link 
     href={href} 
     className={`relative p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFB266] to-[#D96263] transition-all duration-300 hover:scale-105 ${className}`}
     {...props}
@@ -12,18 +13,18 @@ const Button = ({ href, className, children, ...props }) => (
     <div className="flex h-full w-full items-center justify-center rounded-[38px] bg-[#2b3254] px-6 py-2 text-xl font-medium">
       <span className="relative z-10">{children}</span>
     </div>
-  </a>
+  </Link>
 );
 
 const TransitionLink = ({ href, className, children, onClick, ...props }) => (
-  <a 
+  <Link 
     href={href} 
     className={className}
     onClick={onClick}
     {...props}
   >
     {children}
-  </a>
+  </Link>
 );
 
 // Hamburger menu component with glass effect
@@ -163,14 +164,14 @@ const LiquidGlassNavbar = ({ loading = false, setLoading = () => {}, trRef = nul
     }
     
     return (
-      <a
+      <Link
         key={item.href}
         href={item.href}
         className={baseClassName}
         onClick={isMobileMenu ? handleMenuItemClick : undefined}
       >
         {linkContent}
-      </a>
+      </Link>
     );
   };
 

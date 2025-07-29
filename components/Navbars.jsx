@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 // Mock components for dependencies
 const Button = ({ href, className, children, ...props }) => (
@@ -68,6 +69,7 @@ const LiquidGlassNavbar = ({
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isScrolled, setIsScrolled] = useState(false);
+    const pathname = usePathname();
 
     const navbarRef = useRef(null);
     const linksRef = useRef(null);
@@ -140,12 +142,17 @@ const LiquidGlassNavbar = ({
     }, []);
 
     const renderNavItem = (item, className = "", isMobileMenu = false) => {
-        const baseClassName = `relative group transition-all duration-300 hover:text-white ${className}`;
+        const isActive = pathname === item.href;
+        const baseClassName = `relative group transition-all duration-300 hover:text-white ${
+            isActive ? "text-white bg-white/5" : "text-white/80"
+        } ${className}`;
 
         const linkContent = (
             <span className="relative z-10">
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 w-0 group-hover:w-full`}
+                ></span>
             </span>
         );
 

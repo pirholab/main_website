@@ -39,12 +39,12 @@ const CustomCursor = () => {
             cursor.current.x = lerp(
                 cursor.current.x,
                 mouse.current.x + direction.current.x * 5,
-                0.05
+                0.04
             );
             cursor.current.y = lerp(
                 cursor.current.y,
                 mouse.current.y + direction.current.y * 5,
-                0.05
+                0.04
             );
             setRenderCursor({ x: cursor.current.x, y: cursor.current.y });
             requestAnimationFrame(animate);

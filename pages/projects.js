@@ -46,7 +46,7 @@ const ProjectsPage = () => {
             link: "#case-study",
             demoLink:
                 "https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator",
-            category: "Web App",
+            category: "Mobile App",
             status: "Live",
             year: 2024,
             duration: "3 months",
@@ -138,33 +138,32 @@ const ProjectsPage = () => {
         },
         {
             id: 4,
-            title: "Task Management Suite",
-            description:
-                "Collaborative workspace for teams with advanced project tracking, time management, and productivity insights",
-            image: "/api/placeholder/600/400",
-            video: "/api/placeholder/600/400",
-            tags: ["Productivity", "Collaboration", "Tools", "Management"],
-            link: "#case-study",
-            demoLink: "#demo",
+            title: "Biddarthi - Your Learning Partner",
+            description: "Quality education and guidance for competitive exams",
+            image: "/biddarthi/mockup.jpg",
+            video: null,
+            tags: ["Learning", "Education", "EdTech", "Exam"],
+            link: "/works/biddarthi",
+            demoLink: "https://www.biddarthi.org/",
             category: "Web App",
             status: "Live",
-            year: 2023,
+            year: 2025,
             duration: "5 months",
-            team: 5,
-            technologies: ["Angular", "Node.js", "Socket.io", "Redis"],
+            team: 3,
+            technologies: ["React.js", "Node.js", "Next.js", "PostgreSQL"],
             features: [
-                "Real-time collaboration",
-                "Time tracking",
-                "Advanced reporting",
-                "Integrations",
+                "Course management",
+                "Personalized learning paths",
+                "Community support",
+                "Student Tracking",
             ],
             metrics: {
-                users: "15K+",
+                users: "20K+",
                 rating: 4.6,
                 performance: "99.7%",
             },
-            client: "ProductivityFirst LLC",
-            industry: "SaaS",
+            client: "Milton Khandokar",
+            industry: "EdTech",
             challenge: "Seamless team collaboration and project visibility",
             results:
                 "35% increase in team productivity, 90% user adoption rate",
@@ -424,7 +423,7 @@ const ProjectsPage = () => {
                 {/* Status indicator */}
                 <div className="absolute top-4 left-4 z-20">
                     <span
-                        className={`px-3 py-1 text-xs font-semibold rounded-full border ${getStatusColor(
+                        className={`px-3 py-1 text-xs font-semibold rounded-full border bg-zinc-500/30 ${getStatusColor(
                             project.status
                         )}`}
                     >
@@ -513,7 +512,7 @@ const ProjectsPage = () => {
 
                     {/* Title and description */}
                     <div>
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-500">
+                        <h3 className="text-xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-500">
                             {project.title}
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors duration-300">

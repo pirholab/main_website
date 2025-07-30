@@ -1,6 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import localFont from "next/font/local";
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 import { Footer } from "@/components/Footer";
 import Navbars from "@/components/Navbars";
@@ -495,6 +499,8 @@ const ProjectsPage = () => {
                             <span
                                 key={tag}
                                 className={`px-3 py-1 text-xs font-medium rounded-full border transition-all duration-300 ${
+                                    firacode.className
+                                } ${
                                     idx === 0
                                         ? "bg-gradient-to-r from-purple-500/20 to-orange-500/20 text-purple-300 border-purple-500/30"
                                         : "bg-gray-800/50 text-gray-400 border-gray-700/50 group-hover:border-gray-600"
@@ -561,7 +567,7 @@ const ProjectsPage = () => {
                             {project.technologies.slice(0, 4).map((tech) => (
                                 <span
                                     key={tech}
-                                    className="px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300"
+                                    className={`px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300 ${firacode.className}`}
                                 >
                                     {tech}
                                 </span>
@@ -842,7 +848,8 @@ const ProjectsPage = () => {
                                                     setSelectedFilter(tag);
                                                     setVisibleProjects(6);
                                                 }}
-                                                className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
+                                                className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300
+                                                    ${firacode.className} ${
                                                     selectedFilter === tag
                                                         ? "bg-gradient-to-r from-purple-600 to-orange-600 text-white"
                                                         : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50"

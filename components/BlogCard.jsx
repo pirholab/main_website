@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 export default function BlogCard({
     title,
@@ -53,7 +58,7 @@ export default function BlogCard({
                     {tags?.map((tag, i) => (
                         <span
                             key={i}
-                            className="px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300"
+                            className={`px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300 ${firacode.className}`}
                         >
                             {tag}
                         </span>

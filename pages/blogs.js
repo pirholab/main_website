@@ -8,6 +8,10 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import { Award, ChartGantt, CheckCheck, Filter } from "lucide-react";
+import localFont from "next/font/local";
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -122,6 +126,8 @@ const Blogs = () => {
                                     key={index}
                                     onClick={() => handleTagFilter(tag)}
                                     className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
+                                        firacode.className
+                                    } ${
                                         activeTag === tag
                                             ? "bg-gradient-to-r from-purple-600 to-orange-600 text-white"
                                             : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50"

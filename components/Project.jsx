@@ -1,6 +1,10 @@
 import { Award } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import localFont from "next/font/local";
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 // Enhanced SingleSplitText component with better animations
 const SingleSplitText = ({ textBody, className, children }) => {
@@ -308,7 +312,9 @@ function Project() {
         <div className="bg-[#1d1d3b]  p-4 sm:p-8 md:p-16 lg:p-24">
             {/* Title section */}
             <div className="text-center mb-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
+                <div
+                    className={`inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4 ${firacode.className}`}
+                >
                     <Award className="w-3 h-3" />
                     Our Portfolio
                 </div>

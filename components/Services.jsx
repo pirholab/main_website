@@ -5,6 +5,10 @@ import { useEffect, useRef } from "react";
 import { SplitText } from "../ui/SplitText";
 import Card from "./Card";
 import { Wrench } from "lucide-react";
+import localFont from "next/font/local";
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 export default function Services() {
     const actual_data = [
@@ -69,7 +73,9 @@ export default function Services() {
         <div className="mb-[300px] md:mb-[100px]">
             <div className="flex flex-col">
                 <div className="flex flex-col items-center justify-center mt-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
+                    <div
+                        className={`inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4 ${firacode.className}`}
+                    >
                         <Wrench className="w-3 h-3" />
                         Our Services
                     </div>

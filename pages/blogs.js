@@ -96,7 +96,9 @@ const Blogs = () => {
                     </div>
 
                     <div className="text-center mb-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
+                        <div
+                            className={`inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4 ${firacode.className}`}
+                        >
                             <ChartGantt className="w-3 h-3" />
                             Our Blog
                         </div>

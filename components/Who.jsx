@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 
 import Button from "@/components/Button";
 import { Oswald } from "next/font/google";
+import localFont from "next/font/local";
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 const oswald = Oswald({ subsets: ["latin"] });
 export default function Who() {
@@ -38,7 +42,7 @@ export default function Who() {
 
                         <Button
                             href={"/about"}
-                            className="flex w-auto border rounded-[23px] pl-[9px] pr-[5px] pt-[7px] pb-[7px]"
+                            className={`flex w-auto border rounded-[23px] pl-[9px] pr-[5px] pt-[7px] pb-[7px] ${firacode.className}`}
                             height="54px"
                             color="blue"
                         >

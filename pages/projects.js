@@ -28,6 +28,7 @@ import {
     TrendingUp,
     Users,
 } from "lucide-react";
+import Link from "next/link";
 const ProjectsPage = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
     const [visibleProjects, setVisibleProjects] = useState(6);
@@ -144,7 +145,7 @@ const ProjectsPage = () => {
             id: 4,
             title: "Biddarthi - Your Learning Partner",
             description: "Quality education and guidance for competitive exams",
-            image: "/biddarthi/mockup.jpg",
+            image: "/biddarthi/mockup.png",
             video: null,
             tags: ["Learning", "Education", "EdTech", "Exam"],
             link: "/works/biddarthi",
@@ -174,42 +175,46 @@ const ProjectsPage = () => {
         },
         {
             id: 5,
-            title: "PDF Annotation Tool",
+            title: "Kormi Koi - A smart service seeking platform",
             description:
-                "Smart document review system with AI-powered insights, collaborative annotations, and version control",
-            image: "/api/placeholder/600/400",
+                "The best user experience, with features like real-time service tracking, seamless account switching, and worker KYC verification.",
+            image: "/kormikoi/banner.png",
             video: null,
-            tags: ["PDF", "Productivity", "AI", "Collaboration"],
-            link: "#case-study",
+            tags: ["Realtime", "JobFinding", "Service", "Collaboration"],
+            link: "/works/kormi-koi-find-trusted-service-providers",
             demoLink: null,
-            category: "Web App",
-            status: "Live",
-            year: 2023,
-            duration: "4 months",
-            team: 3,
-            technologies: ["React", "PDF.js", "Python", "OpenAI"],
-            features: [
-                "AI insights",
-                "Collaborative reviews",
-                "Version control",
-                "Smart search",
+            category: "Mobile App",
+            status: "Upcoming",
+            year: 2025,
+            duration: "5 months",
+            team: 5,
+            technologies: [
+                "Flutter",
+                "Express js",
+                "MongoDB",
+                "PostgraSql",
+                "WebSocket",
+                "Google Map API",
             ],
-            metrics: {
-                users: "8K+",
-                rating: 4.5,
-                performance: "99.6%",
-            },
-            client: "LegalTech Innovations",
-            industry: "Legal",
+            features: [
+                "Service",
+                "Real-time tracking",
+                "KYC verification",
+                "Job Posting",
+                "Ratings & Reviews",
+            ],
+            metrics: null,
+            client: "Pirhotech",
+            industry: "Service Marketplace",
             challenge: "Efficient document review and collaboration",
             results: "60% faster document processing, 80% error reduction",
         },
         {
             id: 6,
-            title: "Learning Management Portal",
+            title: "Trufslot - Find Best Turf Nearby",
             description:
-                "Complete online education platform with interactive features, assessment tools, and progress analytics",
-            image: "/api/placeholder/600/400",
+                "Trufslot is a comprehensive platform that bridges the gap between sports enthusiasts and turf facility owners.",
+            image: "",
             video: "/api/placeholder/600/400",
             tags: ["Education", "E-learning", "Platform", "Assessment"],
             link: "#case-study",
@@ -217,8 +222,8 @@ const ProjectsPage = () => {
             category: "Web Platform",
             status: "Live",
             year: 2023,
-            duration: "10 months",
-            team: 10,
+            duration: "5 months",
+            team: 8,
             technologies: ["Next.js", "Django", "WebRTC", "AWS"],
             features: [
                 "Interactive courses",
@@ -231,8 +236,8 @@ const ProjectsPage = () => {
                 rating: 4.9,
                 performance: "99.9%",
             },
-            client: "Global Education Network",
-            industry: "Education",
+            client: "Turf Facility Owners and Sports Enthusiasts",
+            industry: "Sports and Recreation",
             challenge: "Scalable online learning ecosystem",
             results:
                 "200% increase in course completion, 95% student satisfaction",
@@ -367,7 +372,7 @@ const ProjectsPage = () => {
             case "Development":
                 return "text-blue-400 bg-blue-400/10 border-blue-400/30";
             default:
-                return "text-gray-400 bg-gray-400/10 border-gray-400/30";
+                return "text-gray-200 bg-gray-400/10 border-gray-400/30";
         }
     };
 
@@ -427,7 +432,7 @@ const ProjectsPage = () => {
                 {/* Status indicator */}
                 <div className="absolute top-4 left-4 z-20">
                     <span
-                        className={`px-3 py-1 text-xs font-semibold rounded-full border bg-zinc-500/30 ${getStatusColor(
+                        className={`px-3 py-1 text-xs font-semibold rounded-full border bg-zinc-800/45 ${getStatusColor(
                             project.status
                         )}`}
                     >
@@ -527,35 +532,46 @@ const ProjectsPage = () => {
                     </div>
 
                     {/* Project stats */}
-                    <div className="grid grid-cols-3 gap-4 py-3 border-t border-gray-800/50">
-                        <div className="text-center">
-                            <div className="flex items-center justify-center gap-1 text-purple-400 mb-1">
-                                <Users className="w-3 h-3" />
-                                <span className="text-xs font-semibold">
-                                    {project.metrics.users}
-                                </span>
+                    {project.metrics && (
+                        <div className="grid grid-cols-3 gap-4 py-3 border-t border-gray-800/50">
+                            <div className="text-center">
+                                <div className="flex items-center justify-center gap-1 text-purple-400 mb-1">
+                                    <Users className="w-3 h-3" />
+                                    <span className="text-xs font-semibold">
+                                        {project.metrics.users}
+                                    </span>
+                                </div>
+                                <div className="text-xs text-gray-500">
+                                    Users
+                                </div>
                             </div>
-                            <div className="text-xs text-gray-500">Users</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="flex items-center justify-center gap-1 text-orange-400 mb-1">
-                                <Star className="w-3 h-3" fill="currentColor" />
-                                <span className="text-xs font-semibold">
-                                    {project.metrics.rating || "N/A"}
-                                </span>
+                            <div className="text-center">
+                                <div className="flex items-center justify-center gap-1 text-orange-400 mb-1">
+                                    <Star
+                                        className="w-3 h-3"
+                                        fill="currentColor"
+                                    />
+                                    <span className="text-xs font-semibold">
+                                        {project.metrics.rating || "N/A"}
+                                    </span>
+                                </div>
+                                <div className="text-xs text-gray-500">
+                                    Rating
+                                </div>
                             </div>
-                            <div className="text-xs text-gray-500">Rating</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="flex items-center justify-center gap-1 text-green-400 mb-1">
-                                <TrendingUp className="w-3 h-3" />
-                                <span className="text-xs font-semibold">
-                                    {project.metrics.performance}
-                                </span>
+                            <div className="text-center">
+                                <div className="flex items-center justify-center gap-1 text-green-400 mb-1">
+                                    <TrendingUp className="w-3 h-3" />
+                                    <span className="text-xs font-semibold">
+                                        {project.metrics.performance}
+                                    </span>
+                                </div>
+                                <div className="text-xs text-gray-500">
+                                    Uptime
+                                </div>
                             </div>
-                            <div className="text-xs text-gray-500">Uptime</div>
                         </div>
-                    </div>
+                    )}
 
                     {/* Technologies */}
                     <div className="space-y-2">
@@ -578,10 +594,13 @@ const ProjectsPage = () => {
                     {/* Action buttons */}
                     <div className="flex gap-3 pt-2">
                         {project.link && (
-                            <button className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 flex items-center justify-center gap-2 hover:-translate-y-0.5">
+                            <Link
+                                href={project.link}
+                                className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 flex items-center justify-center gap-2 hover:-translate-y-0.5 text-center"
+                            >
                                 View Case Study
                                 <ArrowUpRight className="w-4 h-4" />
-                            </button>
+                            </Link>
                         )}
 
                         {project.demoLink && (
@@ -730,7 +749,9 @@ const ProjectsPage = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">
                         {/* Title section */}
                         <div className="text-center mb-10">
-                            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4">
+                            <div
+                                className={`inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-medium mb-4 ${firacode.className}`}
+                            >
                                 <Award className="w-3 h-3" />
                                 Our Portfolio
                             </div>

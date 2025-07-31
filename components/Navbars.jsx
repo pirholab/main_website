@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import localFont from "next/font/local";
+const firacode = localFont({
+    src: "../fonts/firacode/FiraCode-Regular.ttf",
+});
 
 // Mock components for dependencies
 const Button = ({ href, className, children, ...props }) => (

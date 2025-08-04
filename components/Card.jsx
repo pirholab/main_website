@@ -51,7 +51,6 @@ export default function Card({
                     willChange: "transform",
                 }}
             >
-                {getTopStyle(i)}
                 <img src={image} alt="" className={`absolute ${style}`} />
 
                 <div className="absolute top-20 md:right-16 md:top-14 right-10 w-[65%]">

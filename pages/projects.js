@@ -46,9 +46,9 @@ const ProjectsPage = () => {
             description:
                 "AI-powered tool for creating professional document covers instantly with customizable templates and brand integration",
             image: "/cover-page-generator/banner.png",
-            video: "/cover-page-generator/video.mp4",
+            video: null,
             tags: ["Productivity", "PDF", "AI", "Design"],
-            link: "#case-study",
+            link: "/works/cover-page-generator",
             demoLink:
                 "https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator",
             category: "Mobile App",
@@ -56,20 +56,27 @@ const ProjectsPage = () => {
             year: 2024,
             duration: "3 months",
             team: 4,
-            technologies: ["React", "Node.js", "AI/ML", "AWS"],
+            technologies: [
+                "Flutter",
+                "Dart",
+                "SQLite",
+                "PDF Rendering Library",
+                "Material Design",
+            ],
             features: [
                 "AI-powered design",
                 "Template library",
-                "Brand integration",
-                "PDF export",
+                "One Click Export",
+                "Email Sharing",
+                "Save Information",
             ],
             metrics: {
                 users: "10K+",
                 rating: 4.8,
                 performance: "99.9%",
             },
-            client: "Enterprise Solutions Inc.",
-            industry: "SaaS",
+            client: "University Students in Bangladesh.",
+            industry: "Education",
             challenge: "Automated professional document creation",
             results: "300% faster document creation, 95% user satisfaction",
         },
@@ -79,7 +86,7 @@ const ProjectsPage = () => {
             description:
                 "Create professional academic documents instantly with our all-in-one PDF solution!",
             image: "/nanoscan/banner.png",
-            video: null,
+            video: "https://res.cloudinary.com/dzmlgtdvy/video/upload/v1754287114/nanoscan_-_mockup_vmk5pd.webm",
             tags: ["Education", "Mobile", "Analytics", "Management"],
             link: "/works/nanoscan-pdf-scanner-tools",
             demoLink:
@@ -87,9 +94,14 @@ const ProjectsPage = () => {
             category: "Mobile App",
             status: "Live",
             year: 2024,
-            duration: "2 months",
-            team: 2,
-            technologies: ["React Native", "Firebase", "Node.js", "MongoDB"],
+            duration: "2.5 months",
+            team: 4,
+            technologies: [
+                "Flutter",
+                "Dart",
+                "SQLite",
+                "Android Camera & File API",
+            ],
             features: [
                 "Scan documents",
                 "Assignment cover page",
@@ -102,32 +114,33 @@ const ProjectsPage = () => {
                 rating: 4.9,
                 performance: "99.5%",
             },
-            client: "EduTech Solutions",
-            industry: "Education",
+            client: "University Students & Professionals in Bangladesh",
+            industry: "Education & Productivity",
             challenge: "Streamlined student-teacher-parent communication",
             results:
                 "40% improvement in student engagement, 60% faster communication",
         },
         {
             id: 3,
-            title: "E-commerce Analytics Dashboard",
+            title: "EazyTask - Online Scheduler",
             description:
-                "Real-time business intelligence platform for online retailers with predictive analytics and automated reporting",
-            image: "/api/placeholder/600/400",
-            video: "/api/placeholder/600/400",
-            tags: ["Analytics", "E-commerce", "Dashboard", "Business"],
+                "It is a comprehensive online scheduling for security agency. It provides a user-friendly interface for managing tasks, schedules, and resources efficiently.",
+            image: "/eazytask/mockup.jpg",
+            video: null,
+            tags: ["Security", "Business", "Dashboard", "Business"],
             link: null,
-            demoLink: "#demo",
+            demoLink: "https://eazytask.au",
             category: "Web Platform",
-            status: "Beta",
-            year: 2024,
+            status: "Live",
+            year: 2023,
             duration: "8 months",
-            team: 8,
-            technologies: ["Vue.js", "Python", "TensorFlow", "PostgreSQL"],
+            team: 5,
+            technologies: ["Vue.js", "Laravel", "MySql", "Bootstrap"],
             features: [
-                "Predictive analytics",
-                "Custom reports",
-                "Real-time data",
+                "Dashboard Analytics",
+                "Task management",
+                "Scheduling",
+                "Roster management",
                 "API integrations",
             ],
             metrics: {
@@ -135,18 +148,18 @@ const ProjectsPage = () => {
                 rating: 4.7,
                 performance: "99.8%",
             },
-            client: "RetailTech Corp",
-            industry: "Retail",
-            challenge: "Actionable insights from complex e-commerce data",
+            client: "EazyTask Solutions",
+            industry: "Security Agency Management",
+            challenge: "Optimizing task scheduling and resource management",
             results:
-                "25% increase in sales conversion, 50% reduction in inventory waste",
+                "50% reduction in scheduling conflicts, 30% increase in task completion rates",
         },
         {
             id: 4,
             title: "Biddarthi - Your Learning Partner",
             description: "Quality education and guidance for competitive exams",
             image: "/biddarthi/mockup.png",
-            video: null,
+            video: "https://res.cloudinary.com/dzmlgtdvy/video/upload/v1754287864/biddarthi_bhhnfi.webm",
             tags: ["Learning", "Education", "EdTech", "Exam"],
             link: "/works/biddarthi",
             demoLink: "https://www.biddarthi.org/",
@@ -169,9 +182,9 @@ const ProjectsPage = () => {
             },
             client: "Milton Khandokar",
             industry: "EdTech",
-            challenge: "Seamless team collaboration and project visibility",
+            challenge: "Enhancing student engagement and performance tracking",
             results:
-                "35% increase in team productivity, 90% user adoption rate",
+                "60% increase in student retention, 40% improvement in exam scores",
         },
         {
             id: 5,
@@ -179,7 +192,7 @@ const ProjectsPage = () => {
             description:
                 "The best user experience, with features like real-time service tracking, seamless account switching, and worker KYC verification.",
             image: "/kormikoi/banner.png",
-            video: null,
+            video: "https://res.cloudinary.com/dzmlgtdvy/video/upload/v1754284640/mockup_ewthdj.webm",
             tags: ["Realtime", "JobFinding", "Service", "Collaboration"],
             link: "/works/kormi-koi-find-trusted-service-providers",
             demoLink: null,
@@ -214,22 +227,30 @@ const ProjectsPage = () => {
             title: "Trufslot - Find Best Turf Nearby",
             description:
                 "Trufslot is a comprehensive platform that bridges the gap between sports enthusiasts and turf facility owners.",
-            image: "",
-            video: "/api/placeholder/600/400",
-            tags: ["Education", "E-learning", "Platform", "Assessment"],
-            link: "#case-study",
-            demoLink: "#demo",
-            category: "Web Platform",
+            image: "/turfslot/mockup.png",
+            video: "https://res.cloudinary.com/dzmlgtdvy/video/upload/v1754287128/turfslot_-_mockup_tei7mc.webm",
+            tags: ["Sports", "Booking", "Real-time", "Recreation"],
+            link: "/works/trufslot",
+            demoLink: "https://turfslot.com/",
+            category: "Web App",
             status: "Live",
-            year: 2023,
+            year: 2025,
             duration: "5 months",
             team: 8,
-            technologies: ["Next.js", "Django", "WebRTC", "AWS"],
+            technologies: [
+                "Next.js",
+                "Express.js",
+                "MongoDB",
+                "Socket.io",
+                "Tailwind CSS",
+                "SSL Commerz",
+                "Google Maps API",
+            ],
             features: [
-                "Interactive courses",
-                "Live sessions",
-                "Assessment engine",
-                "Certification",
+                "Sports",
+                "Booking Platform",
+                "Facility Management",
+                "Real-time scheduling",
             ],
             metrics: {
                 users: "50K+",
@@ -238,74 +259,48 @@ const ProjectsPage = () => {
             },
             client: "Turf Facility Owners and Sports Enthusiasts",
             industry: "Sports and Recreation",
-            challenge: "Scalable online learning ecosystem",
-            results:
-                "200% increase in course completion, 95% student satisfaction",
+            challenge:
+                "Connecting sports enthusiasts with turf facilities for seamless booking and management",
+            results: "40% increase in turf bookings, 30% reduction in no-shows",
         },
         {
             id: 7,
-            title: "Social Media Analytics",
+            title: "Kothay ki - Business Listing Website",
             description:
-                "Cross-platform social media performance tracking and insights with automated reporting and competitor analysis",
-            image: "/api/placeholder/600/400",
+                "Explore some of the best place from around the city from our partners and friends.",
+            image: "/kothayki/mockup.jpg",
             video: null,
-            tags: ["Analytics", "Social Media", "Tools", "Marketing"],
+            tags: ["Analytics", "Business", "Marketing", "Sales"],
             link: null,
-            demoLink: "#demo",
+            demoLink: "https://kothayki.com.bd",
             category: "Web App",
-            status: "Development",
+            status: "Beta",
             year: 2024,
-            duration: "6 months",
-            team: 7,
-            technologies: ["React", "GraphQL", "Python", "Docker"],
+            duration: "2 months",
+            team: 2,
+            technologies: [
+                "Vue.js",
+                "Laravel",
+                "MySql",
+                "Google Maps API",
+                "PHP",
+            ],
             features: [
-                "Multi-platform tracking",
-                "Competitor analysis",
-                "Automated reports",
-                "Trend predictions",
+                "Business listings",
+                "User reviews",
+                "Location search",
+                "Analytics dashboard",
             ],
             metrics: {
                 users: "Beta",
                 rating: "N/A",
                 performance: "Testing",
             },
-            client: "MarketingPro Agency",
+            client: null,
             industry: "Marketing",
-            challenge: "Unified social media performance insights",
-            results: "Expected: 45% improvement in campaign ROI",
-        },
-        {
-            id: 8,
-            title: "Invoice Generator Pro",
-            description:
-                "Professional invoicing solution with automated workflows, payment integration, and financial reporting",
-            image: "/api/placeholder/600/400",
-            video: "/api/placeholder/600/400",
-            tags: ["Business", "PDF", "Tools", "Finance"],
-            link: "#case-study",
-            demoLink: null,
-            category: "Web App",
-            status: "Live",
-            year: 2023,
-            duration: "3 months",
-            team: 4,
-            technologies: ["Vue.js", "Laravel", "Stripe", "PDF.js"],
-            features: [
-                "Automated invoicing",
-                "Payment processing",
-                "Financial reports",
-                "Tax calculations",
-            ],
-            metrics: {
-                users: "12K+",
-                rating: 4.7,
-                performance: "99.8%",
-            },
-            client: "FinanceFlow Solutions",
-            industry: "Finance",
-            challenge: "Streamlined invoicing and payment processing",
-            results:
-                "70% faster invoice processing, 50% reduction in payment delays",
+            challenge:
+                "Enhancing local business visibility and customer engagement",
+            results: null,
         },
     ];
 
@@ -340,11 +335,11 @@ const ProjectsPage = () => {
             case "oldest":
                 return a.year - b.year;
             case "rating":
-                return (b.metrics.rating || 0) - (a.metrics.rating || 0);
+                return (b.metrics?.rating || 0) - (a.metrics?.rating || 0);
             case "users":
                 return (
-                    parseInt(b.metrics.users.replace(/\D/g, "") || "0") -
-                    parseInt(a.metrics.users.replace(/\D/g, "") || "0")
+                    parseInt(b.metrics?.users.replace(/\D/g, "") || "0") -
+                    parseInt(a.metrics?.users.replace(/\D/g, "") || "0")
                 );
             default:
                 return 0;
@@ -774,7 +769,7 @@ const ProjectsPage = () => {
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-white mb-0.5">
-                                        {projects.length}+
+                                        50+
                                     </div>
                                     <div className="text-gray-400 text-xs">
                                         Projects
@@ -913,7 +908,7 @@ const ProjectsPage = () => {
                             </div>
 
                             {/* View mode toggle */}
-                            <div className="flex items-center gap-2">
+                            {/* <div className="flex items-center gap-2">
                                 <button
                                     onClick={() => setViewMode("grid")}
                                     className={`p-2 rounded-lg ${
@@ -1016,7 +1011,7 @@ const ProjectsPage = () => {
                                         ></line>
                                     </svg>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

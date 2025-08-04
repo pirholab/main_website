@@ -337,7 +337,7 @@ function Project() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
                     <div className="text-center">
                         <div className="text-2xl font-bold text-white mb-0.5">
-                            09+
+                            50+
                         </div>
                         <div className="text-gray-400 text-xs">Projects</div>
                     </div>

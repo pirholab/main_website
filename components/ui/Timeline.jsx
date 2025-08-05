@@ -78,7 +78,7 @@ export const Timeline = ({ data }) => {
                         </div>
 
                         <div className="relative pl-20 pr-4 md:pl-4 w-full">
-                            <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 ">
+                            <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text opacity-70">
                                 {item.title}
                             </h3>
                             {item.content}{" "}

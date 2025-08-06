@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import Head from "next/head";
 import localFont from "next/font/local";
+import Head from "next/head";
+import { useEffect, useRef, useState } from "react";
 const firacode = localFont({
     src: "../fonts/firacode/FiraCode-Regular.ttf",
 });
@@ -12,6 +12,7 @@ import {
     ArrowRight,
     ArrowUpRight,
     Award,
+    CheckCheck,
     CheckCircle,
     ChevronDown,
     Clock,
@@ -963,7 +964,7 @@ const ProjectsPage = () => {
                                                 {tag}
                                                 {selectedFilter === tag && (
                                                     <span className="ml-1">
-                                                        ✓
+                                                        <CheckCheck className="inline w-3 h-3" />
                                                     </span>
                                                 )}
                                             </button>

@@ -5,10 +5,10 @@ import { Footer } from "@/components/Footer";
 import Navbars from "@/components/Navbars";
 import blogData from "@/db/blogs.json";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import Head from "next/head";
-import { Award, ChartGantt, CheckCheck, Filter } from "lucide-react";
+import { ChartGantt, CheckCheck, Filter } from "lucide-react";
 import localFont from "next/font/local";
+import Head from "next/head";
+import { useEffect, useRef, useState } from "react";
 const firacode = localFont({
     src: "../fonts/firacode/FiraCode-Regular.ttf",
 });
@@ -74,7 +74,7 @@ const Blogs = () => {
 
                     {/* Enhanced background elements */}
                     <div className="absolute inset-0">
-                        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+                        <div className="fixed top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
                         <div
                             className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse"
                             style={{ animationDelay: "2s" }}

@@ -6,7 +6,7 @@ import Link from "next/link";
 export function Footer({ loading, setLoading, trRef }) {
   
   return (
-    <footer className="bg-[url(/footer/footer-bg.svg)] bg-cover  md:bg-right-top bg-left-top  text-white ">
+    <footer className="bg-[url(/footer/footer-bg.svg)] bg-cover bg-no-repeat md:bg-right-top bg-left-top  text-white ">
       <div className="relative flex flex-row items-start justify-end">
         <svg
           id="Layer_1"

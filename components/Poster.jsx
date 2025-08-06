@@ -2,9 +2,9 @@ import Button from "@/components/Button";
 import gsap from "gsap";
 import dynamic from "next/dynamic";
 import { Poppins, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import { useEffect, useRef } from "react";
 import Wave from "../pages/animations/wave.json";
-import localFont from "next/font/local";
 const firacode = localFont({
     src: "../fonts/firacode/FiraCode-Regular.ttf",
 });
@@ -199,7 +199,7 @@ export default function Poster() {
                                 />
                                 Your browser does not support the video tag.
                             </video>
-                            <div className="absolute w-full h-full top-[183px] z-[9999] block sm:hidden"></div>
+                            <div className="absolute w-full h-full top-[183px] z-[1] block sm:hidden"></div>
                         </div>
                         <div className="w-[100%] relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] hidden md:block">
                             <video

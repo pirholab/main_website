@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 import localFont from "next/font/local";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 const firacode = localFont({
     src: "../fonts/firacode/FiraCode-Regular.ttf",
 });
@@ -337,10 +337,10 @@ const LiquidGlassNavbar = ({
                             )}
 
                             {/* Mobile CTA */}
-                            <div className="pt-4 border-t border-white/10">
+                            <div className="pt-4 ">
                                 <Button
                                     href="/contact"
-                                    className="w-full text-center justify-center"
+                                    className="w-full text-center justify-center flex"
                                 >
                                     Get Started
                                 </Button>

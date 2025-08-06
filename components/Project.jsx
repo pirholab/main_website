@@ -450,7 +450,7 @@ function Project() {
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="w-[220px] h-[220px] lg:w-[300px] lg:h-[300px] rounded-full hover:scale-110 transition-all duration-300 ease-in-out pointer-events-auto cursor-pointer circle-responsive">
                             <img
-                                src="/bento/circle.svg"
+                                src="/bento/circle.webp"
                                 alt=""
                                 className="w-full rounded-full animate-spin-slow"
                             />

@@ -39,7 +39,10 @@ export default function ({
 
     return (
         <div
-            className={cn("relative w-fit d-inline", containerClassName)}
+            className={`${cn(
+                "relative w-fit",
+                containerClassName
+            )} inline-block`}
             ref={containerRef}
         >
             {children}
@@ -92,7 +95,7 @@ export default function ({
                     >
                         <Pointer
                             className={cn(
-                                "h-5 w-5 text-blue-500",
+                                "h-5 w-5 text-[#BBA5F4]",
                                 pointerClassName
                             )}
                         />

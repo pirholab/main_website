@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 const firacode = localFont({
     src: "../fonts/firacode/FiraCode-Regular.ttf",
 });
+import PointerHighlight from "@/components/ui/PointerHighlight";
 
 const oswald = Oswald({ subsets: ["latin"] });
 export default function Who() {
@@ -24,8 +25,8 @@ export default function Who() {
                             className=""
                         >
                             <h1 className={`text-white text-xl `}>
-                                <span style={{ color: "#FFB266" }}>🟠</span> Who
-                                we are
+                                <span style={{ color: "#FFB266" }}>🟠</span>
+                                <PointerHighlight>Who we are</PointerHighlight>
                             </h1>
                         </motion.div>
                     </div>

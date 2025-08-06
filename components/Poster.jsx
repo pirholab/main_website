@@ -185,7 +185,7 @@ export default function Poster() {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[100%] relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px]">
+                        <div className="w-[100%] relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] md:hidden">
                             <video
                                 ref={canvaRef}
                                 autoPlay
@@ -194,7 +194,23 @@ export default function Poster() {
                                 className="w-full h-full object-cover"
                             >
                                 <source
-                                    src="/videos/video.mp4"
+                                    src="https://res.cloudinary.com/dzmlgtdvy/video/upload/v1754500488/mobile-preview_aalpz8.webm"
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video tag.
+                            </video>
+                            <div className="absolute w-full h-full top-[183px] z-[9999] block sm:hidden"></div>
+                        </div>
+                        <div className="w-[100%] relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] hidden md:block">
+                            <video
+                                ref={canvaRef}
+                                autoPlay
+                                loop
+                                muted
+                                className="w-full h-full object-cover"
+                            >
+                                <source
+                                    src="https://res.cloudinary.com/dzmlgtdvy/video/upload/v1754500491/Preview_3_nn6ulz.webm"
                                     type="video/mp4"
                                 />
                                 Your browser does not support the video tag.

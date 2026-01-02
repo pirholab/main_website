@@ -31,6 +31,11 @@ const members = [
         skill: "Lead Software Engineer",
     },
     {
+        name: "Md Muzahidul Islam",
+        img: "muzahid.jpeg",
+        skill: "Full Stack Developer",
+    },
+    {
         name: "Hasanuzzaman Roky",
         img: "roky.jpg",
         skill: "Web Developer",
@@ -262,9 +267,8 @@ export default function Home() {
             </div>
             <Footer loading={loading} setLoading={setLoading} trRef={trRef} />
             <div
-                className={`fixed inset-0 bg-[#18181b] h-[150dvh] w-full opacity-80 transition-all duration-300 ${
-                    loading ? " opacity-[1]" : "opacity-[0] pointer-events-none"
-                }`}
+                className={`fixed inset-0 bg-[#18181b] h-[150dvh] w-full opacity-80 transition-all duration-300 ${loading ? " opacity-[1]" : "opacity-[0] pointer-events-none"
+                    }`}
                 style={{ zIndex: 99999999999999, backgroundColor: "#18181b" }}
                 ref={trRef}
             />

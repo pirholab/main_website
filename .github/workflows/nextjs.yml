@@ -58,7 +58,7 @@ jobs:
         with:
           static_site_generator: next
           token: ${{ secrets.GITHUB_TOKEN }}
-          enablement: true
+          enablement: false
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -89,4 +89,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

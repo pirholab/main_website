@@ -10,20 +10,25 @@ import { useEffect, useRef, useState } from "react";
 import Navbars from "../components/Navbars";
 
 const members = [
-  // {
-  //     name: "Farhan Sadik",
-  //     img: "farhan.jpg",
-  //     skill: "Founder & CEO",
-  // },
+  {
+    name: "Farhan Sadik",
+    img: "farhan.jpg",
+    skill: "Founder & CEO",
+  },
   {
     name: "Md Nuruzzaman Emon",
-    img: "emon.jpg",
+    img: "emon.jpeg",
     skill: "Founder & CTO",
   },
   {
     name: "Fahad Ali",
     img: "fahad.jpeg",
     skill: "Co-Founder & Tech Lead",
+  },
+  {
+    name: "Hasanuzzaman Roky",
+    img: "roky.jpg",
+    skill: "Co-Founder & Software Engr.",
   },
   {
     name: "Md Jabed Hasan",
@@ -34,11 +39,6 @@ const members = [
     name: "Md Muzahidul Islam",
     img: "muzahid.jpeg",
     skill: "Full Stack Developer",
-  },
-  {
-    name: "Hasanuzzaman Roky",
-    img: "roky.jpg",
-    skill: "Web Developer",
   },
   {
     name: "Mahmudul Hasan Refatt",
@@ -241,9 +241,8 @@ export default function Home() {
       </div>
       <Footer loading={loading} setLoading={setLoading} trRef={trRef} />
       <div
-        className={`fixed inset-0 bg-[#18181b] h-[150dvh] w-full opacity-80 transition-all duration-300 ${
-          loading ? " opacity-[1]" : "opacity-[0] pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-[#18181b] h-[150dvh] w-full opacity-80 transition-all duration-300 ${loading ? " opacity-[1]" : "opacity-[0] pointer-events-none"
+          }`}
         style={{ zIndex: 99999999999999, backgroundColor: "#18181b" }}
         ref={trRef}
       />

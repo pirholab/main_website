@@ -39,12 +39,12 @@ const CustomCursor = () => {
             cursor.current.x = lerp(
                 cursor.current.x,
                 mouse.current.x + direction.current.x * 5,
-                0.04
+                0.1
             );
             cursor.current.y = lerp(
                 cursor.current.y,
                 mouse.current.y + direction.current.y * 5,
-                0.04
+                0.1
             );
             setRenderCursor({ x: cursor.current.x, y: cursor.current.y });
             requestAnimationFrame(animate);
@@ -108,7 +108,7 @@ const CustomCursor = () => {
                         isPointer ? "scale-150" : "scale-100"
                     }`}
                 >
-                    <div className="w-7 h-7 rounded-full border border-white opacity-25" />
+                    <div className="w-7 h-7 rounded-full border-2 border-white opacity-35" />
                 </div>
             </div>
         </>

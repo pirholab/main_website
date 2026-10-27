@@ -80,7 +80,7 @@ export default function Poster() {
                         />
                     </div>
                     <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-4 pr-4 bg-[#03061c]">
-                        <div className="z-10 top-[50px] absolute w-[95%]">
+                        <div className="z-10 top-[47px] absolute w-[95%]">
                             <div className="gooey-container h-[50dvh]">
                                 <div className="flex">
                                     <div className="relative overflow-hidden ">

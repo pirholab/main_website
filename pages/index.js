@@ -89,7 +89,7 @@ export default function Home() {
                             "@type": "Organization",
                             name: "PiRhoTech",
                             url: "https://pirhotech.com",
-                            logo: "https://pirhotech.com/icon-512.png",
+                            logo: "https://pirhotech.com/android-chrome-512x512.png",
                             description:
                                 "Software development company in Dhaka, Bangladesh building custom web apps, Flutter mobile apps, AI chatbots and business automation.",
                             founder: {

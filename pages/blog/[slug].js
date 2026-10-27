@@ -188,7 +188,7 @@ const BlogPost = ({ blog }) => {
                                 name: "PiRhoTech",
                                 logo: {
                                     "@type": "ImageObject",
-                                    url: "https://pirhotech.com/icon-512.png",
+                                    url: "https://pirhotech.com/android-chrome-512x512.png",
                                 },
                             },
                             mainEntityOfPage: `https://pirhotech.com/blog/${blog.slug}`,

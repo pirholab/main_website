@@ -15,10 +15,10 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
 }
 
-const Index = () => {
+const Index = ({ work }) => {
   const router = useRouter();
-  const { slug } = router.query;
-  const data = Works.filter((e) => e.slug === slug);
+  const slug = work?.slug ?? router.query.slug;
+  const data = work ? [work] : [];
   const [loading, setLoading] = useState(false);
   const trRef = useRef();
   
@@ -346,7 +346,7 @@ const Index = () => {
   return (
     <main 
       ref={containerRef}
-      className="bg-gradient bg-gradient-to-br from-[#0a0a0f] via-[#03061c] to-[#1a1a1f] text-white min-h-screen relative overflow-hidden"
+      className="bg-gradient bg-linear-to-br from-[#0a0a0f] via-[#03061c] to-[#1a1a1f] text-white min-h-screen relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="fixed inset-0 z-0">
@@ -357,7 +357,7 @@ const Index = () => {
 
        <Head>
         {/* Primary Meta Tags */}
-        <title>{data[0]?.title || "PiRhoTech"} - Case Study | PiRhoTech</title>
+        <title>{`${data[0]?.title || "Project"} Case Study | PiRhoTech`}</title>
         <meta
           name="description"
           content={data[0]?.overview || "PiRhoTech project case study showcasing our creative technology solutions."}
@@ -366,11 +366,8 @@ const Index = () => {
         <meta charSet="UTF-8" />
         
         {/* Favicon */}
-        <link rel="icon" type="image/png" href="/favicon.ico" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
         <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
+        <link rel="canonical" href={`https://pirhotech.com/works/${slug}`} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -406,7 +403,7 @@ const Index = () => {
                     {project?.tags?.map((tag, j) => (
                       <span 
                         key={j}
-                        className="tag-item rounded-full bg-gradient-to-r from-[#2a2a30] to-[#2d2d35] px-8 py-3 text-sm font-medium text-blue-300 shadow-lg border border-blue-900/30 backdrop-blur-sm cursor-pointer hover:border-blue-700/50 transition-colors"
+                        className="tag-item rounded-full bg-linear-to-r from-[#2a2a30] to-[#2d2d35] px-8 py-3 text-sm font-medium text-blue-300 shadow-lg border border-blue-900/30 backdrop-blur-xs cursor-pointer hover:border-blue-700/50 transition-colors"
                       >
                         {tag}
                       </span>
@@ -415,7 +412,7 @@ const Index = () => {
                   
                   <h1 
                     ref={titleRef}
-                    className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 leading-tight"
+                    className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 bg-clip-text text-transparent bg-linear-to-r from-blue-400 via-purple-400 to-cyan-400 leading-tight"
                     style={{
                       textShadow: '0 0 40px rgba(59, 130, 246, 0.3)'
                     }}
@@ -461,7 +458,7 @@ const Index = () => {
                 onMouseEnter={(e) => handleImageHover(e, true)}
                 onMouseLeave={(e) => handleImageHover(e, false)}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent z-10"></div>
                 {project?.image && (
                   <Image
                     src={project.image}
@@ -493,13 +490,13 @@ const Index = () => {
               className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl mb-32"
             >
               <div 
-                className="overview-content bg-gradient-to-br from-[#1d1d22]/80 to-[#2a2a30]/80 backdrop-blur-xl rounded-3xl p-16 shadow-2xl border border-gray-700/50 relative overflow-hidden"
+                className="overview-content bg-linear-to-br from-[#1d1d22]/80 to-[#2a2a30]/80 backdrop-blur-xl rounded-3xl p-16 shadow-2xl border border-gray-700/50 relative overflow-hidden"
                 onMouseEnter={(e) => handleCardHover(e, true)}
                 onMouseLeave={(e) => handleCardHover(e, false)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-blue-600/5 to-purple-600/5"></div>
                 <div className="relative z-10">
-                  <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Project Overview</h2>
+                  <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400">Project Overview</h2>
                   <p className="text-2xl text-justify text-gray-300 leading-relaxed mb-16 font-light">
                     {project.description}
                   </p>
@@ -510,7 +507,7 @@ const Index = () => {
                         href={project.demo} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center px-12 py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105"
+                        className="group inline-flex items-center px-12 py-6 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105"
                       >
                         <span className="text-lg">Visit Live Project</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 transform group-hover:translate-x-2 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
@@ -531,11 +528,11 @@ const Index = () => {
               >
                 <div className="grid md:grid-cols-2 gap-12">
                   <div 
-                    className="problem-card bg-gradient-to-br from-red-900/20 to-red-800/10 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-red-700/30 relative overflow-hidden"
+                    className="problem-card bg-linear-to-br from-red-900/20 to-red-800/10 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-red-700/30 relative overflow-hidden"
                     onMouseEnter={(e) => handleCardHover(e, true)}
                     onMouseLeave={(e) => handleCardHover(e, false)}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-red-600/5 to-transparent"></div>
                     <div className="relative z-10">
                       <div className="flex items-center mb-8">
                         <div className="h-16 w-16 bg-red-900/30 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
@@ -552,11 +549,11 @@ const Index = () => {
                   </div>
                   
                   <div 
-                    className="solution-card bg-gradient-to-br from-green-900/20 to-green-800/10 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-green-700/30 relative overflow-hidden"
+                    className="solution-card bg-linear-to-br from-green-900/20 to-green-800/10 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-green-700/30 relative overflow-hidden"
                     onMouseEnter={(e) => handleCardHover(e, true)}
                     onMouseLeave={(e) => handleCardHover(e, false)}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-green-600/5 to-transparent"></div>
                     <div className="relative z-10">
                       <div className="flex items-center mb-8">
                         <div className="h-16 w-16 bg-green-900/30 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
@@ -581,18 +578,18 @@ const Index = () => {
                 ref={featuresRef}
                 className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-32"
               >
-                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Key Features</h2>
+                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-400">Key Features</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {project.keyFeatures.map((feature, index) => (
                     <div 
                       key={index} 
-                      className="feature-card bg-gradient-to-br from-[#1d1d22]/80 to-[#2a2a30]/80 backdrop-blur-xl rounded-2xl p-10 shadow-2xl border border-gray-700/50 relative overflow-hidden group cursor-pointer"
+                      className="feature-card bg-linear-to-br from-[#1d1d22]/80 to-[#2a2a30]/80 backdrop-blur-xl rounded-2xl p-10 shadow-2xl border border-gray-700/50 relative overflow-hidden group cursor-pointer"
                       onMouseEnter={(e) => handleCardHover(e, true)}
                       onMouseLeave={(e) => handleCardHover(e, false)}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/10 group-hover:to-purple-600/10 transition-all duration-500"></div>
+                      <div className="absolute inset-0 bg-linear-to-br from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/10 group-hover:to-purple-600/10 transition-all duration-500"></div>
                       <div className="relative z-10">
-                        <div className="h-16 w-16 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-2xl flex items-center justify-center mb-8 transform group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                        <div className="h-16 w-16 bg-linear-to-br from-blue-600 to-purple-600 text-white rounded-2xl flex items-center justify-center mb-8 transform group-hover:rotate-12 transition-transform duration-300 shadow-lg">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -611,7 +608,7 @@ const Index = () => {
                 ref={galleryRef}
                 className="container mx-auto px-4 sm:px-6 lg:px-8 mb-32"
               >
-                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Project Gallery</h2>
+                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-400">Project Gallery</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {project.extraImages.map((img, index) => (
                     <div 
@@ -621,7 +618,7 @@ const Index = () => {
                       onMouseLeave={(e) => handleImageHover(e, false)}
                     >
                       <div className="relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                     <Image
                           src={img}
                           width={600}
@@ -642,12 +639,12 @@ const Index = () => {
                 ref={techRef}
                 className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl mb-32"
               >
-                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Technologies Used</h2>
+                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-400">Technologies Used</h2>
                 <div className="flex flex-wrap justify-center gap-6">
                   {project.technologies.map((tech, index) => (
                     <span 
                       key={index} 
-                      className="tech-tag px-10 py-5 bg-gradient-to-br from-[#2a2a30] to-[#2d2d35] text-blue-300 rounded-2xl font-semibold shadow-xl border border-blue-900/30 backdrop-blur-lg hover:border-blue-700/50 transition-all duration-300 cursor-pointer text-lg"
+                      className="tech-tag px-10 py-5 bg-linear-to-br from-[#2a2a30] to-[#2d2d35] text-blue-300 rounded-2xl font-semibold shadow-xl border border-blue-900/30 backdrop-blur-lg hover:border-blue-700/50 transition-all duration-300 cursor-pointer text-lg"
                     >
                       {tech}
                     </span>
@@ -660,13 +657,13 @@ const Index = () => {
             {project?.specialFeatures && (
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl mb-32">
                 <div 
-                  className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-xl py-20 px-12 rounded-3xl shadow-2xl border border-purple-700/30 relative overflow-hidden"
+                  className="bg-linear-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-xl py-20 px-12 rounded-3xl shadow-2xl border border-purple-700/30 relative overflow-hidden"
                   onMouseEnter={(e) => handleCardHover(e, true)}
                   onMouseLeave={(e) => handleCardHover(e, false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-purple-600/5 to-blue-600/5"></div>
                   <div className="relative z-10">
-                    <h2 className="text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">What Makes This Project Special</h2>
+                    <h2 className="text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-linear-to-r from-purple-400 to-blue-400">What Makes This Project Special</h2>
                     <p className="text-2xl text-justify text-gray-300 leading-relaxed text-center max-w-4xl mx-auto font-light">
                       {project.specialFeatures}
                     </p>
@@ -681,16 +678,16 @@ const Index = () => {
                 ref={testimonialsRef}
                 className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-32"
               >
-                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Client Testimonials</h2>
+                <h2 className="text-5xl font-bold mb-20 text-center bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-400">Client Testimonials</h2>
                 <div className="grid md:grid-cols-2 gap-10">
                   {project.testimonials.map((testimonial, index) => (
                     <div 
                       key={index}
-                      className="testimonial-card bg-gradient-to-br from-[#1d1d22]/80 to-[#2a2a30]/80 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-gray-700/50 relative overflow-hidden group"
+                      className="testimonial-card bg-linear-to-br from-[#1d1d22]/80 to-[#2a2a30]/80 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-gray-700/50 relative overflow-hidden group"
                       onMouseEnter={(e) => handleCardHover(e, true)}
                       onMouseLeave={(e) => handleCardHover(e, false)}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-linear-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="relative z-10">
                         <div className="mb-8">
                           <svg className="h-12 w-12 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -701,7 +698,7 @@ const Index = () => {
                           {testimonial.quote}
                         </p>
                         <div className="flex items-center">
-                          <div className="h-14 w-14 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full flex items-center justify-center mr-4">
+                          <div className="h-14 w-14 bg-linear-to-br from-blue-600/20 to-purple-600/20 rounded-full flex items-center justify-center mr-4">
                             <span className="text-xl font-bold text-blue-400">
                               {testimonial.author[0]}
                             </span>
@@ -727,13 +724,13 @@ const Index = () => {
                 className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl mb-32"
               >
                 <div 
-                  className="future-plans-card bg-gradient-to-br from-cyan-900/20 to-blue-900/20 backdrop-blur-xl py-20 px-12 rounded-3xl shadow-2xl border border-cyan-700/30 relative overflow-hidden"
+                  className="future-plans-card bg-linear-to-br from-cyan-900/20 to-blue-900/20 backdrop-blur-xl py-20 px-12 rounded-3xl shadow-2xl border border-cyan-700/30 relative overflow-hidden"
                   onMouseEnter={(e) => handleCardHover(e, true)}
                   onMouseLeave={(e) => handleCardHover(e, false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/5 to-blue-600/5"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-cyan-600/5 to-blue-600/5"></div>
                   <div className="relative z-10">
-                    <h2 className="text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">Future Plans</h2>
+                    <h2 className="text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-blue-400">Future Plans</h2>
                     <p className="text-2xl text-gray-300 leading-relaxed text-justify max-w-4xl mx-auto font-light">
                       {project.futurePlans}
                     </p>
@@ -748,11 +745,11 @@ const Index = () => {
               className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center mb-32"
             >
               <div 
-                className="cta-content bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 rounded-3xl p-16 shadow-2xl relative overflow-hidden group"
+                className="cta-content bg-linear-to-br from-blue-600 via-purple-600 to-cyan-600 rounded-3xl p-16 shadow-2xl relative overflow-hidden group"
                 onMouseEnter={(e) => handleCardHover(e, true)}
                 onMouseLeave={(e) => handleCardHover(e, false)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <h2 className="text-5xl font-bold mb-8 text-white">
                     Interested in working with us?
@@ -762,7 +759,7 @@ const Index = () => {
                   </p>
                   <Link 
                     href="/contact" 
-                    className="group inline-flex items-center px-12 py-6 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-2xl hover:bg-white/20 transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 border border-white/20"
+                    className="group inline-flex items-center px-12 py-6 bg-white/10 backdrop-blur-xs text-white font-semibold rounded-2xl hover:bg-white/20 transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 border border-white/20"
                   >
                     <span className="text-xl">Contact Us</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 transform group-hover:translate-x-2 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
@@ -778,6 +775,19 @@ const Index = () => {
       <Footer />
     </main>
   );
+};
+
+// Pre-render every case study so search engines get the full content in the HTML
+export const getStaticPaths = () => ({
+  paths: Works.filter((e) => e.image).map((e) => ({ params: { slug: e.slug } })),
+  fallback: false,
+});
+
+export const getStaticProps = ({ params }) => {
+  const work = Works.find((e) => e.slug === params.slug);
+  if (!work) return { notFound: true };
+  // Strip undefined values, which Next.js can't serialize
+  return { props: { work: JSON.parse(JSON.stringify(work)) } };
 };
 
 export default Index;

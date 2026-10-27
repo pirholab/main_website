@@ -14,72 +14,47 @@ const PrivacyPolicy = () => {
     <main>
        <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhoTech-Privacy</title>
+        <title>Privacy Policy | PiRhoTech</title>
+        <link rel="canonical" href="https://pirhotech.com/privacy" />
         <meta
           name="description"
-          content=""
+          content="How PiRhoTech collects, uses and protects your information."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon.ico"
-          sizes="96x96"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/logo.png"
-        />
-        <meta name="apple-mobile-web-app-title" content="PiRhoTech.com" />
+        <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
         
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon.ico"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon.ico"
-        />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="PirRhotech.com" />
+        <meta property="og:title" content="Privacy Policy | PiRhoTech" />
         <meta
           property="og:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="How PiRhoTech collects, uses and protects your information."
         />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:url" content="https://yourwebsite.com" />
+        <meta property="og:image" content="https://pirhotech.com/og-image.png" />
+        <meta property="og:url" content="https://pirhotech.com/privacy" />
         <meta property="og:type" content="website" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PirRhotech.com" />
+        <meta name="twitter:title" content="Privacy Policy | PiRhoTech" />
         <meta
           name="twitter:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="How PiRhoTech collects, uses and protects your information."
         />
-        <meta name="twitter:image" content="/logo.png" />
+        <meta name="twitter:image" content="https://pirhotech.com/og-image.png" />
 
         {/* Keywords */}
         <meta
           name="keywords"
-          content="Next.js, SEO, favicon, web development, branding"
+          content="software development company in Bangladesh, web development company Bangladesh, mobile app development company, Flutter app development, AI chatbot development, business automation services, custom software development, Shopify app development, offshore software development, PiRhoTech, Solidy.io"
         />
 
         {/* Author */}
-        <meta name="author" content="Your Name or Company Name" />
+        <meta name="author" content="PiRhoTech" />
       </Head>
       <Navbars loading={loading} setLoading={setLoading} trRef={trRef}  />
       <div className="mt-[100px] py-10 px-6">

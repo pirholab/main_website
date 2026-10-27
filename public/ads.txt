@@ -1,0 +1,2 @@
+# pirhotech.com does not sell ad space. Placeholder record per the IAB ads.txt spec.
+placeholder.example.com, placeholder, DIRECT, placeholder

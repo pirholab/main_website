@@ -82,7 +82,7 @@ const CoverPageGenerator = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       <Head>
         <title>Cover Page Generator - Professional Assignment Cover Pages | PiRhoTech</title>
         <meta
@@ -93,9 +93,6 @@ const CoverPageGenerator = () => {
         <meta charSet="UTF-8" />
         
         {/* Favicon */}
-        <link rel="icon" type="image/png" href="/favicon.ico" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -153,9 +150,9 @@ const CoverPageGenerator = () => {
 
       {/* Animated Background */}
       <div className="fixed inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500 to-blue-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-linear-to-r from-purple-500 to-pink-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-linear-to-r from-green-500 to-blue-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
 
       {/* Floating Particles */}
@@ -163,7 +160,7 @@ const CoverPageGenerator = () => {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-[#007d7c] to-cyan-400 rounded-full opacity-20"
+            className="absolute w-2 h-2 bg-linear-to-r from-[#007d7c] to-cyan-400 rounded-full opacity-20"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -179,10 +176,10 @@ const CoverPageGenerator = () => {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-lg flex items-center justify-center">
                 <img className="h-8" src="/cover-page-logo.svg" alt="Cover Page Generator Logo"  />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-[#007d7c] to-cyan-400 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-linear-to-r from-[#007d7c] to-cyan-400 bg-clip-text text-transparent">
                 Cover Page Generator
               </span>
             </div>
@@ -190,7 +187,7 @@ const CoverPageGenerator = () => {
               href="https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-full hover:from-[#006665] hover:to-cyan-600 transition-all duration-300 flex items-center space-x-2 group"
+              className="px-6 py-3 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-full hover:from-[#006665] hover:to-cyan-600 transition-all duration-300 flex items-center space-x-2 group"
             >
               <FaGooglePlay className="w-5 h-5 group-hover:scale-110 transition-transform" />
               <span className="font-semibold">Download</span>
@@ -207,14 +204,14 @@ const CoverPageGenerator = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#007d7c]/20 to-cyan-500/20 px-4 py-2 rounded-full border border-[#007d7c]/30">
+                <div className="inline-flex items-center space-x-2 bg-linear-to-r from-[#007d7c]/20 to-cyan-500/20 px-4 py-2 rounded-full border border-[#007d7c]/30">
                   <Sparkles className="w-5 h-5 text-[#007d7c]" />
                   <span className="text-sm font-medium text-[#007d7c]">9,000+ Downloads</span>
                 </div>
                 
                 <h1 className="text-5xl lg:text-7xl font-black leading-tight">
                   Create
-                  <span className="block bg-gradient-to-r from-[#007d7c] via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <span className="block bg-linear-to-r from-[#007d7c] via-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     Professional
                   </span>
                   Cover Pages
@@ -231,7 +228,7 @@ const CoverPageGenerator = () => {
                   href="https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-2xl hover:from-[#006665] hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#007d7c]/25"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-2xl hover:from-[#006665] hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#007d7c]/25"
                 >
                   <FaGooglePlay className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
                   <span className="font-bold text-lg">Download on Play Store</span>
@@ -255,30 +252,30 @@ const CoverPageGenerator = () => {
             <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="relative">
                 {/* Phone Mockup */}
-                <div className="relative mx-auto w-80 h-[600px] bg-gradient-to-b from-slate-800 to-slate-900 rounded-[3rem] p-3 shadow-2xl">
+                <div className="relative mx-auto w-80 h-[600px] bg-linear-to-b from-slate-800 to-slate-900 rounded-[3rem] p-3 shadow-2xl">
                   <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#007d7c]/10 to-cyan-500/10"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-[#007d7c]/10 to-cyan-500/10"></div>
                     <div className="relative z-10 p-8 flex flex-col items-center justify-center h-full">
-                      <div className="w-16 h-16 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                      <div className="w-16 h-16 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
                       <img className="h-10" src="/cover-page-logo.svg" alt="Cover Page Generator Logo"  />
                       </div>
                       <h3 className="text-2xl font-bold text-slate-800 mb-2">Cover Page Generator</h3>
                       <p className="text-slate-600 text-center mb-8">Professional cover pages in seconds</p>
                       
                       <div className="space-y-4 w-full">
-                        <div className="bg-gradient-to-r from-[#007d7c]/20 to-cyan-500/20 p-4 rounded-xl">
+                        <div className="bg-linear-to-r from-[#007d7c]/20 to-cyan-500/20 p-4 rounded-xl">
                           <div className="flex items-center space-x-3">
                             <Check className="w-5 h-5 text-[#007d7c]" />
                             <span className="text-slate-700">University Templates</span>
                           </div>
                         </div>
-                        <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 p-4 rounded-xl">
+                        <div className="bg-linear-to-r from-green-500/20 to-emerald-500/20 p-4 rounded-xl">
                           <div className="flex items-center space-x-3">
                             <Check className="w-5 h-5 text-green-600" />
                             <span className="text-slate-700">PDF Export</span>
                           </div>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-4 rounded-xl">
+                        <div className="bg-linear-to-r from-purple-500/20 to-pink-500/20 p-4 rounded-xl">
                           <div className="flex items-center space-x-3">
                             <Check className="w-5 h-5 text-purple-600" />
                             <span className="text-slate-700">Direct Sharing</span>
@@ -290,8 +287,8 @@ const CoverPageGenerator = () => {
                 </div>
 
                 {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-linear-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>
@@ -320,7 +317,7 @@ const CoverPageGenerator = () => {
                 style={{animationDelay: `${index * 100}ms`}}
                 onMouseEnter={() => setActiveFeature(index)}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 bg-linear-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -333,7 +330,7 @@ const CoverPageGenerator = () => {
                 </p>
 
                 {/* Hover Glow Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
+                <div className={`absolute inset-0 bg-linear-to-r ${feature.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
               </div>
             ))}
           </div>
@@ -362,7 +359,7 @@ const CoverPageGenerator = () => {
                 style={{transitionDelay: screenshot.delay}}
               >
                 <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 group-hover:bg-slate-800/80 transition-all duration-300">
-                  <div className="aspect-[9/16] rounded-xl overflow-hidden relative">
+                  <div className="aspect-9/16 rounded-xl overflow-hidden relative">
                     <Image
                       src={screenshot.src}
                       alt={`Cover Page Generator Screenshot ${screenshot.id}`}
@@ -374,7 +371,7 @@ const CoverPageGenerator = () => {
                 </div>
                 
                 {/* Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#007d7c] to-cyan-500 opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-[#007d7c] to-cyan-500 opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-300"></div>
               </div>
             ))}
           </div>
@@ -383,7 +380,7 @@ const CoverPageGenerator = () => {
 
       {/* CTA Section */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#007d7c]/20 to-cyan-500/20"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-[#007d7c]/20 to-cyan-500/20"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl lg:text-6xl font-black mb-6">
@@ -397,7 +394,7 @@ const CoverPageGenerator = () => {
             href="https://play.google.com/store/apps/details?id=com.pirhotech.coverpagegenerator"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-2xl hover:from-[#006665] hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#007d7c]/25 text-xl font-bold"
+            className="group inline-flex items-center justify-center px-12 py-6 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-2xl hover:from-[#006665] hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#007d7c]/25 text-xl font-bold"
           >
             <FaGooglePlay className="w-8 h-8 mr-4 group-hover:scale-110 transition-transform" />
             Download Now - It's Free!
@@ -410,7 +407,7 @@ const CoverPageGenerator = () => {
       <section className="relative pt-28 ">
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden rounded-2xl shadow-xl">
-            <div className="relative aspect-[21/9] w-full">
+            <div className="relative aspect-21/9 w-full">
               <img
                 src="/cover-page-generator/banner.png"
                 alt="Cover Page Generator"
@@ -455,10 +452,10 @@ const CoverPageGenerator = () => {
       <footer className="py-12 px-6 border-t border-slate-700/50">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#007d7c] to-cyan-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-linear-to-r from-[#007d7c] to-cyan-500 rounded-lg flex items-center justify-center">
             <img className="h-5" src="/cover-page-logo.svg" alt="Cover Page Generator Logo"  />
             </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-[#007d7c] to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-lg font-bold bg-linear-to-r from-[#007d7c] to-cyan-400 bg-clip-text text-transparent">
               Cover Page Generator
             </span>
           </div>

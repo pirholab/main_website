@@ -24,13 +24,13 @@ export default function BlogCard({
             className="relative flex flex-col bg-gray-900/60 backdrop-blur-xl rounded-3xl overflow-hidden hover:-translate-y-3 border border-gray-800/50 hover:border-purple-500/40 shadow-lg hover:shadow-xl  hover:shadow-purple-500/20 transition-all duration-700 h-full  group"
         >
             {/* <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none group-hover:animate-pulse">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-sm" />
+                <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-xs" />
             </div> */}
 
             {/* Enhanced accent shapes */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-purple-500/30 to-orange-500/30 rounded-full blur-2xl group-hover:from-purple-500/50 group-hover:to-orange-500/50 transition-all duration-700"></div>
-            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-tr from-orange-500/20 to-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-all duration-700"></div>
-            <div className="absolute top-1/2 right-0 w-16 h-16 bg-gradient-to-l from-purple-500/10 to-transparent rounded-full blur-lg"></div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-br from-purple-500/30 to-orange-500/30 rounded-full blur-2xl group-hover:from-purple-500/50 group-hover:to-orange-500/50 transition-all duration-700"></div>
+            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-linear-to-tr from-orange-500/20 to-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-all duration-700"></div>
+            <div className="absolute top-1/2 right-0 w-16 h-16 bg-linear-to-l from-purple-500/10 to-transparent rounded-full blur-lg"></div>
 
             <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -45,20 +45,20 @@ export default function BlogCard({
                     priority={true}
                 />
             </div>
-            <div className="p-5 flex flex-col flex-grow">
+            <div className="p-5 flex flex-col grow">
                 <div className="flex justify-between items-center mb-2 text-sm text-zinc-400">
                     <span>{author}</span>
                     <span>{date}</span>
                 </div>
-                <h3 className="text-xl mb-2 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 group-hover:bg-clip-text">
+                <h3 className="text-xl mb-2 text-white group-hover:text-transparent group-hover:bg-linear-to-r group-hover:from-purple-400 group-hover:to-orange-400 group-hover:bg-clip-text">
                     {title}
                 </h3>
-                <p className="text-zinc-400 mb-4 flex-grow">{description}</p>
+                <p className="text-zinc-400 mb-4 grow">{description}</p>
                 <div className="flex gap-2 flex-wrap mb-4">
                     {tags?.map((tag, i) => (
                         <span
                             key={i}
-                            className={`px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300 ${firacode.className}`}
+                            className={`px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded-sm border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300 ${firacode.className}`}
                         >
                             {tag}
                         </span>

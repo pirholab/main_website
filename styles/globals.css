@@ -1,8 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Public+Sans:wght@100&display=swap')
+layer(base);
+@import 'tailwindcss';
 
-/* :root {
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --breakpoint-sml: 375px;
+  --breakpoint-smll: 425px;
+  --breakpoint-semi: 849px;
+  --breakpoint-ss: 439px;
+  --breakpoint-dm: 875px;
+  --breakpoint-smm: 590px;
+  --breakpoint-sms: 772px;
+  --breakpoint-lgl: 1157px;
+  --breakpoint-mlg: 1340px;
+
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+  --animate-spin-slow: spin 10s linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer utilities {
+  /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -16,127 +67,132 @@
   }
 } */
 
-:root {
-  background-color: #03061c;
-  color: white;
-  --gap: 20px;
-}
-
-html {
-  background-color: #03061c;
-}
-
-body {
-  background-color: #03061c;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-/* Blog post styling */
-.prose {
-  /* Headings */
-  h2 {
-    @apply text-2xl sm:text-3xl font-bold mb-6 mt-10 text-white;
-    @apply border-b border-zinc-800 pb-3;
+  :root {
+    background-color: #03061c;
+    color: white;
+    --gap: 20px;
   }
 
-  h3 {
-    @apply text-xl sm:text-2xl font-semibold mb-4 mt-8 text-white;
+  html {
+    background-color: #03061c;
   }
 
-  h4 {
-    @apply text-lg sm:text-xl font-medium mb-3 mt-6 text-cyan-300;
+  body {
+    background-color: #03061c;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Open Sans',
+      'Helvetica Neue',
+      sans-serif;
   }
 
-  /* Paragraphs */
-  p {
-    @apply text-zinc-300 mb-5 leading-relaxed;
-  }
+  /* Blog post styling */
+  .prose {
+    /* Headings */
+    h2 {
+      @apply text-2xl sm:text-3xl font-bold mb-6 mt-10 text-white;
+      @apply border-b border-zinc-800 pb-3;
+    }
 
-  /* Lists */
-  ul,
-  ol {
-    @apply mb-6 pl-6 text-zinc-300;
+    h3 {
+      @apply text-xl sm:text-2xl font-semibold mb-4 mt-8 text-white;
+    }
 
-    li {
-      @apply mb-2;
+    h4 {
+      @apply text-lg sm:text-xl font-medium mb-3 mt-6 text-cyan-300;
+    }
 
-      &::before {
-        @apply text-cyan-400;
+    /* Paragraphs */
+    p {
+      @apply text-zinc-300 mb-5 leading-relaxed;
+    }
+
+    /* Lists */
+    ul,
+    ol {
+      @apply mb-6 pl-6 text-zinc-300;
+
+      li {
+        @apply mb-2;
+
+        &::before {
+          @apply text-cyan-400;
+        }
       }
     }
-  }
 
-  ul {
-    @apply list-disc;
-  }
+    ul {
+      @apply list-disc;
+    }
 
-  ol {
-    @apply list-decimal;
-  }
+    ol {
+      @apply list-decimal;
+    }
 
-  /* Code blocks */
-  pre {
-    @apply my-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700/50 overflow-x-auto;
+    /* Code blocks */
+    pre {
+      @apply my-6 p-4 rounded-lg bg-zinc-800/50 border border-zinc-700/50 overflow-x-auto;
 
+      code {
+        @apply bg-transparent p-0 text-sm text-zinc-300 font-mono;
+      }
+    }
+
+    /* Inline code */
     code {
-      @apply bg-transparent p-0 text-sm text-zinc-300 font-mono;
+      @apply bg-zinc-800 text-cyan-300 rounded-sm px-1.5 py-0.5 text-sm font-mono;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      @apply border-l-4 border-cyan-500 pl-4 italic my-6 text-zinc-400;
+
+      p {
+        @apply text-zinc-400;
+      }
+    }
+
+    /* Links */
+    a {
+      @apply text-cyan-400 hover:text-cyan-300 transition-colors underline;
+    }
+
+    /* Horizontal rule */
+    hr {
+      @apply my-8 border-zinc-800;
     }
   }
 
-  /* Inline code */
-  code {
-    @apply bg-zinc-800 text-cyan-300 rounded px-1.5 py-0.5 text-sm font-mono;
+  .navanimation {
+    display: inline-block;
+    position: relative;
+    color: white;
   }
 
-  /* Blockquotes */
-  blockquote {
-    @apply border-l-4 border-cyan-500 pl-4 italic my-6 text-zinc-400;
-
-    p {
-      @apply text-zinc-400;
-    }
+  .navanimation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    /* background-color: #085fe2; */
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
   }
 
-  /* Links */
-  a {
-    @apply text-cyan-400 hover:text-cyan-300 transition-colors underline;
-  }
-
-  /* Horizontal rule */
-  hr {
-    @apply my-8 border-zinc-800;
-  }
-}
-
-.navanimation {
-  display: inline-block;
-  position: relative;
-  color: white;
-}
-
-.navanimation::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  /* background-color: #085fe2; */
-  background-color: white;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.navanimation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .navanimation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }
 
@@ -245,7 +301,6 @@ body {
   white-space: nowrap; /* Prevent text from wrapping */
   animation: RightToLeft 10s linear infinite; /* Adjust duration as needed */
 }
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Public+Sans:wght@100&display=swap");
 
 .a-section {
   padding: 3em 3% 0;
@@ -377,7 +432,7 @@ body {
   }
 }
 
-// Animation of plane
+/* Animation of plane */
 /* Define custom properties for button styling */
 .button {
   --primary: #f6f8ff;
@@ -554,7 +609,7 @@ body {
 /* Styles for animation trails */
 .button .trails {
   display: block;
-  // width: 33px;
+  /* width: 33px; */
   height: 64px;
   top: -4px;
   left: 16px;
@@ -591,7 +646,7 @@ body {
 .button span.success svg {
   display: inline-block;
   vertical-align: top;
-  // width: 16px;
+  /* width: 16px; */
   height: 16px;
   margin: 4px 8px 0 0;
   fill: none;

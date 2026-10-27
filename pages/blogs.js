@@ -8,28 +8,18 @@ import { motion } from "framer-motion";
 import { ChartGantt, CheckCheck, Filter } from "lucide-react";
 import localFont from "next/font/local";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 const firacode = localFont({
     src: "../fonts/firacode/FiraCode-Regular.ttf",
 });
 
 const Blogs = () => {
-    const [blogs, setBlogs] = useState([]);
+    // Read blog data directly so posts are in the server-rendered HTML
+    const blogs = blogData;
+    const allTags = ["All", ...new Set(blogData.flatMap((blog) => blog.tags))];
     const [activeTag, setActiveTag] = useState("All");
-    const [allTags, setAllTags] = useState(["All"]);
     const [loading, setLoading] = useState(false);
     const trRef = useRef(null);
-
-    useEffect(() => {
-        setBlogs(blogData);
-
-        // Extract unique tags
-        const tags = new Set(["All"]);
-        blogData.forEach((blog) => {
-            blog.tags.forEach((tag) => tags.add(tag));
-        });
-        setAllTags([...tags]);
-    }, []);
 
     const filteredBlogs =
         activeTag === "All"
@@ -53,7 +43,18 @@ const Blogs = () => {
     return (
         <>
             <Head>
-                <title>Blogs - PirhoTech</title>
+                <title>Blog | Software, AI &amp; Automation Insights | PiRhoTech</title>
+                <meta name="description" content="Practical guides on custom software, AI chatbots, business automation, Flutter apps and Shopify development, written by the PiRhoTech engineering team." />
+                <meta property="og:title" content="Blog | Software, AI &amp; Automation Insights | PiRhoTech" />
+                <meta property="og:description" content="Practical guides on custom software, AI chatbots, business automation, Flutter apps and Shopify development, written by the PiRhoTech engineering team." />
+                <meta property="og:url" content="https://pirhotech.com/blogs" />
+                <meta name="twitter:title" content="Blog | Software, AI &amp; Automation Insights | PiRhoTech" />
+                <meta name="twitter:description" content="Practical guides on custom software, AI chatbots, business automation, Flutter apps and Shopify development, written by the PiRhoTech engineering team." />
+                <meta name="keywords" content="software development company in Bangladesh, web development company Bangladesh, mobile app development company, Flutter app development, AI chatbot development, business automation services, custom software development, Shopify app development, offshore software development, PiRhoTech, Solidy.io" />
+                <meta name="author" content="PiRhoTech" />
+                <meta property="og:image" content="https://pirhotech.com/og-image.png" />
+                <meta name="twitter:image" content="https://pirhotech.com/og-image.png" />
+                <link rel="canonical" href="https://pirhotech.com/blogs" />
             </Head>
             <Navbars loading={loading} setLoading={setLoading} trRef={trRef} />
             <div className="min-h-screen  pt-24 pb-16 px-4 sm:px-6 lg:px-8 mt-[60px]">
@@ -79,8 +80,8 @@ const Blogs = () => {
                             className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse"
                             style={{ animationDelay: "2s" }}
                         ></div>
-                        <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full blur-2xl"></div>
-                        <div className="absolute top-1/3 right-0 w-48 h-48 bg-gradient-to-l from-orange-500/15 to-purple-500/15 rounded-full blur-2xl"></div>
+                        <div className="absolute top-1/2 left-0 w-64 h-64 bg-linear-to-r from-purple-500/10 to-orange-500/10 rounded-full blur-2xl"></div>
+                        <div className="absolute top-1/3 right-0 w-48 h-48 bg-linear-to-l from-orange-500/15 to-purple-500/15 rounded-full blur-2xl"></div>
 
                         {/* Animated grid */}
                         <div className="absolute inset-0 opacity-[0.02]">
@@ -104,9 +105,9 @@ const Blogs = () => {
                         </div>
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
                             From Code{" "}
-                            <span className="text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
+                            <span className="text-transparent bg-linear-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
                                 to Creativity
-                                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
+                                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
                             </span>
                         </h1>
                         <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
@@ -127,11 +128,11 @@ const Blogs = () => {
                                 <button
                                     key={index}
                                     onClick={() => handleTagFilter(tag)}
-                                    className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
+                                    className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
                                         firacode.className
                                     } ${
                                         activeTag === tag
-                                            ? "bg-gradient-to-r from-purple-600 to-orange-600 text-white"
+                                            ? "bg-linear-to-r from-purple-600 to-orange-600 text-white"
                                             : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50"
                                     }`}
                                 >
@@ -184,7 +185,7 @@ const Blogs = () => {
             <Footer />
             <div
                 ref={trRef}
-                className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
+                className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-99999999999999"
                 style={{ transform: "translateY(100%)" }}
             ></div>
         </>

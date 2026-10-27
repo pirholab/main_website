@@ -98,53 +98,47 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={`relative z-[999]`}>
+    <main className={`relative z-999`}>
       <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhoTech - About</title>
-        <meta name="description" content="" />
+        <title>About PiRhoTech | Software Development Team in Dhaka, Bangladesh</title>
+        <link rel="canonical" href="https://pirhotech.com/about" />
+        <meta name="description" content="Meet the PiRhoTech team: engineers, designers and AI specialists in Dhaka building web apps, mobile apps and automation. International clients work with us as Solidy.io." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
-        <link rel="icon" type="image/png" href="/favicon.ico" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
-        <meta name="apple-mobile-web-app-title" content="PiRhoTech.com" />
+        <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
 
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="PirRhotech.com" />
+        <meta property="og:title" content="About PiRhoTech | Software Development Team in Dhaka, Bangladesh" />
         <meta
           property="og:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="Meet the PiRhoTech team: engineers, designers and AI specialists in Dhaka building web apps, mobile apps and automation. International clients work with us as Solidy.io."
         />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:url" content="https://yourwebsite.com" />
+        <meta property="og:image" content="https://pirhotech.com/og-image.png" />
+        <meta property="og:url" content="https://pirhotech.com/about" />
         <meta property="og:type" content="website" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PirRhotech.com" />
+        <meta name="twitter:title" content="About PiRhoTech | Software Development Team in Dhaka, Bangladesh" />
         <meta
           name="twitter:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="Meet the PiRhoTech team: engineers, designers and AI specialists in Dhaka building web apps, mobile apps and automation. International clients work with us as Solidy.io."
         />
-        <meta name="twitter:image" content="/logo.png" />
+        <meta name="twitter:image" content="https://pirhotech.com/og-image.png" />
 
         {/* Keywords */}
         <meta
           name="keywords"
-          content="Next.js, SEO, favicon, web development, branding"
+          content="software development company in Bangladesh, web development company Bangladesh, mobile app development company, Flutter app development, AI chatbot development, business automation services, custom software development, Shopify app development, offshore software development, PiRhoTech, Solidy.io"
         />
 
         {/* Author */}
-        <meta name="author" content="Your Name or Company Name" />
+        <meta name="author" content="PiRhoTech" />
       </Head>
       <Navbars loading={loading} setLoading={setLoading} trRef={trRef} />
       <div
@@ -176,7 +170,7 @@ export default function Home() {
                 <div className="absolute w-full bottom-0 flex flex-col items-start">
                   <svg
                     id="Layer_1"
-                    className="w-[30px] rotate-[180deg] relative bottom-0"
+                    className="w-[30px] rotate-180 relative bottom-0"
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
                     x="0"
@@ -191,11 +185,11 @@ export default function Home() {
                   <div className="bottom-0 flex items-end">
                     <div className="p-[15px] pl-[30px] bg-[#03061c] rounded-tr-[30px]">
                       <h1 className="text-xl">{e.name}</h1>
-                      <p className="font-[100] opacity-[0.5]">{e.skill}</p>
+                      <p className="font-thin opacity-[0.5]">{e.skill}</p>
                     </div>
                     <svg
                       id="Layer_1"
-                      className="w-[30px] rotate-[180deg] relative bottom-0"
+                      className="w-[30px] rotate-180 relative bottom-0"
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
                       x="0"
@@ -218,7 +212,7 @@ export default function Home() {
             <span>Bringing Your Dreams to Life</span>{" "}
           </h1>
           <br />
-          <p className="text-xl font-[100] opacity-[0.7]">
+          <p className="text-xl font-thin opacity-[0.7]">
             At PiRhoTech, we truly care about your work and the impact it has.
             Our team is committed to delivering high-quality results with
             creativity and precision. We work closely with you to understand
@@ -233,7 +227,7 @@ export default function Home() {
           </h1>
           <div className="flex items-center">
             <h1 className="text-[2rem]">{"Let's talk"}</h1>
-            <Button className="block w-fit bg-black relative left-[11px] top-[0px] p-[10px] rounded-[10px] border-none">
+            <Button className="block w-fit bg-black relative left-[11px] top-0 p-[10px] rounded-[10px] border-none">
               Contact Us
             </Button>
           </div>

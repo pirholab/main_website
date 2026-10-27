@@ -23,7 +23,7 @@ export function ProjectCard(props) {
       className={`group relative overflow-hidden bg-transparent transition-all duration-500 hover:shadow-2xl md:rounded-3xl ${className}`}
     >
       <div
-        className={`relative z-10 h-[100%] flex w-[95%] rounded-2xl bg-transparent text-center md:bg-zinc-700 md:w-full flex-col ${contStyle}`}
+        className={`relative z-10 h-full flex w-[95%] rounded-2xl bg-transparent text-center md:bg-zinc-700 md:w-full flex-col ${contStyle}`}
       >
         <div className="flex items-center md:items-start flex-row">
           <div className="flex items-start">
@@ -33,7 +33,7 @@ export function ProjectCard(props) {
             {gooyey && (
               <svg
                 id="Layer_1"
-                className="w-[30px] rotate-[270deg] relative bottom-0"
+                className="w-[30px] rotate-270 relative bottom-0"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 x="0"

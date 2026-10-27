@@ -102,11 +102,11 @@ export function ProjectCard(props) {
 
             {/* Border glow effect */}
             <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-sm" />
+                <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-xs" />
             </div>
 
             <div
-                className={`relative z-10 h-[100%] flex w-[95%] rounded-2xl bg-transparent text-center md:bg-zinc-700/80 md:backdrop-blur-sm md:w-full flex-col border border-zinc-600/30 ${contStyle} transition-all duration-500 group-hover:bg-zinc-700/90 group-hover:border-zinc-500/50`}
+                className={`relative z-10 h-full flex w-[95%] rounded-2xl bg-transparent text-center md:bg-zinc-700/80 md:backdrop-blur-xs md:w-full flex-col border border-zinc-600/30 ${contStyle} transition-all duration-500 group-hover:bg-zinc-700/90 group-hover:border-zinc-500/50`}
             >
                 <div className="flex items-center md:items-start flex-row p-4 md:p-6">
                     <div className="flex items-start relative">
@@ -122,7 +122,7 @@ export function ProjectCard(props) {
                             <div className="relative ml-2 transition-transform duration-300 group-hover:rotate-45">
                                 <svg
                                     id="Layer_1"
-                                    className="w-[30px] rotate-[270deg] relative bottom-0 transition-all duration-300 group-hover:fill-blue-400"
+                                    className="w-[30px] rotate-270 relative bottom-0 transition-all duration-300 group-hover:fill-blue-400"
                                     version="1.1"
                                     xmlns="http://www.w3.org/2000/svg"
                                     x="0"
@@ -145,7 +145,7 @@ export function ProjectCard(props) {
                     className="w-full h-full absolute inset-0 rounded-2xl overflow-hidden"
                     style={{ zIndex: -1 }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent z-10" />
 
                     {vid ? (
                         <video
@@ -182,7 +182,7 @@ export function ProjectCard(props) {
 
                 {/* Content overlay */}
                 {description && (
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-linear-to-t from-black/80 to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                         <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                             {description}
                         </p>
@@ -240,7 +240,7 @@ function Project() {
     //       "Interactive visualization of neural network architectures with real-time training data",
     //     textBody: "AI/ML • Visualization",
     //     className:
-    //       "md:col-span-2 md:row-span-2 bg-gradient-to-br from-blue-900/20 to-purple-900/20",
+    //       "md:col-span-2 md:row-span-2 bg-linear-to-br from-blue-900/20 to-purple-900/20",
     //     textStyle: "text-blue-400 font-bold",
     //     gooyey: true,
     //     slug: "neural-visualizer",
@@ -252,7 +252,7 @@ function Project() {
     //     title: "3D Portfolio",
     //     textBody: "WebGL • Three.js",
     //     className:
-    //       "md:col-span-2 bg-gradient-to-r from-green-900/20 to-teal-900/20",
+    //       "md:col-span-2 bg-linear-to-r from-green-900/20 to-teal-900/20",
     //     textStyle: "text-green-400 font-semibold",
     //     gooyey: false,
     //   },
@@ -262,7 +262,7 @@ function Project() {
     //       "Full-stack e-commerce solution with modern payment integration",
     //     textBody: "React • Node.js • Stripe",
     //     className:
-    //       "md:col-span-2 md:row-span-2 bg-gradient-to-bl from-orange-900/20 to-red-900/20",
+    //       "md:col-span-2 md:row-span-2 bg-linear-to-bl from-orange-900/20 to-red-900/20",
     //     textStyle: "text-orange-400 font-bold",
     //     gooyey: true,
     //     slug: "ecommerce-platform",
@@ -274,7 +274,7 @@ function Project() {
     //     title: "Mobile App",
     //     textBody: "React Native • Firebase",
     //     className:
-    //       "md:col-span-1 bg-gradient-to-t from-pink-900/20 to-purple-900/20",
+    //       "md:col-span-1 bg-linear-to-t from-pink-900/20 to-purple-900/20",
     //     textStyle: "text-pink-400 font-medium",
     //     gooyey: false,
     //   },
@@ -284,7 +284,7 @@ function Project() {
     //       "Real-time analytics dashboard with interactive charts and metrics",
     //     textBody: "D3.js • Analytics",
     //     className:
-    //       "md:col-span-1 bg-gradient-to-b from-cyan-900/20 to-blue-900/20",
+    //       "md:col-span-1 bg-linear-to-b from-cyan-900/20 to-blue-900/20",
     //     textStyle: "text-cyan-400 font-bold",
     //     gooyey: true,
     //     slug: "data-dashboard",
@@ -298,7 +298,7 @@ function Project() {
     //       "Decentralized application built on Ethereum with smart contracts",
     //     textBody: "Web3 • Solidity • DeFi",
     //     className:
-    //       "md:col-span-2 bg-gradient-to-r from-yellow-900/20 to-orange-900/20",
+    //       "md:col-span-2 bg-linear-to-r from-yellow-900/20 to-orange-900/20",
     //     textStyle: "text-yellow-400 font-bold",
     //     gooyey: true,
     //     slug: "blockchain-app",
@@ -320,9 +320,9 @@ function Project() {
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
                     Featured{" "}
-                    <span className="text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
+                    <span className="text-transparent bg-linear-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
                         Projects
-                        <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
+                        <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
                     </span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
@@ -334,7 +334,7 @@ function Project() {
 
             {/* Stats bar */}
             <div className="flex justify-center mb-12">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-xs rounded-2xl border border-gray-800/30">
                     <div className="text-center">
                         <div className="text-2xl font-bold text-white mb-0.5">
                             50+
@@ -366,7 +366,7 @@ function Project() {
             {/* Project grid */}
             <div className=" flex items-center justify-center">
                 {/* Large screens - Bento grid */}
-                <div className="hidden lg:grid grid-cols-4 grid-rows-10 gap-6 aspect-[4/3] w-full max-w-7xl relative">
+                <div className="hidden lg:grid grid-cols-4 grid-rows-10 gap-6 aspect-4/3 w-full max-w-7xl relative">
                     <div className="rounded-3xl col-span-1 row-span-5 hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
                         <Link href="/works/cover-page-generator">
                             <img

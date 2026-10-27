@@ -71,7 +71,7 @@ const CustomCursor = () => {
         <>
             {/* Main cursor dot */}
             <div
-                className={`fixed pointer-events-none z-[99999] transition-transform duration-100 ${
+                className={`fixed pointer-events-none z-99999 transition-transform duration-100 ${
                     isPointer ? "scale-150" : "scale-100"
                 }`}
                 style={{
@@ -82,12 +82,12 @@ const CustomCursor = () => {
             >
                 <div className="relative w-7 h-7">
                     <div
-                        className={`absolute w-3 h-3 bg-gradient-to-r from-[#FFB266] to-[#D96263] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
+                        className={`absolute w-3 h-3 bg-linear-to-r from-[#FFB266] to-[#D96263] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
                             isClicking ? "scale-150" : "scale-100"
                         }`}
                     />
                     <div
-                        className={`absolute w-3 h-3 bg-gradient-to-r from-[#FFB266] to-[#D96263] rounded-full blur-sm opacity-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
+                        className={`absolute w-3 h-3 bg-linear-to-r from-[#FFB266] to-[#D96263] rounded-full blur-xs opacity-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${
                             isClicking ? "scale-[2]" : "scale-100"
                         }`}
                     />
@@ -96,7 +96,7 @@ const CustomCursor = () => {
 
             {/* Outer ring */}
             <div
-                className="fixed pointer-events-none z-[99998] mix-blend-difference"
+                className="fixed pointer-events-none z-99998 mix-blend-difference"
                 style={{
                     left: `${mouse.current.x}px`,
                     top: `${mouse.current.y}px`,

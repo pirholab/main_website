@@ -12,7 +12,7 @@ const firacode = localFont({
 const Button = ({ href, className, children, ...props }) => (
     <Link
         href={href}
-        className={`relative p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFB266] to-[#D96263] transition-all duration-300 hover:scale-105 ${className}`}
+        className={`relative p-[2px] rounded-[40px] bg-linear-to-r from-[#FFB266] to-[#D96263] transition-all duration-300 hover:scale-105 ${className}`}
         {...props}
     >
         <div className="flex h-full w-full items-center justify-center rounded-[38px] bg-[#2b3254] px-6 py-2 text-xl font-medium">
@@ -31,7 +31,7 @@ const TransitionLink = ({ href, className, children, onClick, ...props }) => (
 const Hamburger = ({ size, toggled, toggle, color }) => (
     <button
         onClick={() => toggle(!toggled)}
-        className="relative w-10 h-10 flex flex-col justify-center items-center space-y-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-110"
+        className="relative w-10 h-10 flex flex-col justify-center items-center space-y-1 rounded-full bg-white/10 backdrop-blur-xs border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-110"
         aria-label={toggled ? "Close menu" : "Open menu"}
     >
         <span
@@ -155,7 +155,7 @@ const LiquidGlassNavbar = ({
             <span className="relative z-10">
                 {item.label}
                 <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 w-0 group-hover:w-full`}
+                    className={`absolute bottom-0 left-0 h-0.5 bg-linear-to-r from-blue-400 to-purple-400 transition-all duration-300 w-0 group-hover:w-full`}
                 ></span>
             </span>
         );
@@ -221,7 +221,7 @@ const LiquidGlassNavbar = ({
                 {/* Animated background blobs */}
                 <div className="absolute inset-0 overflow-hidden rounded-3xl">
                     <div
-                        className="absolute w-32 h-32 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse"
+                        className="absolute w-32 h-32 bg-linear-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse"
                         style={{
                             left: `${mousePosition.x * 0.5}%`,
                             top: `${mousePosition.y * 0.3}%`,
@@ -230,7 +230,7 @@ const LiquidGlassNavbar = ({
                         }}
                     ></div>
                     <div
-                        className="absolute w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-pulse"
+                        className="absolute w-24 h-24 bg-linear-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-pulse"
                         style={{
                             right: `${(100 - mousePosition.x) * 0.4}%`,
                             bottom: `${(100 - mousePosition.y) * 0.2}%`,
@@ -256,7 +256,7 @@ const LiquidGlassNavbar = ({
                                         className="w-12 h-12"
                                     />
                                 </div>
-                                <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+                                <span className="bg-linear-to-r from-white to-gray-200 bg-clip-text text-transparent">
                                     PiRhoTech
                                 </span>
                             </TransitionLink>
@@ -297,7 +297,7 @@ const LiquidGlassNavbar = ({
                 <div className="fixed inset-0 z-40 md:hidden">
                     {/* Backdrop */}
                     <div
-                        className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+                        className="fixed inset-0 bg-black/50 backdrop-blur-xs"
                         onClick={() => setIsMenuOpen(false)}
                     />
 

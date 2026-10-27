@@ -7,16 +7,11 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-const BlogPost = () => {
-    const router = useRouter();
-    const { slug } = router.query;
-    const [blog, setBlog] = useState(null);
-    const [pageLoading, setPageLoading] = useState(true);
+const BlogPost = ({ blog }) => {
     const [navLoading, setNavLoading] = useState(false);
     const trRef = useRef(null);
 
@@ -73,6 +68,16 @@ const BlogPost = () => {
     const RenderContent = ({ content }) => {
         if (!content) return null;
 
+        // Posts without code blocks render as plain HTML, which also works on the server
+        if (!content.includes("<pre")) {
+            return (
+                <div
+                    className="prose prose-invert prose-lg max-w-none"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                />
+            );
+        }
+
         const processedContent = processContent(content);
 
         // Split the content by our placeholder
@@ -119,35 +124,6 @@ const BlogPost = () => {
         );
     };
 
-    useEffect(() => {
-        if (slug) {
-            const foundBlog = blogData.find((blog) => blog.slug === slug);
-            setBlog(foundBlog);
-            setPageLoading(false);
-        }
-    }, [slug]);
-
-    if (pageLoading) {
-        return (
-            <>
-                <Navbars
-                    loading={navLoading}
-                    setLoading={setNavLoading}
-                    trRef={trRef}
-                />
-                <div className="min-h-screen bg-[#03061c] pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-                    <div className="animate-pulse">Loading...</div>
-                </div>
-                <Footer />
-                <div
-                    ref={trRef}
-                    className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
-                    style={{ transform: "translateY(100%)" }}
-                ></div>
-            </>
-        );
-    }
-
     if (!blog) {
         return (
             <>
@@ -173,7 +149,7 @@ const BlogPost = () => {
                 <Footer />
                 <div
                     ref={trRef}
-                    className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
+                    className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-99999999999999"
                     style={{ transform: "translateY(100%)" }}
                 ></div>
             </>
@@ -183,9 +159,42 @@ const BlogPost = () => {
     return (
         <>
             <Head>
-                <title>{blog.title} - PirhoTech</title>
+                <title>{`${blog.title} | PiRhoTech`}</title>
                 <meta name="description" content={blog.description} />
+                <link rel="canonical" href={`https://pirhotech.com/blog/${blog.slug}`} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={`https://pirhotech.com/blog/${blog.slug}`} />
                 <meta property="og:title" content={blog.title} />
+                <meta property="og:description" content={blog.description} />
+                <meta property="og:image" content={`https://pirhotech.com${blog.image}`} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={blog.title} />
+                <meta name="twitter:description" content={blog.description} />
+                <meta name="twitter:image" content={`https://pirhotech.com${blog.image}`} />
+                <meta name="author" content={blog.author} />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BlogPosting",
+                            headline: blog.title,
+                            description: blog.description,
+                            image: `https://pirhotech.com${blog.image}`,
+                            datePublished: blog.date,
+                            author: { "@type": "Person", name: blog.author },
+                            publisher: {
+                                "@type": "Organization",
+                                name: "PiRhoTech",
+                                logo: {
+                                    "@type": "ImageObject",
+                                    url: "https://pirhotech.com/icon-512.png",
+                                },
+                            },
+                            mainEntityOfPage: `https://pirhotech.com/blog/${blog.slug}`,
+                        }),
+                    }}
+                />
             </Head>
             <Navbars
                 loading={navLoading}
@@ -207,7 +216,7 @@ const BlogPost = () => {
                 />
 
                 {/* Dark gradient overlay with stronger gradient at bottom for text */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/70 to-zinc-900/5 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-900 via-zinc-900/70 to-zinc-900/5 flex flex-col justify-end">
                     <div className="max-w-5xl mx-auto w-[90%] pl-0 pr-4 sm:pl-0 sm:pr-6 lg:pl-0 lg:pr-8 pb-16">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -287,7 +296,7 @@ const BlogPost = () => {
                             viewport={{ once: true }}
                             className="relative z-10"
                         >
-                            <div className="w-1 h-full max-h-20 bg-gradient-to-b from-cyan-400 to-purple-600 absolute -left-4 top-1/2 transform -translate-y-1/2 rounded-full"></div>
+                            <div className="w-1 h-full max-h-20 bg-linear-to-b from-cyan-400 to-purple-600 absolute -left-4 top-1/2 transform -translate-y-1/2 rounded-full"></div>
                             <p className="text-2xl text-white leading-relaxed py-2 font-light">
                                 {blog.description}
                             </p>
@@ -295,7 +304,7 @@ const BlogPost = () => {
                     </div>
 
                     {/* Glow effect */}
-                    <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-500/50 to-transparent"></div>
                 </div>
 
                 {/* Main Content */}
@@ -380,11 +389,22 @@ const BlogPost = () => {
             <Footer />
             <div
                 ref={trRef}
-                className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-[99999999999999]"
+                className="fixed top-0 left-0 w-full h-full bg-[#03061c] z-99999999999999"
                 style={{ transform: "translateY(100%)" }}
             ></div>
         </>
     );
+};
+
+export const getStaticPaths = () => ({
+    paths: blogData.map((blog) => ({ params: { slug: blog.slug } })),
+    fallback: false,
+});
+
+export const getStaticProps = ({ params }) => {
+    const blog = blogData.find((b) => b.slug === params.slug);
+    if (!blog) return { notFound: true };
+    return { props: { blog } };
 };
 
 export default BlogPost;

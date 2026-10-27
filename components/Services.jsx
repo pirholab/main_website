@@ -1,5 +1,5 @@
 "use client";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import { motion, useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { SplitText } from "../ui/SplitText";

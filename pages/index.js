@@ -18,16 +18,14 @@ export default function Home() {
     const [loading, setLoading] = useState(false);
     const trRef = useRef();
     return (
-        <main className={`relative z-[999] cursor-none`}>
+        <main className={`relative z-999 cursor-none`}>
             {/* <CustomCursor /> */}
             <Head>
                 {/* Primary Meta Tags */}
-                <title>
-                    PiRhoTech | Creative Technology Agency in Bangladesh
-                </title>
+                <title>PiRhoTech | Software, AI &amp; Automation Company in Bangladesh</title>
                 <meta
                     name="description"
-                    content="PiRhoTech is a leading creative technology agency in Bangladesh specializing in web development, mobile apps, branding, and digital solutions. Home of Cover Page Generator - the #1 app for creating professional assignment cover pages with 9K+ downloads and 5.0 star rating."
+                    content="PiRhoTech builds custom software, web apps, Flutter mobile apps, AI chatbots and business automation for startups and growing businesses. 50+ projects delivered from Dhaka, Bangladesh."
                 />
                 <meta
                     name="viewport"
@@ -36,15 +34,6 @@ export default function Home() {
                 <meta charSet="UTF-8" />
 
                 {/* Favicon */}
-                <link
-                    rel="icon"
-                    type="image/png"
-                    href="/favicon.ico"
-                    sizes="96x96"
-                />
-                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-                <link rel="shortcut icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
                 <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
 
                 {/* Open Graph / Facebook */}
@@ -52,11 +41,11 @@ export default function Home() {
                 <meta property="og:url" content="https://pirhotech.com" />
                 <meta
                     property="og:title"
-                    content="PiRhoTech | Creative Technology Agency"
+                    content="PiRhoTech | Software, AI &amp; Automation Company in Bangladesh"
                 />
                 <meta
                     property="og:description"
-                    content="Creative Agency Designing Tomorrow's Visions of the Future. Creators of Cover Page Generator - the top-rated app for university assignments in Bangladesh with over 9,000 downloads."
+                    content="PiRhoTech builds custom software, web apps, Flutter mobile apps, AI chatbots and business automation for startups and growing businesses. 50+ projects delivered from Dhaka, Bangladesh."
                 />
                 <meta
                     property="og:image"
@@ -68,21 +57,21 @@ export default function Home() {
                 <meta name="twitter:url" content="https://pirhotech.com" />
                 <meta
                     name="twitter:title"
-                    content="PiRhoTech | Creative Technology Agency"
+                    content="PiRhoTech | Software, AI &amp; Automation Company in Bangladesh"
                 />
                 <meta
                     name="twitter:description"
-                    content="Creative Agency Designing Tomorrow's Visions of the Future. Creators of Cover Page Generator - the top-rated app for university assignments in Bangladesh with over 9,000 downloads."
+                    content="PiRhoTech builds custom software, web apps, Flutter mobile apps, AI chatbots and business automation for startups and growing businesses. 50+ projects delivered from Dhaka, Bangladesh."
                 />
                 <meta
                     name="twitter:image"
-                    content="https://pirhotech.com/logo.png"
+                    content="https://pirhotech.com/og-image.png"
                 />
 
                 {/* Keywords */}
                 <meta
                     name="keywords"
-                    content="PiRhoTech, creative agency, Bangladesh, web development, mobile apps, Cover Page Generator, technology solutions, branding, UI/UX design, software development"
+                    content="software development company in Bangladesh, web development company Bangladesh, mobile app development company, Flutter app development, AI chatbot development, business automation services, custom software development, Shopify app development, offshore software development, PiRhoTech, Solidy.io"
                 />
 
                 {/* Canonical URL */}
@@ -100,18 +89,31 @@ export default function Home() {
                             "@type": "Organization",
                             name: "PiRhoTech",
                             url: "https://pirhotech.com",
-                            logo: "https://pirhotech.com/logo.png",
+                            logo: "https://pirhotech.com/icon-512.png",
                             description:
-                                "Creative Technology Agency Designing Tomorrow's Visions of the Future",
+                                "Software development company in Dhaka, Bangladesh building custom web apps, Flutter mobile apps, AI chatbots and business automation.",
+                            founder: {
+                                "@type": "Person",
+                                name: "Farhan Sadik",
+                            },
                             address: {
                                 "@type": "PostalAddress",
-                                addressCountry: "Bangladesh",
+                                addressLocality: "Dhaka",
+                                addressCountry: "BD",
                             },
                             sameAs: [
                                 "https://www.facebook.com/pirhotech",
-                                "https://twitter.com/pirhotech",
+                                "https://x.com/pirhotech",
+                                "https://www.instagram.com/pirhotech",
                                 "https://www.linkedin.com/company/pirhotech",
                             ],
+                            subOrganization: {
+                                "@type": "Organization",
+                                name: "Solidy.io",
+                                url: "https://solidy.io",
+                                description:
+                                    "PiRhoTech's software development brand for international clients.",
+                            },
                             makesOffer: {
                                 "@type": "Offer",
                                 itemOffered: {
@@ -124,11 +126,6 @@ export default function Home() {
                                         "@type": "Offer",
                                         price: "0",
                                         priceCurrency: "BDT",
-                                    },
-                                    aggregateRating: {
-                                        "@type": "AggregateRating",
-                                        ratingValue: "5.0",
-                                        ratingCount: "9000",
                                     },
                                     description:
                                         "Create professional cover pages for assignments and lab reports for universities in Bangladesh.",

@@ -89,72 +89,47 @@ export default function Contact() {
     <main>
        <Head>
         {/* Primary Meta Tags */}
-        <title>PiRhoTech- Contact Us</title>
+        <title>Contact PiRhoTech | Get a Free Project Consultation</title>
+        <link rel="canonical" href="https://pirhotech.com/contact" />
         <meta
           name="description"
-          content=""
+          content="Tell us about your web app, mobile app, AI chatbot or automation project. Book a free consultation with PiRhoTech and get a clear plan, timeline and quote."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon.ico"
-          sizes="96x96"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/logo.png"
-        />
-        <meta name="apple-mobile-web-app-title" content="PiRhoTech.com" />
+        <meta name="apple-mobile-web-app-title" content="PiRhoTech" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
         
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon.ico"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon.ico"
-        />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="PirRhotech.com" />
+        <meta property="og:title" content="Contact PiRhoTech | Get a Free Project Consultation" />
         <meta
           property="og:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="Tell us about your web app, mobile app, AI chatbot or automation project. Book a free consultation with PiRhoTech and get a clear plan, timeline and quote."
         />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:url" content="https://yourwebsite.com" />
+        <meta property="og:image" content="https://pirhotech.com/og-image.png" />
+        <meta property="og:url" content="https://pirhotech.com/contact" />
         <meta property="og:type" content="website" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PirRhotech.com" />
+        <meta name="twitter:title" content="Contact PiRhoTech | Get a Free Project Consultation" />
         <meta
           name="twitter:description"
-          content="Creative Agency Designing Tomorrow's Visions of the Future"
+          content="Tell us about your web app, mobile app, AI chatbot or automation project. Book a free consultation with PiRhoTech and get a clear plan, timeline and quote."
         />
-        <meta name="twitter:image" content="/logo.png" />
+        <meta name="twitter:image" content="https://pirhotech.com/og-image.png" />
 
         {/* Keywords */}
         <meta
           name="keywords"
-          content="Next.js, SEO, favicon, web development, branding"
+          content="software development company in Bangladesh, web development company Bangladesh, mobile app development company, Flutter app development, AI chatbot development, business automation services, custom software development, Shopify app development, offshore software development, PiRhoTech, Solidy.io"
         />
 
         {/* Author */}
-        <meta name="author" content="Your Name or Company Name" />
+        <meta name="author" content="PiRhoTech" />
       </Head>
       <Navbars loading={loading} setLoading={setLoading} trRef={trRef} />
       <div className="mt-[150px] flex justify-center main mb-[250px]">
@@ -172,12 +147,12 @@ export default function Contact() {
                   <h1 class="text-4xl font-medium">Contact us</h1>
 
                   {formStatus.success ? (
-                    <div className="mt-10 p-4 bg-green-50 border border-green-500 rounded text-green-700">
+                    <div className="mt-10 p-4 bg-green-50 border border-green-500 rounded-sm text-green-700">
                       <h2 className="text-xl font-semibold mb-2">Message Sent Successfully!</h2>
                       <p>Thank you for contacting us. We'll get back to you soon.</p>
                       <button 
                         onClick={() => setFormStatus(prev => ({...prev, success: false}))}
-                        className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                        className="mt-4 bg-green-600 text-white px-4 py-2 rounded-sm hover:bg-green-700"
                       >
                         Send Another Message
                       </button>
@@ -188,7 +163,7 @@ export default function Contact() {
                       class="mt-10"
                     >
                       {formStatus.error && (
-                        <div className="mb-4 p-3 bg-red-50 border border-red-500 rounded text-red-700">
+                        <div className="mb-4 p-3 bg-red-50 border border-red-500 rounded-sm text-red-700">
                           {formStatus.error}
                         </div>
                       )}
@@ -199,10 +174,10 @@ export default function Contact() {
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
-                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
+                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-hidden focus:ring-0"
                             placeholder=" "
                           />
-                          <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
+                          <label class="absolute top-3 -z-10 origin-left -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
                             Your name
                           </label>
                         </div>
@@ -212,10 +187,10 @@ export default function Contact() {
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
+                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-hidden focus:ring-0"
                             placeholder=" "
                           />
-                          <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
+                          <label class="absolute top-3 -z-10 origin-left -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
                             Your email
                           </label>
                         </div>
@@ -225,10 +200,10 @@ export default function Contact() {
                             value={formData.message}
                             onChange={handleInputChange}
                             rows="5"
-                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-none focus:ring-0"
+                            class="peer text-white block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:outline-hidden focus:ring-0"
                             placeholder=" "
                           ></textarea>
-                          <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
+                          <label class="absolute top-3 -z-10 origin-left -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  peer-focus:text-white">
                             Your message
                           </label>
                         </div>

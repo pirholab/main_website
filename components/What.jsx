@@ -147,7 +147,7 @@ export default function Another() {
             {data.map((e, i) => (
               <div
                 key={i}
-                className="w-[90%] sm:w-[80%] md:w-[90%] lg:w-[80vmax] custom-card h-auto sm:h-auto md:h-auto rounded-3xl flex-col-reverse md:flex-row-reverse shadow flex justify-center items-center content-center transition-all bg-zinc-700 absolute"
+                className="w-[90%] sm:w-[80%] md:w-[90%] lg:w-[80vmax] custom-card h-auto sm:h-auto md:h-auto rounded-3xl flex-col-reverse md:flex-row-reverse shadow-sm flex justify-center items-center content-center transition-all bg-zinc-700 absolute"
                 style={{ zIndex: `${i + 2}`, transition: "all 0.1s" }}
               >
                 <div className="flex h-full justify-center items-center p-0 sm:p-[22px]">

@@ -510,9 +510,9 @@ const ProjectsPage = () => {
                 onMouseLeave={() => setIsHovered(false)}
             >
                 {/* Enhanced accent shapes */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-purple-500/30 to-orange-500/30 rounded-full blur-2xl group-hover:from-purple-500/50 group-hover:to-orange-500/50 transition-all duration-700"></div>
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-orange-500/20 to-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-all duration-700"></div>
-                <div className="absolute top-1/2 right-0 w-16 h-16 bg-gradient-to-l from-purple-500/10 to-transparent rounded-full blur-lg"></div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-br from-purple-500/30 to-orange-500/30 rounded-full blur-2xl group-hover:from-purple-500/50 group-hover:to-orange-500/50 transition-all duration-700"></div>
+                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-linear-to-tr from-orange-500/20 to-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-all duration-700"></div>
+                <div className="absolute top-1/2 right-0 w-16 h-16 bg-linear-to-l from-purple-500/10 to-transparent rounded-full blur-lg"></div>
 
                 {/* Status indicator */}
                 <div className="absolute top-4 left-4 z-20">
@@ -549,7 +549,7 @@ const ProjectsPage = () => {
                     )}
 
                     {/* Enhanced overlay controls */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent">
                         <div className="absolute bottom-4 left-4 right-4">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2 text-white/80">
@@ -561,7 +561,7 @@ const ProjectsPage = () => {
                                 {project.video && (
                                     <button
                                         onClick={handleVideoToggle}
-                                        className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-all duration-300"
+                                        className="w-10 h-10 bg-white/10 backdrop-blur-xs rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-all duration-300"
                                     >
                                         {videoPlaying ? (
                                             <Pause
@@ -592,7 +592,7 @@ const ProjectsPage = () => {
                                     firacode.className
                                 } ${
                                     idx === 0
-                                        ? "bg-gradient-to-r from-purple-500/20 to-orange-500/20 text-purple-300 border-purple-500/30"
+                                        ? "bg-linear-to-r from-purple-500/20 to-orange-500/20 text-purple-300 border-purple-500/30"
                                         : "bg-gray-800/50 text-gray-400 border-gray-700/50 group-hover:border-gray-600"
                                 }`}
                             >
@@ -608,7 +608,7 @@ const ProjectsPage = () => {
 
                     {/* Title and description */}
                     <div>
-                        <h3 className="text-xl text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-500">
+                        <h3 className="text-xl text-white mb-2 group-hover:text-transparent group-hover:bg-linear-to-r group-hover:from-purple-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-500">
                             {project.title}
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors duration-300">
@@ -668,7 +668,7 @@ const ProjectsPage = () => {
                             {project.technologies.slice(0, 4).map((tech) => (
                                 <span
                                     key={tech}
-                                    className={`px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300 ${firacode.className}`}
+                                    className={`px-2 py-1 text-xs bg-gray-800/60 text-gray-300 rounded-sm border border-gray-700/50 group-hover:bg-gray-800 transition-all duration-300 ${firacode.className}`}
                                 >
                                     {tech}
                                 </span>
@@ -681,7 +681,7 @@ const ProjectsPage = () => {
                         {project.link && (
                             <Link
                                 href={project.link}
-                                className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 flex items-center justify-center gap-2 hover:-translate-y-0.5 text-center"
+                                className="flex-1 px-4 py-3 bg-linear-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white text-sm font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 flex items-center justify-center gap-2 hover:-translate-y-0.5 text-center"
                             >
                                 View Case Study
                                 <ArrowUpRight className="w-4 h-4" />
@@ -766,7 +766,7 @@ const ProjectsPage = () => {
                                     {project.features.map((feature) => (
                                         <span
                                             key={feature}
-                                            className="px-2 py-1 text-xs bg-purple-500/10 text-purple-300 rounded border border-purple-500/30"
+                                            className="px-2 py-1 text-xs bg-purple-500/10 text-purple-300 rounded-sm border border-purple-500/30"
                                         >
                                             {feature}
                                         </span>
@@ -801,8 +801,18 @@ const ProjectsPage = () => {
     return (
         <>
             <Head>
-                <title>Our Projects | Portfolio</title>
-                <meta name="description" content="" />
+                <title>Our Work | Web, Mobile App &amp; AI Projects | PiRhoTech</title>
+                <meta property="og:title" content="Our Work | Web, Mobile App &amp; AI Projects | PiRhoTech" />
+                <meta property="og:description" content="Case studies from PiRhoTech: marketplace apps, booking platforms, edtech, Shopify apps and AI tools. See what we built, the tech stack, and the results." />
+                <meta property="og:url" content="https://pirhotech.com/projects" />
+                <meta name="twitter:title" content="Our Work | Web, Mobile App &amp; AI Projects | PiRhoTech" />
+                <meta name="twitter:description" content="Case studies from PiRhoTech: marketplace apps, booking platforms, edtech, Shopify apps and AI tools. See what we built, the tech stack, and the results." />
+                <meta name="keywords" content="software development company in Bangladesh, web development company Bangladesh, mobile app development company, Flutter app development, AI chatbot development, business automation services, custom software development, Shopify app development, offshore software development, PiRhoTech, Solidy.io" />
+                <meta name="author" content="PiRhoTech" />
+                <meta property="og:image" content="https://pirhotech.com/og-image.png" />
+                <meta name="twitter:image" content="https://pirhotech.com/og-image.png" />
+                <link rel="canonical" href="https://pirhotech.com/projects" />
+                <meta name="description" content="Case studies from PiRhoTech: marketplace apps, booking platforms, edtech, Shopify apps and AI tools. See what we built, the tech stack, and the results." />
             </Head>
             <div className="mt-[100px] min-h-screen bg-gray-950 relative overflow-hidden">
                 <Navbars />
@@ -813,8 +823,8 @@ const ProjectsPage = () => {
                         className="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse"
                         style={{ animationDelay: "2s" }}
                     ></div>
-                    <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-orange-500/10 rounded-full blur-2xl"></div>
-                    <div className="absolute top-1/3 right-0 w-48 h-48 bg-gradient-to-l from-orange-500/15 to-purple-500/15 rounded-full blur-2xl"></div>
+                    <div className="absolute top-1/2 left-0 w-64 h-64 bg-linear-to-r from-purple-500/10 to-orange-500/10 rounded-full blur-2xl"></div>
+                    <div className="absolute top-1/3 right-0 w-48 h-48 bg-linear-to-l from-orange-500/15 to-purple-500/15 rounded-full blur-2xl"></div>
 
                     {/* Animated grid */}
                     <div className="absolute inset-0 opacity-[0.02]">
@@ -842,9 +852,9 @@ const ProjectsPage = () => {
                             </div>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
                                 Featured{" "}
-                                <span className="text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
+                                <span className="text-transparent bg-linear-to-r from-purple-400 via-purple-300 to-orange-400 bg-clip-text relative">
                                     Projects
-                                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
+                                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-purple-400 to-orange-400 rounded-full opacity-30"></div>
                                 </span>
                             </h1>
                             <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
@@ -856,7 +866,7 @@ const ProjectsPage = () => {
 
                         {/* Stats bar */}
                         <div className="flex justify-center mb-12">
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-800/30">
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-6 py-4 bg-gray-900/40 backdrop-blur-xs rounded-2xl border border-gray-800/30">
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-white mb-0.5">
                                         50+
@@ -905,7 +915,7 @@ const ProjectsPage = () => {
                                         onChange={(e) =>
                                             setSearchTerm(e.target.value)
                                         }
-                                        className="w-full pl-9 pr-3 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none text-sm"
+                                        className="w-full pl-9 pr-3 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-hidden text-sm"
                                     />
                                 </div>
 
@@ -916,7 +926,7 @@ const ProjectsPage = () => {
                                         onChange={(e) =>
                                             setSortBy(e.target.value)
                                         }
-                                        className="w-full appearance-none bg-gray-800/50 border border-gray-700/50 rounded-lg px-3 py-3 text-white focus:border-purple-500/50 focus:outline-none text-sm"
+                                        className="w-full appearance-none bg-gray-800/50 border border-gray-700/50 rounded-lg px-3 py-3 text-white focus:border-purple-500/50 focus:outline-hidden text-sm"
                                     >
                                         <option value="newest">
                                             Newest First
@@ -954,10 +964,10 @@ const ProjectsPage = () => {
                                                     setSelectedFilter(tag);
                                                     setVisibleProjects(6);
                                                 }}
-                                                className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300
+                                                className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300
                                                     ${firacode.className} ${
                                                     selectedFilter === tag
-                                                        ? "bg-gradient-to-r from-purple-600 to-orange-600 text-white"
+                                                        ? "bg-linear-to-r from-purple-600 to-orange-600 text-white"
                                                         : "bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700/50"
                                                 }`}
                                             >
@@ -1137,7 +1147,7 @@ const ProjectsPage = () => {
                                         setSearchTerm("");
                                         setSelectedFilter("All");
                                     }}
-                                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                                    className="px-6 py-3 bg-linear-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
                                 >
                                     Clear Filters
                                 </button>
@@ -1150,7 +1160,7 @@ const ProjectsPage = () => {
                                 <button
                                     onClick={loadMore}
                                     disabled={isLoading}
-                                    className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600/20 to-orange-600/20 hover:from-purple-600/30 hover:to-orange-600/30 text-white font-semibold rounded-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="inline-flex items-center gap-3 px-10 py-4 bg-linear-to-r from-purple-600/20 to-orange-600/20 hover:from-purple-600/30 hover:to-orange-600/30 text-white font-semibold rounded-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isLoading ? (
                                         <>
@@ -1191,8 +1201,8 @@ const ProjectsPage = () => {
                 {/* Call to action section */}
                 <div className="relative z-10 mt-24">
                     <div className="max-w-7xl mx-auto px-6">
-                        <div className="relative bg-gradient-to-r from-purple-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl border border-gray-800/50 overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-orange-500/10"></div>
+                        <div className="relative bg-linear-to-r from-purple-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl border border-gray-800/50 overflow-hidden">
+                            <div className="absolute inset-0 bg-linear-to-r from-purple-500/10 to-orange-500/10"></div>
                             <div className="relative p-12 text-center">
                                 <h2 className="text-4xl font-bold text-white mb-6">
                                     Have a Project in Mind?
@@ -1203,7 +1213,7 @@ const ProjectsPage = () => {
                                     exceptional design.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1">
+                                    <button className="px-8 py-4 bg-linear-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1">
                                         Start a Project
                                     </button>
                                     <button className="px-8 py-4 bg-gray-800/60 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">

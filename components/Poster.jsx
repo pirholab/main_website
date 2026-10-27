@@ -12,7 +12,7 @@ const firacode = localFont({
 const roboto = Roboto({ weight: "500", subsets: ["latin"] });
 const pop = Poppins({ weight: "500", subsets: ["latin"] });
 
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react").then((m) => m.Lottie), { ssr: false });
 
 export default function Poster() {
     const textRef1 = useRef(null);
@@ -67,18 +67,19 @@ export default function Poster() {
     }, []);
 
     return (
-        <div className="bg-[#03061c] text-white -mt-[15px]">
+        <div className="bg-[#03061c] text-white mt-[-15px]">
             <section className="flex w-full items-center content-center justify-center">
-                <div className="w-[100%] md:w-[85%]">
-                    <div className="flex pl-[1.5rem] lg:pl-[2rem] z-[9] items-center relative gap-[10px] top-[39px]">
+                <div className="w-full md:w-[85%]">
+                    <div className="flex pl-6 lg:pl-8 z-9 items-center relative gap-[10px] top-[39px]">
                         <p className=" text-white">{`Hey, We are PiRhoTech`}</p>
                         <Lottie
-                            animationData={Wave}
-                            loop={true}
+                            src={Wave}
+                            autoplay
+                            loop
                             className="w-[30px]"
                         />
                     </div>
-                    <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-[1rem] pr-[1rem] bg-[#03061c]">
+                    <div className="relative w-full flex flex-col md:flex-row items-start justify-between p-12 pl-4 pr-4 bg-[#03061c]">
                         <div className="z-10 top-[50px] absolute w-[95%]">
                             <div className="gooey-container h-[50dvh]">
                                 <div className="flex">
@@ -97,7 +98,7 @@ export default function Poster() {
                                         >
                                             <span
                                                 ref={textRef1}
-                                                className="flex-shrink-0 opacity-0 truncate inline relative pl-3 lg:pl-5"
+                                                className="shrink-0 opacity-0 truncate inline relative pl-3 lg:pl-5"
                                                 style={{ zIndex: 2 }}
                                             >
                                                 Creative Agency
@@ -106,7 +107,7 @@ export default function Poster() {
                                             </span>
                                             <span
                                                 ref={textRef2}
-                                                className="flex-shrink-0 opacity-0 truncate inline relative pl-3 lg:pl-5"
+                                                className="shrink-0 opacity-0 truncate inline relative pl-3 lg:pl-5"
                                                 style={{ zIndex: 1 }}
                                             >
                                                 {`Tomorrow's Visions `}
@@ -115,7 +116,7 @@ export default function Poster() {
                                             </span>
                                             <span
                                                 ref={textRef3}
-                                                className="flex-shrink-0 opacity-0 truncate inline relative pl-3 lg:pl-5"
+                                                className="shrink-0 opacity-0 truncate inline relative pl-3 lg:pl-5"
                                                 style={{ zIndex: 0 }}
                                             >
                                                 of the Future&nbsp;&nbsp;
@@ -166,7 +167,7 @@ export default function Poster() {
                                         viewBox="0 0 43 39"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-[21px] relative -top-[1px] -left-[15px] sm:-left-[12px]"
+                                        className="w-[21px] relative -top-px left-[-15px] sm:left-[-12px]"
                                     >
                                         <path
                                             d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
@@ -177,7 +178,7 @@ export default function Poster() {
                                 <div className="flex space-x-4 relative top-[10px]">
                                     <Button
                                         href="/contact"
-                                        className={` bg-black relative left-[11px] top-[0px] p-[10px] rounded-[10px] border-none ${firacode.className}`}
+                                        className={` bg-black relative left-[11px] top-0 p-[10px] rounded-[10px] border-none ${firacode.className}`}
                                         button1Ref={button1Ref}
                                     >
                                         Contact Us
@@ -185,7 +186,7 @@ export default function Poster() {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[100%] relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] md:hidden">
+                        <div className="w-full relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] md:hidden">
                             <video
                                 ref={canvaRef}
                                 autoPlay
@@ -199,9 +200,9 @@ export default function Poster() {
                                 />
                                 Your browser does not support the video tag.
                             </video>
-                            <div className="absolute w-full h-full top-[183px] z-[1] block sm:hidden"></div>
+                            <div className="absolute w-full h-full top-[183px] z-1 block sm:hidden"></div>
                         </div>
-                        <div className="w-[100%] relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] hidden md:block">
+                        <div className="w-full relative top-[2px] h-[70vh] ss:h-[80dvh] overflow-hidden rounded-[15px] sm:rounded-[30px] hidden md:block">
                             <video
                                 ref={canvaRef}
                                 autoPlay
@@ -215,7 +216,7 @@ export default function Poster() {
                                 />
                                 Your browser does not support the video tag.
                             </video>
-                            <div className="absolute w-full h-full top-[183px] z-[9999] block sm:hidden"></div>
+                            <div className="absolute w-full h-full top-[183px] z-9999 block sm:hidden"></div>
                         </div>
                     </div>
                 </div>

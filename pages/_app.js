@@ -1,5 +1,5 @@
 import "@/styles/cal.css";
-import "@/styles/globals.scss";
+import "@/styles/globals.css";
 import { getCalApi } from "@calcom/embed-react";
 import localFont from "next/font/local";
 import { useEffect } from "react";

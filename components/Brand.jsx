@@ -8,7 +8,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Brand() {
   return (
-    <div className="h-[15rem] rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
+    <div className="h-60 rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
       <Marquee autoFill={true} >
         {testimonials?.map((e, i) => (
 

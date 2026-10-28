@@ -137,7 +137,7 @@ POSTS = [
         "slug": "business-process-automation-examples",
         "description": "Ten practical business process automation examples, from lead follow-up to invoicing and reporting, that save small teams hours every week.",
         "tags": ["Automation", "Business Process Automation", "Productivity"],
-        "image": "/blog-covers/business-process-automation-examples.png",
+        "image": "/blog-covers/business-process-automation-examples.jpg",
         "content": """
 <p>Most growing businesses lose hours every week copying data between tools, sending the same emails and building the same reports. Business process automation fixes that. Here are the ten processes we recommend automating first, because they are frequent, rule-based and easy to measure.</p>
 
@@ -178,7 +178,7 @@ POSTS = [
         "slug": "shopify-app-development-admin-dashboard",
         "description": "What goes into a Shopify app admin dashboard: revenue tracking, billing, roles and permissions, email templates and promo codes, based on our work on Boomerang Magic.",
         "tags": ["Shopify App Development", "SaaS", "Case Study"],
-        "image": "/blog-covers/shopify-app-development-admin-dashboard.png",
+        "image": "/blog-covers/shopify-app-development-admin-dashboard.jpg",
         "content": """
 <p>Building a Shopify app is not only about the features merchants see. Behind every successful app is an admin dashboard where the app team tracks revenue, manages installs, handles billing and supports merchants. Our team built this kind of control centre for <strong>Boomerang Magic</strong>, a Shopify SaaS app. Here is what we learned.</p>
 
@@ -214,7 +214,7 @@ POSTS = [
         "slug": "software-development-company-in-bangladesh",
         "description": "Why startups and SMBs outsource software development to Bangladesh, what to look for in a development partner, and how PiRhoTech and Solidy.io work with clients worldwide.",
         "tags": ["Outsourcing", "Software Development", "Bangladesh"],
-        "image": "/blog-covers/software-development-company-in-bangladesh.png",
+        "image": "/blog-covers/software-development-company-in-bangladesh.jpg",
         "content": """
 <p>Bangladesh has become one of the world's fastest-growing destinations for software development and IT services. For startups and growing businesses, working with a software development company in Bangladesh can mean senior-level quality at a startup-friendly cost. Here is what to know, and how to choose the right partner.</p>
 
@@ -243,7 +243,295 @@ POSTS = [
 <p><a href="/contact">Book a free consultation</a> and get a clear plan, timeline and quote for your software project.</p>
 """,
     },
+    {
+        "title": "Shopify Automation: 12 Tasks Every Store Should Stop Doing by Hand",
+        "slug": "shopify-automation-ideas",
+        "date": "2026-10-28",
+        "description": "Twelve practical Shopify automation ideas for orders, inventory, customers and reporting, plus when to use Shopify Flow, Zapier or a custom app.",
+        "tags": ["Shopify", "Automation", "E-commerce"],
+        "image": "/blog-covers/shopify-automation-ideas.jpg",
+        "content": """
+<p>When a Shopify store starts growing, the manual work grows with it. Orders get copied into spreadsheets, someone checks stock levels every morning, and the same "where is my order?" email gets answered again and again. None of this needs a person. Here are twelve Shopify tasks we recommend automating first, grouped by area.</p>
+
+<h2>Orders</h2>
+<ol>
+<li><strong>Tag orders automatically.</strong> Tag orders by product type, shipping method, country or value so your team can filter and fulfil them faster.</li>
+<li><strong>Hold risky orders for review.</strong> When Shopify marks an order as high risk, pause fulfilment and notify the person who checks fraud instead of shipping it by mistake.</li>
+<li><strong>Send orders to your warehouse, ERP or spreadsheet.</strong> New orders can sync to your fulfilment partner, accounting software or Google Sheet the moment they are placed.</li>
+<li><strong>Route special orders.</strong> Wholesale, pre-order and custom orders can go to the right person or channel automatically.</li>
+</ol>
+
+<h2>Inventory and products</h2>
+<ol start="5">
+<li><strong>Low-stock alerts.</strong> Get a Slack or email alert when a best-seller drops below a threshold, before it sells out.</li>
+<li><strong>Hide sold-out products and show them again on restock.</strong> Customers stop landing on products they cannot buy.</li>
+<li><strong>Keep inventory in sync across channels.</strong> If you also sell on marketplaces or in a physical shop, stock levels should update everywhere from one source of truth.</li>
+</ol>
+
+<h2>Customers</h2>
+<ol start="8">
+<li><strong>Tag VIP and repeat customers.</strong> Tag customers by total spend or order count so your email flows can treat them differently.</li>
+<li><strong>Ask for reviews at the right time.</strong> Send review requests a set number of days after delivery, not after purchase.</li>
+<li><strong>Answer "where is my order?" automatically.</strong> An <a href="/blog/ai-chatbot-for-small-business">AI assistant</a> connected to your order data can reply with live tracking information at any hour.</li>
+</ol>
+
+<h2>Reporting and finance</h2>
+<ol start="11">
+<li><strong>Weekly sales report.</strong> Sales, refunds, top products and ad spend can land in your inbox every Monday morning without anyone building it.</li>
+<li><strong>Refund and return tracking.</strong> Log every refund with its reason so you can see which products cause problems.</li>
+</ol>
+
+<h2>Which tool should you use?</h2>
+<ul>
+<li><strong>Shopify Flow:</strong> Shopify's own automation app, available on most plans. Great for rules inside Shopify, such as tagging orders and customers, hiding products and sending internal alerts.</li>
+<li><strong>Zapier, Make or n8n:</strong> good for connecting Shopify to other tools like Google Sheets, Slack or your CRM without code.</li>
+<li><strong>A custom Shopify app or integration:</strong> the right choice when you need complex logic, high order volume, a connection to your own system, or when you are paying for several apps and still moving data by hand. Read more in <a href="/blog/custom-shopify-app-vs-app-store-apps">Custom Shopify App vs App Store Apps</a>.</li>
+</ul>
+
+<h2>How to start</h2>
+<p>Write down every task your team does by hand in a normal week and how long each one takes. Start with the task that is repeated most often and causes the most damage when it is late or wrong. Automate that one, measure the time saved, then move to the next.</p>
+
+<h2>Get a free Shopify automation audit</h2>
+<p>Show us how your team spends its week and we will show you which tasks to automate first and what it would take. No pitch unless you ask for one. <a href="https://cal.com/pirhotech/30min">Book a free 30-minute audit</a> or <a href="/contact">send us a message</a>.</p>
+""",
+    },
+    {
+        "title": "Shopify Store Launch Checklist: 25 Things to Do Before You Go Live",
+        "slug": "shopify-store-launch-checklist",
+        "date": "2026-10-28",
+        "description": "A practical Shopify launch checklist for new store owners: settings, payments, shipping, legal pages, SEO, speed and testing, so nothing breaks on day one.",
+        "tags": ["Shopify", "E-commerce", "Store Setup"],
+        "image": "/blog-covers/shopify-store-launch-checklist.png",
+        "content": """
+<p>Launching a Shopify store is exciting, and it is easy to miss something small that costs you sales in the first week. Use this checklist before you remove the password page. It is based on the problems we see most often when new stores ask us for help.</p>
+
+<h2>Store settings</h2>
+<ol>
+<li><strong>Connect your own domain</strong> and set it as the primary domain, so customers never see the myshopify.com address.</li>
+<li><strong>Set your store currency, time zone and units</strong> correctly. Changing them after you have orders is painful.</li>
+<li><strong>Add a sender email on your own domain</strong> and verify it, so order emails don't land in spam.</li>
+<li><strong>Create staff accounts</strong> for your team with only the permissions they need, instead of sharing the owner login.</li>
+<li><strong>Turn on two-step authentication</strong> for every account that can access the admin.</li>
+</ol>
+
+<h2>Payments, shipping and taxes</h2>
+<ol start="6">
+<li><strong>Set up your payment providers</strong> and confirm payouts reach your bank account.</li>
+<li><strong>Create shipping zones and rates</strong> for every country you sell to, and decide on free shipping thresholds.</li>
+<li><strong>Configure taxes</strong> for your regions. Ask an accountant if you are unsure; this one is not worth guessing.</li>
+<li><strong>Place real test orders.</strong> Use test mode, then place one real order and refund it, so you see the whole customer journey and every email.</li>
+</ol>
+
+<h2>Legal and trust</h2>
+<ol start="10">
+<li><strong>Publish refund, privacy, shipping and terms of service policies</strong> and link them in your footer.</li>
+<li><strong>Add a contact page</strong> with a real email address, and a phone number if you offer phone support.</li>
+<li><strong>Write an About page.</strong> New customers want to know who is behind the store.</li>
+<li><strong>Set up cookie consent</strong> if you sell to the EU or UK.</li>
+</ol>
+
+<h2>Products and SEO</h2>
+<ol start="14">
+<li><strong>Write unique product descriptions.</strong> Copying the manufacturer's text hurts your search ranking.</li>
+<li><strong>Edit each product's search title and description</strong> in the search engine listing section.</li>
+<li><strong>Add alt text to product images</strong> so Google and screen readers understand them.</li>
+<li><strong>Organise products into collections</strong> that match how customers search, such as by category, use or season.</li>
+<li><strong>Submit your sitemap to Google Search Console.</strong> Shopify creates it for you at yourdomain.com/sitemap.xml.</li>
+</ol>
+
+<h2>Speed and design</h2>
+<ol start="19">
+<li><strong>Compress images before uploading</strong> and avoid huge autoplay videos on the homepage.</li>
+<li><strong>Install only the apps you need on day one.</strong> Every app can add scripts that slow your store. See <a href="/blog/speed-up-slow-shopify-store">why Shopify stores get slow</a>.</li>
+<li><strong>Check every page on a real phone.</strong> Most of your traffic will be mobile.</li>
+<li><strong>Add a favicon and a social sharing image</strong> so links look good on Facebook, WhatsApp and LinkedIn.</li>
+</ol>
+
+<h2>Marketing and follow-up</h2>
+<ol start="23">
+<li><strong>Turn on abandoned checkout emails.</strong> Shopify includes them; they recover sales from day one.</li>
+<li><strong>Install analytics and your ad pixels</strong> through Shopify's customer events, and confirm they record a test purchase.</li>
+<li><strong>Customise your order notification emails</strong> with your logo, colours and tone of voice.</li>
+</ol>
+
+<h2>After launch</h2>
+<p>Once orders start coming in, the next problem is usually manual work: copying orders, checking stock and answering the same questions. Our guide to <a href="/blog/shopify-automation-ideas">Shopify automation</a> covers what to automate first.</p>
+<p>Need help with a custom feature, integration or app for your new store? <a href="https://cal.com/pirhotech/30min">Book a free 30-minute call</a> with our team.</p>
+""",
+    },
+    {
+        "title": "Custom Shopify App vs App Store Apps: When to Build Your Own",
+        "slug": "custom-shopify-app-vs-app-store-apps",
+        "date": "2026-10-28",
+        "description": "When a Shopify App Store app is enough, when a custom Shopify app makes more sense, and how to decide based on cost, speed, data and how your team works.",
+        "tags": ["Shopify App Development", "Shopify", "E-commerce"],
+        "image": "/blog-covers/custom-shopify-app-vs-app-store-apps.png",
+        "content": """
+<p>The Shopify App Store has an app for almost everything, and for most new stores that is exactly the right place to start. But as stores grow, many end up paying for a long list of apps that don't talk to each other, while someone on the team still moves data between them by hand. Here is how to decide when an off-the-shelf app is enough and when a custom Shopify app is worth building.</p>
+
+<h2>When App Store apps are the right choice</h2>
+<ul>
+<li><strong>The problem is common.</strong> Reviews, email marketing, subscriptions and shipping labels are solved well by mature apps.</li>
+<li><strong>You need it this week.</strong> Installing an app takes minutes; building one takes weeks.</li>
+<li><strong>Your process is still changing.</strong> Don't build custom software for a workflow you haven't settled yet.</li>
+<li><strong>The monthly fee is small</strong> compared with the time the app saves.</li>
+</ul>
+
+<h2>Signs it is time for a custom Shopify app</h2>
+<ul>
+<li><strong>You glue apps together by hand.</strong> If a person exports from one app and imports into another every day, that is a missing integration.</li>
+<li><strong>Your app bill keeps growing.</strong> Several apps that each solve a small part of one problem can often be replaced by one focused app.</li>
+<li><strong>Your business rules are unusual.</strong> Custom pricing, B2B rules, bundles, made-to-order products or complex fulfilment often don't fit generic settings.</li>
+<li><strong>You need to connect your own system.</strong> An ERP, warehouse system, POS or internal database needs a reliable connection to Shopify.</li>
+<li><strong>Store speed is suffering.</strong> Apps that inject scripts into your theme can slow every page. A custom app loads only what you need.</li>
+<li><strong>You need control over your data.</strong> Reports and logic that live in a third-party app are hard to change or move.</li>
+</ul>
+
+<h2>What a custom Shopify app can do</h2>
+<ul>
+<li>React to events such as new orders, refunds or inventory changes using webhooks</li>
+<li>Read and update products, orders and customers through Shopify's Admin API</li>
+<li>Add custom discount, shipping or payment logic using Shopify Functions</li>
+<li>Add screens inside the Shopify admin so your team never leaves Shopify</li>
+<li>Sync data with your other systems on a schedule or in real time</li>
+</ul>
+
+<h2>Custom app vs public app</h2>
+<p>A <strong>custom app</strong> is built for one store (or one company's stores) and is not listed in the App Store. A <strong>public app</strong> is listed in the App Store and installed by many merchants, which brings extra requirements such as billing, onboarding and an admin for the app team. We wrote about that side in <a href="/blog/shopify-app-development-admin-dashboard">Building a Shopify App Admin Dashboard</a>.</p>
+
+<h2>A simple way to decide</h2>
+<ol>
+<li>List every app you pay for and what each one does.</li>
+<li>Mark the manual steps your team does between them.</li>
+<li>Add up the monthly app fees and the hours spent on manual steps.</li>
+<li>Compare that with the one-time cost of a custom app plus maintenance.</li>
+</ol>
+<p>If the numbers are close, stay with apps. If the manual work and fees keep growing every month, a custom app usually pays for itself.</p>
+
+<h2>Not sure which way to go?</h2>
+<p>We build custom Shopify apps and integrations. In a <a href="https://cal.com/pirhotech/30min">free 30-minute call</a> we will look at your current apps and workflow and tell you honestly whether custom is worth it. International clients can also reach us through <a href="https://solidy.io">Solidy.io</a>.</p>
+""",
+    },
+    {
+        "title": "Why Your Shopify Store Is Slow (and How to Fix It)",
+        "slug": "speed-up-slow-shopify-store",
+        "date": "2026-10-28",
+        "description": "The most common reasons Shopify stores load slowly, from too many apps to heavy images and leftover code, and a step-by-step plan to make your store faster.",
+        "tags": ["Shopify", "Performance", "E-commerce"],
+        "image": "/blog-covers/speed-up-slow-shopify-store.png",
+        "content": """
+<p>A slow store loses sales. Shoppers on mobile data won't wait for a heavy homepage, and Google uses page experience as one of its ranking signals. The good news: most Shopify speed problems come from a handful of causes, and most of them can be fixed without rebuilding your theme.</p>
+
+<h2>How to measure your store's speed</h2>
+<ul>
+<li><strong>Shopify's web performance report</strong> in your admin analytics shows how fast your store loads for real visitors.</li>
+<li><strong>Google PageSpeed Insights</strong> (pagespeed.web.dev) tests one page and lists what slows it down. Test your homepage, a collection page and a product page.</li>
+<li>Always look at the <strong>mobile</strong> results first.</li>
+</ul>
+
+<h2>The 7 most common causes</h2>
+<h3>1. Too many apps</h3>
+<p>Many apps add their own JavaScript and CSS to every page, even pages where the app does nothing. Ten apps can mean ten extra scripts loading before your customer sees a product.</p>
+
+<h3>2. Code left behind by uninstalled apps</h3>
+<p>Some apps leave snippets in your theme after you uninstall them. The app is gone, but its code still loads or throws errors. Check your theme files for references to apps you no longer use.</p>
+
+<h3>3. Large images</h3>
+<p>Uploading 5 MB photos straight from a camera is one of the biggest causes of slow pages. Resize and compress images before uploading, and use your theme's image settings instead of forcing full-size images.</p>
+
+<h3>4. Autoplay videos and sliders</h3>
+<p>A homepage slider with five large images or a background video loads a lot before anything useful appears. One strong hero image usually converts as well and loads much faster.</p>
+
+<h3>5. Heavy or heavily modified themes</h3>
+<p>Themes packed with features you don't use, or edited by many developers over the years, often carry unused code. Shopify's newer themes are built to be fast, so moving to one can be faster than patching an old theme.</p>
+
+<h3>6. Too many tracking scripts</h3>
+<p>Every pixel, chat widget, heatmap and pop-up tool adds weight. Keep the ones you actually use to make decisions and remove the rest.</p>
+
+<h3>7. Custom fonts</h3>
+<p>Several font families and weights can delay text from appearing. Use one or two fonts and only the weights you need.</p>
+
+<h2>A step-by-step plan</h2>
+<ol>
+<li>Measure your current speed and save the results.</li>
+<li>List every installed app and remove the ones you don't need.</li>
+<li>Check the theme for leftover code from removed apps.</li>
+<li>Compress and resize your largest images, starting with the homepage.</li>
+<li>Replace sliders and autoplay video with a single hero image.</li>
+<li>Remove unused tracking scripts and widgets.</li>
+<li>Measure again and compare.</li>
+</ol>
+
+<h2>When apps are the problem</h2>
+<p>If you need several apps for one workflow, a single custom app that does exactly what you need is often lighter and cheaper. Read <a href="/blog/custom-shopify-app-vs-app-store-apps">Custom Shopify App vs App Store Apps</a> to decide.</p>
+<p>Want a second opinion on your store? <a href="https://cal.com/pirhotech/30min">Book a free 30-minute call</a> and we will look at your speed report, apps and theme with you.</p>
+""",
+    },
+    {
+        "title": "How to Hire a Shopify Developer: 10 Questions to Ask",
+        "slug": "hire-shopify-developer",
+        "date": "2026-10-28",
+        "description": "What kind of Shopify developer you actually need, the questions to ask before hiring, red flags to watch for, and how to protect your store and your code.",
+        "tags": ["Shopify", "Hiring", "Shopify App Development"],
+        "image": "/blog-covers/hire-shopify-developer.png",
+        "content": """
+<p>"Shopify developer" can mean very different jobs. Before you hire, it helps to know which kind of help you need and how to tell a strong developer from one who will leave you with a broken theme. Here is the guide we wish every store owner had read before their first hire.</p>
+
+<h2>First, which kind of Shopify developer do you need?</h2>
+<ul>
+<li><strong>Theme developer:</strong> changes how your store looks and works on the storefront. Works in Liquid, HTML, CSS and JavaScript.</li>
+<li><strong>App and integration developer:</strong> builds custom Shopify apps, connects Shopify to other systems and automates back-office work using Shopify's APIs and webhooks.</li>
+<li><strong>Automation specialist:</strong> sets up Shopify Flow and tools like Zapier, Make or n8n for simpler workflows.</li>
+</ul>
+<p>Many problems need more than one of these. Be clear about which part you need help with.</p>
+
+<h2>10 questions to ask before hiring</h2>
+<ol>
+<li><strong>Can you show me Shopify work similar to mine?</strong> Ask for live stores, apps or case studies, not only screenshots.</li>
+<li><strong>Which Shopify APIs and tools have you used?</strong> For app work, listen for the Admin API, webhooks and Shopify Functions.</li>
+<li><strong>How will you access my store?</strong> A professional will request collaborator or staff access, never ask for your owner password.</li>
+<li><strong>Will you work on a copy of my theme or a development store first?</strong> Changes should never be tested on your live store.</li>
+<li><strong>Who owns the code?</strong> You should own everything you pay for and have access to the repository.</li>
+<li><strong>How will you handle Shopify API updates?</strong> Shopify releases new API versions regularly, and older ones stop being supported, so custom apps need maintenance.</li>
+<li><strong>How will this affect my store's speed?</strong> Good developers think about performance before adding scripts.</li>
+<li><strong>How do you communicate progress?</strong> Expect a regular update, a shared task board and one point of contact.</li>
+<li><strong>What happens after launch?</strong> Ask about bug fixes, support and a maintenance plan.</li>
+<li><strong>Can we start with a small, fixed-scope task?</strong> A small paid milestone is the safest way to test a new developer.</li>
+</ol>
+
+<h2>Red flags</h2>
+<ul>
+<li>Asking for your owner login or password</li>
+<li>Editing your live theme directly with no backup</li>
+<li>No written scope, only "it will be done soon"</li>
+<li>Refusing to give you the code or repository access</li>
+<li>Recommending a new app for every problem without asking how your business works</li>
+</ul>
+
+<h2>Freelancer, agency or in-house?</h2>
+<p>A freelancer can be great for small theme changes. For custom apps, integrations and ongoing work, an agency gives you more than one developer, code reviews and continuity if someone leaves. Hiring in-house makes sense once you have enough work for a full-time person.</p>
+
+<h2>Work with our Shopify team</h2>
+<p>Our team builds custom Shopify apps, admin dashboards and store automation, including the <a href="/blog/shopify-app-development-admin-dashboard">Boomerang Magic admin suite</a>. <a href="https://cal.com/pirhotech/30min">Book a free 30-minute call</a> to talk through your project, or reach us through <a href="https://solidy.io">Solidy.io</a> if you are an international business.</p>
+""",
+    },
 ]
+
+# Display order on /blogs; the first 3 also appear on the homepage.
+ORDER = [
+    "shopify-automation-ideas",
+    "shopify-app-development-admin-dashboard",
+    "business-process-automation-examples",
+    "shopify-store-launch-checklist",
+    "custom-shopify-app-vs-app-store-apps",
+    "speed-up-slow-shopify-store",
+    "hire-shopify-developer",
+    "software-development-company-in-bangladesh",
+    "mobile-app-development-cost",
+    "building-service-marketplace-app-flutter",
+    "ai-chatbot-for-small-business",
+]
+POSTS.sort(key=lambda post: ORDER.index(post["slug"]))
 
 out = []
 for i, post in enumerate(POSTS, start=1):
@@ -255,7 +543,7 @@ for i, post in enumerate(POSTS, start=1):
         "content": " ".join(line.strip() for line in post["content"].strip().splitlines() if line.strip()),
         "image": post["image"],
         "author": AUTHOR,
-        "date": DATE,
+        "date": post.get("date", DATE),
         "tags": post["tags"],
     })
 
